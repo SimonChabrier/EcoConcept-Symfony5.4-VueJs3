@@ -34,9 +34,7 @@ export default {
 }
 
 h1 {
-    font-size: 2em;
-    text-align: center;
-    color: #2c3e50;
+    font-size: 2rem;
 }
 
 ul {
@@ -51,6 +49,10 @@ li {
 
 a {
     color: $green;
+}
+
+p {
+    font-size: 1rem;
 }
 
 

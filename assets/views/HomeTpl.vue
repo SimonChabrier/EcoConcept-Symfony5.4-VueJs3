@@ -2,6 +2,7 @@
     
         <div class="main">
             <h1>HOME TEMPLATE</h1>
+            <p>Le contenu du template vient ici</p>
         </div>  
 </template>
 
