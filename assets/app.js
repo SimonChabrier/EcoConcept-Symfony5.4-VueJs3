@@ -7,16 +7,17 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
+import './styles/reset.css'
 
-// start the Stimulus application
-import './bootstrap';
 
 // init vue app
-
 import { createApp } from "vue";
-import App from "./App.vue";
+import router from "@/router/router";
+import App from "@/App.vue";
 
-createApp(App).mount("#app");
+createApp(App)
+    .use(router)
+    .mount("#app");
 
 
 

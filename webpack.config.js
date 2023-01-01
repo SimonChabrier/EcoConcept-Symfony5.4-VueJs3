@@ -1,83 +1,75 @@
-const Encore = require('@symfony/webpack-encore');
+/* eslint-disable no-undef */
 
-// Manually configure the runtime environment if not already configured yet by the "encore" command.
-// It's useful when you use tools that rely on webpack.config.js file.
+const Encore = require('@symfony/webpack-encore');
+const path = require('path');
+const webpack = require('webpack');
+// const ESLintWebpackPlugin = require('eslint-webpack-plugin');
+
 if (!Encore.isRuntimeEnvironmentConfigured()) {
     Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
 }
 
 Encore
-    // directory where compiled assets will be stored
-    .setOutputPath('public/build/')
-    // public path used by the web server to access the output path
-    .setPublicPath('/build')
-    // only needed for CDN's or subdirectory deploy
-    //.setManifestKeyPrefix('build/')
+// le repertoire où les assets compilés seront stockés
+.setOutputPath('public/build/')
+// le repertoire public utilisé par le serveur web pour accéder au repertoire de sortie
+.setPublicPath('/build')
+// L'application Vue.js est dans le dossier assets
+.addEntry('app', './assets/app.js')
 
-    /*
-     * ENTRY CONFIG
-     *
-     * Each entry will result in one JavaScript file (e.g. app.js)
-     * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
-     */
-    .addEntry('app', './assets/app.js')
+.splitEntryChunks()
+.enableSingleRuntimeChunk()
+.cleanupOutputBeforeBuild()
+.enableBuildNotifications()
+.enableSourceMaps(!Encore.isProduction())
+.enableVersioning(Encore.isProduction())
 
-    // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
-    .enableStimulusBridge('./assets/controllers.json')
+.configureBabelPresetEnv((config) => {
+    config.useBuiltIns = 'usage';
+    config.corejs = 3;
+})
 
-    // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
-    .splitEntryChunks()
+.enableSassLoader()
 
-    // will require an extra script tag for runtime.js
-    // but, you probably want this, unless you're building a single-page app
-    .enableSingleRuntimeChunk()
+.enableVueLoader(() => { }, {
+    version: 3,
+    runtimeCompilerBuild: false,
+    useJsx: false,
+  })
 
-    /*
-     * FEATURE CONFIG
-     *
-     * Enable & configure other features below. For a full
-     * list of features, see:
-     * https://symfony.com/doc/current/frontend.html#adding-more-features
-     */
-    .cleanupOutputBeforeBuild()
-    .enableBuildNotifications()
-    .enableSourceMaps(!Encore.isProduction())
-    // enables hashed filenames (e.g. app.abc123.css)
-    .enableVersioning(Encore.isProduction())
-
-    // configure Babel
-    // .configureBabel((config) => {
-    //     config.plugins.push('@babel/a-babel-plugin');
-    // })
-
-    // enables and configure @babel/preset-env polyfills
-    .configureBabelPresetEnv((config) => {
-        config.useBuiltIns = 'usage';
-        config.corejs = '3.23';
+// Configurer les règles de chargement du scss pour ajouter les variables globales dans l'application Vue.js
+Encore.configureLoaderRule('scss', loaderRule => {
+loaderRule.oneOf.forEach(rule => {
+    rule.use.forEach(loader => {
+    if (loader.loader.indexOf('sass-loader') > -1) {
+        loader.options.additionalData = `
+        @import "./assets/styles/_vars.scss";
+        `;
+    }
     })
+});
+})
 
-    // enables Sass/SCSS support
-    .enableSassLoader()
+// Déclarer explicitement les plugins de webpack ici pour ne pas avoir les messages relatifs à ces plugins en console
+.addPlugin(new webpack.DefinePlugin({
+    __VUE_OPTIONS_API__: true,
+    __VUE_PROD_DEVTOOLS__: true,
+}))
 
-    // enables Vue.js support
-    .enableVueLoader(() => {}, {
-        version: 3,
-        runtimeCompilerBuild: false,
-        useJsx: false,
-      })
+// Ajouter des alias pour les chemins d'accès aux fichiers sinon Vue ne les trouve pas avec @
+.addAliases({
+    
+    '@': path.resolve('assets'),
+    '@styles': path.resolve('assets/styles'),    
+})
 
-    // uncomment if you use TypeScript
-    //.enableTypeScriptLoader()
+// Ajouter un plugin pour linter les fichiers js 
+// ne pas mettre vu et js dans les extensions sinon il y a des erreurs
+// la config est ensuite faire dans .eslintrc 
+// .addPlugin(new ESLintWebpackPlugin({
+//     extensions: ['ts'],
+// }))
 
-    // uncomment if you use React
-    //.enableReactPreset()
+module.exports = Encore.getWebpackConfig(); 
 
-    // uncomment to get integrity="..." attributes on your script & link tags
-    // requires WebpackEncoreBundle 1.4 or higher
-    //.enableIntegrityHashes(Encore.isProduction())
 
-    // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
-;
-
-module.exports = Encore.getWebpackConfig();

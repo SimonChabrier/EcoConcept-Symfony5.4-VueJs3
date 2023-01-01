@@ -7,6 +7,8 @@
         "@symfony/webpack-encore": "^4.0.0",
         "@vue/compiler-sfc": "^3.2.45",
         "core-js": "^3.23.0",
+        "eslint": "^8.31.0",
+        "eslint-plugin-vue": "^9.8.0",
         "regenerator-runtime": "^0.13.9",
         "sass": "^1.57.1",
         "sass-loader": "^13.2.0",
@@ -23,5 +25,8 @@
         "dev": "encore dev",
         "watch": "encore dev --watch",
         "build": "encore production --progress"
+    },
+    "dependencies": {
+        "vue-router": "^4.1.6"
     }
 }
