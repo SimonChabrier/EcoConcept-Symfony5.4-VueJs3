@@ -57,7 +57,14 @@ Encore
     })
 
     // enables Sass/SCSS support
-    //.enableSassLoader()
+    .enableSassLoader()
+
+    // enables Vue.js support
+    .enableVueLoader(() => {}, {
+        version: 3,
+        runtimeCompilerBuild: false,
+        useJsx: false,
+      })
 
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()

@@ -10,3 +10,13 @@ import './styles/app.css';
 
 // start the Stimulus application
 import './bootstrap';
+
+// init vue app
+
+import { createApp } from "vue";
+import App from "./App.vue";
+
+createApp(App).mount("#app");
+
+
+
