@@ -1,5 +1,5 @@
 <template>
-    <div class="main">
+    <div>
 
         <div class="header">
 
@@ -54,14 +54,14 @@ h1 {
     font-family: "Poppins";
     font-weight: 600;
     font-size: 2rem!important;
-    margin: $gutter-medium!important;
+    margin: $gutter-big!important;
 }
 
 h2 {
     font-family: "Poppins";
     font-weight: 600;
     font-size: 1.3rem!important;
-    margin: $gutter-medium!important;
+    margin: $gutter-big!important;
 }
 
 h3 {
@@ -91,6 +91,13 @@ p {
     line-height: 30px!important;
 }
 
+pre {
+    display: flex;
+    background-color: $darkBlack!important;
+    border: none!important;;
+    margin: $gutter-big 0!important;
+}
+
 #app {
     display: flex;
     margin: 0;
@@ -103,7 +110,7 @@ p {
 .header {
     justify-content: center;
     align-items: center;
-    background: blue;
+    background: $mediumBlue;
 }
 
 .content {
@@ -120,7 +127,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: red;
+    background: $mediumBlue;
 }
 
 

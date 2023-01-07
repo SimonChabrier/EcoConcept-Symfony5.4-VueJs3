@@ -76,13 +76,6 @@ export default {
 
 <style lang="scss" scoped>
 
-pre {
-    display: flex;
-    background-color: #1e1e1e;
-    border-radius: 5px;
-    padding: 1rem;
-    margin: 1rem 0;
-    border: none;
-}
+// pre style est dans dans App.vue
 
 </style>
