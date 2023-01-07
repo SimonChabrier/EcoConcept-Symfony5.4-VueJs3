@@ -1,12 +1,16 @@
 <template>
     
-    <div class="content">
 
         <nav class="navbar">
 
             <div class="links" id="navbarNav">
-                <router-link @click="''" to="/">Home</router-link>
-                <router-link @click="''" to="/test">Test</router-link>
+
+
+                    <router-link @click="''" to="/">Home</router-link>
+
+                    <router-link @click="''" to="/test">Test</router-link>
+
+
             </div>
 
                 <form class="form">
@@ -16,11 +20,11 @@
 
         </nav>
 
-    </div>
 
 </template>
 
 <script>
+
 
 export default {
 
@@ -47,27 +51,24 @@ export default {
 
 <style lang="scss" scoped>
 
-.content {
-    background-color: $lightblue;
-    padding: $gutter-big;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
+// .content {
+//     background-color: $lightblue;
+//     padding: $gutter-big;
+//     text-align: center;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     align-items: center;
+// }
 
 .navbar {
-    background: $lightWhite;
-    padding: 1.5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    border-radius: 20px;
-    gap: 10px;
-    
+    height: 100%;
+    background-color: $mediumBlue;
+
     a {
         color: $mediumBlack;
         text-decoration: none;
@@ -77,12 +78,11 @@ export default {
         border-radius: 5px;
         transition: all 0.3s ease-in-out;
         cursor: pointer;
-        
-        &:hover {
-            background: $mediumBlue;
-            color: $lightWhite;
-        }
 
+        &:hover {
+            color: $red;
+            box-shadow: $shadow-light;
+        }
         &::before {
             content: "➜";
             margin-right: 5px;
@@ -114,6 +114,13 @@ export default {
     background-color: $green;
     color: white;
     cursor: pointer;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0
 }
 
 

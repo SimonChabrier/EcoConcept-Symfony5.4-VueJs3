@@ -1,6 +1,6 @@
 <template>
 
-    <div class="footer">
+    <div>
         <h1>Footer</h1>
     </div>
 
@@ -20,10 +20,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.footer {
-    background-color: $mediumBlue;
-    text-align: center;
-    padding: $gutter-big;
-}
 
 </style>
