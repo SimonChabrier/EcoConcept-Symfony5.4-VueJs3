@@ -6,7 +6,7 @@
 
             <div class="links" id="navbarNav">
                 <router-link @click="''" to="/">Home</router-link>
-                <router-link to="/test">Test</router-link>
+                <router-link @click="''" to="/test">Test</router-link>
             </div>
 
                 <form class="form">
@@ -28,7 +28,7 @@ export default {
 
     data() {
         return {
-            //
+            toggle: false
         }
     },
 
@@ -39,7 +39,7 @@ export default {
     methods: {
         submit() {
             console.log('submit');
-        }
+        },
     }
 }
 
