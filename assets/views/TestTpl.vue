@@ -1,6 +1,6 @@
 <template>
 <div>
-    
+
     <section>
         <h1>Vue.js et Symfony</h1>
                 <p>Vue.js est un framework JavaScript open-source utilisé pour la création d'interfaces utilisateur. Il a été conçu pour être simple à utiliser et offre une expérience de développement agréable grâce à ses composants réutilisables et sa syntaxe claire. Vue.js s'intègre facilement à de nombreux projets grâce à sa flexibilité et à sa taille réduite.</p>
@@ -14,13 +14,31 @@
 
     <section>
         <pre>
-        <code class="language-css">
-            ::placeholder {
-                color: var(--placeholder);
-                opacity: 1;
-            }
-        </code>
+            <code class="language-css">
+                ::placeholder {
+                    color: var(--placeholder);
+                    opacity: 1;
+                }
+            </code>
         </pre>
+
+        <pre>
+            <code class="language-javascript">
+                // code here for example
+                function hello(){
+                    console.log(Hello World)
+                } 
+            </code>
+        </pre>
+
+        <pre>
+            <code class="language-markup">
+                // code here
+                <div>Hello World</div>
+            </code>
+        </pre>
+
+
     </section>
 
 </div>

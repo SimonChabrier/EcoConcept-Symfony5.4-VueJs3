@@ -3,7 +3,7 @@
 
         <nav class="navbar">
 
-            <div class="links" id="navbarNav">
+            <div>
 
 
                     <router-link @click="''" to="/">Home</router-link>
@@ -51,23 +51,13 @@ export default {
 
 <style lang="scss" scoped>
 
-// .content {
-//     background-color: $lightblue;
-//     padding: $gutter-big;
-//     text-align: center;
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     align-items: center;
-// }
-
 .navbar {
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
-    background-color: $mediumBlue;
+    height: 100px;
 
     a {
         color: $mediumBlack;

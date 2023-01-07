@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div class="main">
 
         <div class="header">
 
@@ -7,7 +7,6 @@
 
         </div>
 
-        <!-- add a transition vue js 3 on each route change. Mouted Component slide out and new component slide in -->
         <div class="content">
 
             <router-view v-slot="{ Component }">
@@ -21,9 +20,11 @@
         <div class="footer">
 
             <FooterComp ></FooterComp>
+
         </div>
 
     </div>
+
 </template>
 
 <script>
@@ -90,29 +91,36 @@ p {
     line-height: 30px!important;
 }
 
+#app {
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    background: lightblue;
+    min-height: 100vh;
+    min-width: 100%;
+}
+
 .header {
-    position: relative;
-    height: 100px;
+    justify-content: center;
+    align-items: center;
+    background: blue;
 }
 
 .content {
-    position: absolute;
+    //position: relative;
     padding: 100px;
-    // 100% moins la hauteur du header et du footer
-    height: calc(100% - 100px - 100px);
-    width: 100%;
-    background-color: $lightBlue;
 }
 
 .footer {
     position: absolute;
     bottom: 0;
-    height: 100px;
+    left: 0;
     width: 100%;
-    background-color: $mediumBlue;
+    height: 100px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    background: red;
 }
 
 
