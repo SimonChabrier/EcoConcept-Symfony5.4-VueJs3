@@ -168,67 +168,67 @@
             <form action="" class="appForm" method="POST">
 
                 <label for="text">Texte</label>
-                <input type="text" placeholder="Text input"> 
+                <input type="text" id="" name="" placeholder="Text input"> 
                 <small class="help">This is a help text</small>
 
                 <label for="password">Password</label>
-                <input type="password" placeholder="Password input">
+                <input type="password" id="" name="" placeholder="Password input">
                 <small class="help">This is a help text</small>
 
                 <label for="email">email</label>
-                <input type="email" placeholder="Email input">
+                <input type="email" id="" name="" placeholder="Email input">
                 <small class="help">This is a help text</small>
 
                 <label for="number">number</label>
-                <input type="number" placeholder="Number input">
+                <input type="number" id="" name="" placeholder="Number input">
                 <small class="help">This is a help text</small>
 
                 <label for="date">date</label>
-                <input type="date" placeholder="Date input">
+                <input type="date" id="" name="" placeholder="Date input">
                 <small class="help">This is a help text</small>
 
                 <label for="time">time</label>
-                <input type="time" placeholder="Time input">
+                <input type="time" id="" name="" placeholder="Time input">
                 <small class="help">This is a help text</small>
 
                 <label for="datetime">datetime</label>
-                <input type="datetime" placeholder="Datetime input">
+                <input type="datetime" id="" name="" placeholder="Datetime input">
                 <small class="help">This is a help text</small>
 
                 <label for="datetime-local">datetime-local</label>
-                <input type="datetime-local" placeholder="Datetime-local input">
+                <input type="datetime-local" id="" name="" placeholder="Datetime-local input">
                 <small class="help">This is a help text</small>
 
                 <label for="month">month</label>
-                <input type="month" placeholder="Month input">
+                <input type="month" id="" name="" placeholder="Month input">
                 <small class="help">This is a help text</small>
 
                 <label for="week">week</label>
-                <input type="week" placeholder="Week input">
+                <input type="week" id="" name="" placeholder="Week input">
                 <small class="help">This is a help text</small>
 
                 <label for="url">url</label>
-                <input type="url" placeholder="Url input">
+                <input type="url" id="" name="" placeholder="Url input">
                 <small class="help">This is a help text</small>
 
                 <label for="search">search</label>
-                <input type="search" placeholder="Search input">
+                <input type="search" id="" name="" placeholder="Search input">
                 <small class="help">This is a help text</small>
 
                 <label for="tel">tel</label>
-                <input type="tel" placeholder="Tel input">
+                <input type="tel" id="" name="" placeholder="Tel input">
                 <small class="help">This is a help text</small>
 
                 <label for="color">color</label>
-                <input type="color" placeholder="Color input">
+                <input type="color" id="" name="" placeholder="Color input">
                 <small class="help">This is a help text</small>
 
                 <label for="range">range</label>
-                <input type="range" placeholder="Range input">
+                <input type="range" id="" name="" placeholder="Range input">
                 <small class="help">This is a help text</small>
 
                 <label for="file">file</label>
-                <input type="file" placeholder="File input">
+                <input type="file" id="" name="" placeholder="File input">
                 <small class="help">This is a help text</small>
 
                 <label for="textarea">textarea</label>
@@ -237,37 +237,45 @@
 
                 <label for="select">select</label>
                 <select name="" id="">
-                    <option value="">Option 1</option>
-                    <option value="">Option 2</option>
-                    <option value="">Option 3</option>
-                    <option value="">Option 4</option>
-                    <option value="">Option 5</option>
+                    <option id="" name="" value="" >Option 1</option>
+                    <option id="" name="" value="" >Option 2</option>
+                    <option id="" name="" value="" >Option 3</option>
+                    <option id="" name="" value="" >Option 4</option>
+                    <option id="" name="" value="" >Option 5</option>
                 </select>
                 <small class="help">This is a help text</small>
 
                 
                 <label for="selectMultiple">selectMultiple</label>
                 <select name="" id="" multiple>
-                    <option value="">Option 1</option>
-                    <option value="">Option 2</option>
-                    <option value="">Option 3</option>
-                    <option value="">Option 4</option>
-                    <option value="">Option 5</option>
+                    <option id="" name="" value="" >Option 1</option>
+                    <option id="" name="" value="" >Option 2</option>
+                    <option id="" name="" value="" >Option 3</option>
+                    <option id="" name="" value="" >Option 4</option>
+                    <option id="" name="" value="" >Option 5</option>
                 </select>
                 <small class="help">This is a help text</small>
 
                 <label for="checkbox">checkbox</label>
                 <section class="boxAndRadio">
-                    choix 1 <input type="checkbox" placeholder="Checkbox input">
-                    choix 2 <input type="checkbox" placeholder="Checkbox input">
-                    choix 3 <input type="checkbox" placeholder="Checkbox input">
+                    <label for="1">Choix 1</label>
+                    <input type="checkbox" placeholder="Checkbox input" id="" name="" value="" >
+                    <label for="1">Choix 2</label>
+                    <input type="checkbox" placeholder="Checkbox input" id="" name="" value="" >
+                    <label for="1">Choix 3</label>
+                    <input type="checkbox" placeholder="Checkbox input" id="" name="" value="" >
+
                 </section>
 
                 <label for="radio">radio</label>
                 <section class="boxAndRadio">
-                    choix 1<input type="radio" placeholder="Radio input">
-                    choix 2<input type="radio" placeholder="Radio input" >
+                    <label for="1">Choix 1</label>
+                    <input type="radio" id="" name="" value="" checked >
+                    <label for="2">Choix 2</label>
+                    <input type="radio" id="" name="" value="" >
                 </section>
+
+
 
                 <label for="submit">submit</label>
                 <input type="submit" placeholder="Submit input" @click.prevent="submitForm()">
