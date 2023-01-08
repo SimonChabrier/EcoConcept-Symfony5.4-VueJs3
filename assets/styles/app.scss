@@ -16,6 +16,7 @@ h4, h5, h6 {
     background-color: $azure!important;
     padding: $gutter-medium!important;
     border-radius: $radiusUpDown!important;
+    width: fit-content;
 }
 
 h1 {
@@ -249,7 +250,7 @@ form {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 .flexColumn {

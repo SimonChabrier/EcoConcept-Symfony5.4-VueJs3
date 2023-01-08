@@ -115,8 +115,7 @@
 
         </section>
         
-        <section class="section appLight flexColumn">
-            
+        <section class="section appLight flexColumn">           
             <table>
                 <thead>
                     <tr>
@@ -161,7 +160,6 @@
 
                 </tbody>
             </table>
-
         </section>  
         
     <span class="appSpan fill">Form</span>
