@@ -50,7 +50,7 @@ export default {
     // flex-direction: column;
     // min-height: 100vh;
     // min-width: 100%;
-    background: $lightBlue;
+    background: $creme;
 }
 
 .appHeader, .appFooter {

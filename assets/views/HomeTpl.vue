@@ -341,7 +341,7 @@
 <script>
 
 import ButTest from '@/components/elements/ButTest.vue';
-import CardComponent from '@/components/CardComponent.vue';
+import CardComponent from '@/components/elements/CardComponent.vue';
 
 export default {
 
