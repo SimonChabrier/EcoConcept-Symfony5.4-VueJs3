@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <div class="header">
+        <div class="appHeader">
 
             <NavBarComp></NavBarComp>
 
@@ -17,7 +17,7 @@
 
         </div>
 
-        <div class="footer">
+        <div class="appFooter">
 
             <FooterComp ></FooterComp>
 
@@ -53,23 +53,25 @@ export default {
     min-width: 100%;
 }
 
-.header, .footer {
+.appHeader, .appFooter {
     color: $lightWhite;
     background: $mediumBlue;
     padding: $gutter-big;
 }
 
-
-.header {
-    justify-content: center;
+.appHeader {
+    justify-content: space-between;
     align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .main {
     padding: 50px 100px;
 }
 
-.footer {
+.appFooter {
     height: 100px;
     display: flex;
     justify-content: center;
@@ -105,6 +107,23 @@ export default {
 .fade-leave-to {
     transform: translateX(100%);
     opacity: 0;
+}
+
+
+// media queries
+
+@media screen and (max-width: 820px) {
+
+    .main {
+        padding: 50px 20px;
+    }
+
+    .flexRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    }
+
 }
 
 

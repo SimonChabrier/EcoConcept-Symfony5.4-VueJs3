@@ -62,9 +62,7 @@ ol li {
 
 a {
     color: $lightWhite!important;
-    &:hover {
-        color: $orange!important;
-    }
+    transition: $transition-fast;
 }
 
 p {
@@ -132,6 +130,7 @@ form {
         padding: $gutter-medium!important;
         border: none!important;
         border-radius: $border-radius!important;
+        max-width: 100%;
     }   
 
     .help {
@@ -149,6 +148,7 @@ form {
         border-radius: $border-radius!important;
         font-family: 'poppins'!important;
         resize: vertical;
+        max-width: 100%;
     }
 
     select {
@@ -244,6 +244,8 @@ form {
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
+    // for table in phone view
+    overflow: auto;
 }
 
 .flexRow {
