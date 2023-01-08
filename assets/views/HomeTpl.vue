@@ -1,20 +1,6 @@
 <template>
     <div>
     
-    <span class="appSpan fill">Tags</span>
-        <section class="section appLight flexColumn">
-            <TagComponent color="primary">Primary</TagComponent>
-            <TagComponent color="secondary">Secondary</TagComponent>
-            <TagComponent color="success">Success</TagComponent>
-            <TagComponent color="danger">Danger</TagComponent>
-            <TagComponent color="warning">Warning</TagComponent>
-            <TagComponent color="info">Info</TagComponent>
-            <TagComponent color="light">Light</TagComponent>
-            <TagComponent color="dark">Dark</TagComponent>
-        </section>
-           
-    
-
     <span class="appSpan fill">Light section</span>
         <section class="section appLight flexRow">
             <h1>Titre de premier niveau</h1>
@@ -72,6 +58,18 @@
         <ButTest size="xs" type="light">light</ButTest>
         <ButTest size="xs" type="dark">dark</ButTest>
         </section> 
+
+    <span class="appSpan fill">Tags</span>
+        <section class="section appLight flexColumn">
+            <TagComponent color="primary">Primary</TagComponent>
+            <TagComponent color="secondary">Secondary</TagComponent>
+            <TagComponent color="success">Success</TagComponent>
+            <TagComponent color="danger">Danger</TagComponent>
+            <TagComponent color="warning">Warning</TagComponent>
+            <TagComponent color="info">Info</TagComponent>
+            <TagComponent color="light">Light</TagComponent>
+            <TagComponent color="dark">Dark</TagComponent>
+        </section>
 
     <span class="appSpan fill">List</span>
         <section class="section appDark flexColumn">

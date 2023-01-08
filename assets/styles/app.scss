@@ -308,13 +308,13 @@ legend {
     align-items: stretch;
 }
 
-// .flexColumn {
-//     display: flex;
-//     flex-wrap: wrap;
-//     flex-direction: row;
-//     align-items: center;
-//     justify-content: flex-start;
-// }
+.flexColumn {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
 
 .appDark {
     background-color: $darkBlack!important;
