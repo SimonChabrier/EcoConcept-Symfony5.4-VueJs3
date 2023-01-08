@@ -1,5 +1,19 @@
 <template>
     <div>
+    
+    <span class="appSpan fill">Tags</span>
+        <section class="section appLight flexColumn">
+            <TagComponent color="primary">Primary</TagComponent>
+            <TagComponent color="secondary">Secondary</TagComponent>
+            <TagComponent color="success">Success</TagComponent>
+            <TagComponent color="danger">Danger</TagComponent>
+            <TagComponent color="warning">Warning</TagComponent>
+            <TagComponent color="info">Info</TagComponent>
+            <TagComponent color="light">Light</TagComponent>
+            <TagComponent color="dark">Dark</TagComponent>
+        </section>
+           
+    
 
     <span class="appSpan fill">Light section</span>
         <section class="section appLight flexRow">
@@ -342,6 +356,7 @@
 
 import ButTest from '@/components/elements/ButTest.vue';
 import CardComponent from '@/components/elements/CardComponent.vue';
+import TagComponent from '@/components/elements/TagComponent.vue';
 
 export default {
 
@@ -349,7 +364,8 @@ export default {
 
     components: {
         ButTest,
-        CardComponent
+        CardComponent,
+        TagComponent
     },
 
     data() {
