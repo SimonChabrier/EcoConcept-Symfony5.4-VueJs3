@@ -40,7 +40,7 @@ export default {
 button {
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    radius: 5px;
     background-color: $green;
     color: $lightWhite;
     font-size: 1.2rem;

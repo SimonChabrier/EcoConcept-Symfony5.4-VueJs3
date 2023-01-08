@@ -112,4 +112,30 @@ export default {
     box-shadow: none!important;
 }
 
+// media queries
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 0!important;
+        margin: $gutter-medium 0 0 0!important;
+    }
+    .searchForm {
+        flex-direction: column;
+        align-items: center;
+        padding: 0!important;
+        margin: $gutter-medium 0 0 0!important;
+    }
+    .input {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .btn {
+        width: -webkit-fill-available;
+        margin: 0 0 $gutter-medium 0!important;
+        padding: 12px;
+    }
+}
+
 </style>

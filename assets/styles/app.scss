@@ -107,7 +107,7 @@ form {
     align-items: center;
     padding: $gutter-medium!important;
     margin: $gutter-medium 0!important;
-    border-radius: $border-radius!important;
+    border-radius: $radius!important;
 }
 
 .appForm {
@@ -129,7 +129,7 @@ form {
         font-size: 1.1rem!important;
         padding: $gutter-medium!important;
         border: none!important;
-        border-radius: $border-radius!important;
+        border-radius: $radius!important;
         max-width: 100%;
     }   
 
@@ -145,7 +145,7 @@ form {
         padding: $gutter-small!important;
         margin: 0!important;
         border: $border!important;
-        border-radius: $border-radius!important;
+        border-radius: $radius!important;
         font-family: 'poppins'!important;
         resize: vertical;
         max-width: 100%;
@@ -156,7 +156,7 @@ form {
         padding: $gutter-small!important;
         margin: 0!important;
         border: $border!important;
-        border-radius: $border-radius!important;
+        border-radius: $radius!important;
         line-height: $gutter-medium!important;
         
         option {
@@ -170,7 +170,7 @@ form {
 
     input[type = file]{
         border: $border!important;
-        border-radius: $border-radius!important;
+        border-radius: $radius!important;
         padding: $gutter-small!important;
         font-family: 'poppins'!important;
         background-color: $lightGray!important;
@@ -183,7 +183,7 @@ form {
             padding: $gutter-small!important;
             margin-right: $gutter-big!important;
             border: none!important;
-            border-radius: $border-radius!important;
+            border-radius: $radius!important;
             cursor: pointer;
             transition: $transition;
             &:hover {
@@ -209,6 +209,30 @@ form {
         width: 20px!important;
         height: 20px!important;
         transition: $transition;
+    }
+
+    input[type = color] {
+        width: 100px !important;
+        height: 100px !important;
+        padding: 0!important;
+        background-color: transparent;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+
+        &::-webkit-color-swatch-wrapper {
+            background-color: transparent!important;
+        }
+
+        // cibler la couleur affichée dans le bouton
+        &::-webkit-color-swatch {
+            padding: 0!important;
+            margin: 0!important;
+            border-radius: $radiusBig!important;
+            border: none!important;
+            //background-color: red!important;
+        }
+
+        
     }
 
     // checkbox and radio button checked
@@ -239,7 +263,7 @@ form {
 .section {
     padding: $gutter-medium!important;
     margin:$gutter-medium 0!important;
-    border-radius: $border-radius!important;
+    border-radius: $radius!important;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;

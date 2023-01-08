@@ -124,6 +124,15 @@ export default {
     flex-wrap: wrap;    
     }
 
+    .appHeader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+
+    }
+
 }
 
 

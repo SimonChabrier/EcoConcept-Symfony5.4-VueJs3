@@ -38,7 +38,10 @@ $transition-slow: all .5s ease-in-out;
 $fade: 0.5s ease-in-out;
 
 // border radius
-$border-radius: .3rem;
+$radius: .3rem;
+$radiusBig: .7rem;
+$radiusUpDown: 8px 0 ;
+$radiusDownUp: 0 8px ;
 
 // border
 $border: 1px solid $lightGray;
@@ -50,5 +53,3 @@ $shadow: 0 0 1rem rgb(94 94 94 / 12%);
 $shadow-dark: 0 0 1rem rgba(0, 0, 0, 0.5);
 
 // contour
-$radiusUpDown: 8px 0 ;
-$radiusDownUp: 0 8px ;
