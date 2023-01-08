@@ -1,6 +1,7 @@
 ## Doc
 
-[Template et composants](./doc/template.jpg).
+![Template et composants](./doc/template.jpg).
+
 
 ## Déjà installé et prêt à l'emploi
 
