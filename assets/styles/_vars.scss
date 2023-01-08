@@ -15,12 +15,13 @@ $mediumBlue:#457B9D;
 $lightBlue:#a8dadc;
 
 // elements
-$red:#B63030;
-$green:#2ECC71;
-$orange:#FCA311;
+$red:#c71212;
+$green:#0bc357;
+$orange:#ff9000;
 $yellow:#F1C40F;
 $purple:#9B59B6;
 $white:#FFFFFF;
+$azure:#3498DB;
 
 // Typo
 $darkGray: #6C757D;
@@ -37,12 +38,12 @@ $transition-slow: all .5s ease-in-out;
 $fade: 0.5s ease-in-out;
 
 // border radius
-$border-radius: 0.25rem;
+$border-radius: .3rem;
 
 // border
 $border: 1px solid $lightGray;
 
 // shadows
-$shadow-light: 0 0.5rem 1rem rgba(0, 0, 0, 0.07);
-$shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-$shadow-dark: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+$shadow-light: 0 0 1rem rgb(224 223 223 / 70%);
+$shadow: 0 0 1rem rgb(94 94 94 / 12%);
+$shadow-dark: 0 0 1rem rgba(0, 0, 0, 0.5);

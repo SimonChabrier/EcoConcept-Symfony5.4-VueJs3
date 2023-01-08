@@ -41,11 +41,11 @@ Encore
 Encore.configureLoaderRule('scss', loaderRule => {
 loaderRule.oneOf.forEach(rule => {
     rule.use.forEach(loader => {
-    if (loader.loader.indexOf('sass-loader') > -1) {
-        loader.options.additionalData = `
-        @import "./assets/styles/_vars.scss";
-        `;
-    }
+        if (loader.loader.indexOf('sass-loader') > -1) {
+            loader.options.additionalData = `
+            @import "./assets/styles/_vars.scss";
+            `;
+        }
     })
 });
 })
@@ -66,9 +66,9 @@ loaderRule.oneOf.forEach(rule => {
 // Ajouter un plugin pour linter les fichiers js 
 // ne pas mettre vu et js dans les extensions sinon il y a des erreurs
 // la config est ensuite faire dans .eslintrc 
-// .addPlugin(new ESLintWebpackPlugin({
-//     extensions: ['ts'],
-// }))
+.addPlugin(new ESLintWebpackPlugin({
+    extensions: ['ts'],
+}))
 
 module.exports = Encore.getWebpackConfig(); 
 

@@ -82,20 +82,16 @@ li {
 }
 
 a {
-    color: $green;
+    color: $lightWhite!important;
+    &:hover {
+        color: $orange!important;
+    }
 }
 
 p {
     font-size: 1.2rem!important;
     font-weight: 200!important;
     line-height: 30px!important;
-}
-
-pre {
-    display: flex;
-    background-color: $darkBlack!important;
-    border: none!important;;
-    margin: $gutter-big 0!important;
 }
 
 #app {
@@ -107,42 +103,61 @@ pre {
     min-width: 100%;
 }
 
+.header, .footer {
+    color: $lightWhite;
+    background: $mediumBlue;
+    padding: $gutter-big;
+}
+
+
 .header {
     justify-content: center;
     align-items: center;
-    background: $mediumBlue;
 }
 
 .content {
     //position: relative;
-    padding: 100px;
+    padding: 50px 100px;
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: $mediumBlue;
 }
 
+// Transition fade
+
+// .fade-enter-active,
+// .fade-leave-active {
+//   transition: opacity 0.5s ease;
+// }
+// .fade-enter-from,
+// .fade-leave-to {
+//   opacity: 0;
+//   transition: opacity 0.1s ease;
+// }
 
 
-// all frame slide left on leave and slide right on enter
+// Transition slide
 
-.fade-enter-active,
+.fade-enter-active {
+    transition: all 0.2s ease;
+}
+.fade-enter-from {
+    transform: translateX(-100%);
+    opacity: 0;
+}
 .fade-leave-active {
-  transition: opacity 0.2s ease;
+    transition: all 0.2s ease;
 }
-.fade-enter-from,
+
 .fade-leave-to {
-  opacity: 0;
-  transition: opacity 0.2s ease;
+    transform: translateX(100%);
+    opacity: 0;
 }
+
 
 
 

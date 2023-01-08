@@ -15,6 +15,8 @@
     <section>
         <pre>
             <code class="language-css">
+                //css
+
                 ::placeholder {
                     color: var(--placeholder);
                     opacity: 1;
@@ -24,7 +26,8 @@
 
         <pre>
             <code class="language-javascript">
-                // code here for example
+                // js
+
                 function hello(){
                     console.log(Hello World)
                 } 
@@ -32,9 +35,44 @@
         </pre>
 
         <pre>
-            <code class="language-markup">
-                // code here
-                <div>Hello World</div>
+            <code class="language-md">
+                // markup
+
+                # Title 1
+                ## Title 2
+                ### Title 3
+                #### Title 4
+                ##### Title 5
+            </code>
+        </pre>
+
+        <pre>
+            <code class="language-php">
+                // php
+
+                echo 'Hello World';
+            </code>
+        </pre>
+
+        <pre>
+            <code class="language-scss">
+                // scss
+
+                .hello {
+                    color: red;
+                }
+            </code>
+        </pre>
+
+        <pre>
+            <code class="language-sql">
+                // sql
+
+                SELECT COUNT(*) AS cpt, MAX(t.pos) AS max_pos
+                FROM `my_table`
+                LEFT JOIN `other_table` AS t
+                WHERE `somecol` IS NOT NULL
+                ORDER BY t.other_col DESC
             </code>
         </pre>
 
@@ -49,7 +87,7 @@
 <script>
 
 import Prism from 'prismjs';
-import "prismjs/themes/prism-dark.css"; // you can change
+import "prismjs/themes/prism-okaidia.css"; // you can change
 
 
 export default {
@@ -67,8 +105,9 @@ export default {
   mounted() {
     // add prismjs to code blocks
     Prism.highlightAll();
-    // window.Prism = window.Prism || {};
-    // window.Prism.manual = true;
+    window.Prism = window.Prism || {};
+    window.Prism.manual = true;
+    Prism.highlightAll();
   }
 }
 

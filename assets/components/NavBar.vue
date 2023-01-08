@@ -60,22 +60,32 @@ export default {
     height: 100px;
 
     a {
-        color: $mediumBlack;
+        color: $lightWhite;
         text-decoration: none;
         font-size: 1.2rem;
         padding: 10px 20px;
-        margin: 0 5px;
+        margin: 0 15px;
         border-radius: 5px;
-        transition: all 0.3s ease-in-out;
         cursor: pointer;
+        border : 1px solid transparent;
+        position: relative;
+        transition: all 0.2s ease-in-out;
 
-        &:hover {
-            color: $red;
-            box-shadow: $shadow-light;
+        &:hover::before {
+            transition: all 0.2s ease-in-out;
+            top: 10px;
+            
         }
         &::before {
-            content: "➜";
-            margin-right: 5px;
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: $lightWhite;
+            top: 15px;
+            left: 0px;
+            transition: all 0.2s ease-in-out;
+            border-radius: 50%;
         }
     }
 }
@@ -102,7 +112,7 @@ export default {
     border: none;
     border-radius: 5px;
     background-color: $green;
-    color: white;
+    color: $lightWhite;
     cursor: pointer;
 }
 
