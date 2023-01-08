@@ -7,7 +7,7 @@
 
         </div>
 
-        <div class="content">
+        <div class="main">
 
             <router-view v-slot="{ Component }">
                 <transition name="fade" mode="out-in">
@@ -44,56 +44,6 @@ export default {
 
 <style lang="scss">
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-h1 {
-    font-family: "Poppins";
-    font-weight: 600;
-    font-size: 2rem!important;
-    margin: $gutter-big!important;
-}
-
-h2 {
-    font-family: "Poppins";
-    font-weight: 600;
-    font-size: 1.3rem!important;
-    margin: $gutter-big!important;
-}
-
-h3 {
-    font-family: "Poppins";
-    font-weight: 600;
-    font-size: 1.1rem!important;
-    margin: $gutter-medium!important;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-a {
-    color: $lightWhite!important;
-    &:hover {
-        color: $orange!important;
-    }
-}
-
-p {
-    font-size: 1.2rem!important;
-    font-weight: 200!important;
-    line-height: 30px!important;
-}
-
 #app {
     display: flex;
     margin: 0;
@@ -115,8 +65,7 @@ p {
     align-items: center;
 }
 
-.content {
-    //position: relative;
+.main {
     padding: 50px 100px;
 }
 

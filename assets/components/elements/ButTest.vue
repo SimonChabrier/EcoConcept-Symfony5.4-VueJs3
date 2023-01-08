@@ -22,7 +22,7 @@
       size: {
         type: String,
         default: '',
-        validator: (value) => ['', 'lg', 'sm'].includes(value),
+        validator: (value) => ['xs', 'lg', 'sm'].includes(value),
       },
     },
     methods: {
@@ -108,6 +108,13 @@ background-color: $red;
 .sm {
   padding: .25rem .5rem;
   font-size: .875rem;
+  line-height: 1.5;
+  border-radius: .2rem;
+}
+
+.xs {
+  padding: .1rem .5rem;
+  font-size: .75rem;
   line-height: 1.5;
   border-radius: .2rem;
 }

@@ -1,0 +1,311 @@
+* {
+    box-sizing: border-box!important;
+}
+
+h1, h2, h3 {
+    font-family: "Poppins"!important;
+    font-weight: 600!important;
+    margin: $gutter-big!important;
+}
+
+h4, h5, h6 {
+    font-family: "Poppins"!important;
+    font-weight: 200!important;
+    margin: $gutter-medium $gutter-big!important;
+    color: $lightWhite;
+    background-color: $azure!important;
+    padding: $gutter-medium!important;
+    border-radius: $radiusUpDown!important;
+}
+
+h1 {
+    font-size: 2.3rem!important;
+}
+
+h2 {
+    font-size: 1.9rem!important;
+}
+
+h3 {
+    font-size: 1.5rem!important;
+}
+
+h4 {
+    font-size: 1.3rem!important;
+}
+
+h5 {
+    font-size: 1.1rem!important;
+}
+
+h6 {
+    font-size: 1rem!important;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    padding: $gutter-small!important;
+    margin: 0 $gutter-big!important;
+    list-style: square;
+}
+
+ol li {
+    padding: $gutter-small!important;
+    margin: 0 $gutter-big!important;
+    list-style: decimal;
+}
+
+a {
+    color: $lightWhite!important;
+    &:hover {
+        color: $orange!important;
+    }
+}
+
+p {
+    font-size: 1.1rem!important;
+    font-weight: 200!important;
+    line-height: 28px!important;
+    padding: $gutter-big!important;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: $gutter-medium 0!important;
+    overflow: hidden;
+    box-shadow: $shadow;
+    th, td {
+        padding: $gutter-small!important;
+        text-align: left;
+        border-bottom: $border;
+    }
+
+    tr {
+        transition: $transition-fast;
+        &:hover {
+            background-color: $lightGray;
+            color:$darkBlack;
+        }
+    }
+}
+
+thead {
+    background-color: $lightBlack;
+    color: $lightWhite;
+    text-transform: uppercase;
+}
+
+form {
+    width: 100%;
+    box-shadow: $shadow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $gutter-medium!important;
+    margin: $gutter-medium 0!important;
+    border-radius: $border-radius!important;
+}
+
+.appForm {
+    margin: $gutter-medium 0!important;
+    font-weight: 200!important;
+    line-height: 28px!important;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    label {
+        font-size: 1.1rem!important;
+        padding: $gutter-small!important;
+        text-transform: capitalize;
+    }
+
+    input {
+        font-size: 1.1rem!important;
+        padding: $gutter-medium!important;
+        border: none!important;
+        border-radius: $border-radius!important;
+    }   
+
+    .help {
+        font-size: .8rem!important;
+        padding-left: $gutter-small!important;
+        padding-top: 0!important;
+        margin: 0!important;
+    }
+
+    textarea {
+        font-size: 1.1rem!important;
+        padding: $gutter-small!important;
+        margin: 0!important;
+        border: $border!important;
+        border-radius: $border-radius!important;
+        font-family: 'poppins'!important;
+        resize: vertical;
+    }
+
+    select {
+        font-size: 1.1rem!important;
+        padding: $gutter-small!important;
+        margin: 0!important;
+        border: $border!important;
+        border-radius: $border-radius!important;
+        line-height: $gutter-medium!important;
+        
+        option {
+            padding: $gutter-small!important;
+            border: none;
+        }
+        option:nth-child(odd) {
+            background-color: $lightGray;
+        }
+    }
+
+    input[type = file]{
+        border: $border!important;
+        border-radius: $border-radius!important;
+        padding: $gutter-small!important;
+        font-family: 'poppins'!important;
+        background-color: $lightGray!important;
+        cursor: pointer;
+
+        // style button file input
+        &::-webkit-file-upload-button {
+            background-color: $mediumBlue!important;
+            color: $lightWhite!important;
+            padding: $gutter-small!important;
+            margin-right: $gutter-big!important;
+            border: none!important;
+            border-radius: $border-radius!important;
+            cursor: pointer;
+            transition: $transition;
+            &:hover {
+                background-color: $darkBlue!important;
+                color: $lightWhite!important;
+            }
+        }
+    }
+
+    input[type = submit], input[type = reset] {
+        background-color: $mediumBlue!important;
+        color: $lightWhite!important;
+        transition: $transition;
+        cursor: pointer;
+    }
+
+    input[type = submit]:hover, input[type = reset]:hover {
+        background-color: $darkBlue!important;
+        color: $lightWhite!important;
+    }
+
+    input[type = radio], input[type = checkbox] {
+        width: 20px!important;
+        height: 20px!important;
+        transition: $transition;
+    }
+
+    // checkbox and radio button checked
+    input[type = radio]:checked, input[type = checkbox]:checked {
+        background-color: $mediumBlue!important;
+        color: $lightWhite!important;
+        transform: scale(1.3);
+        transition: $transition;
+        margin-bottom: $gutter-small!important;
+    }
+
+    .boxAndRadio {
+        display: flex;
+        flex-direction: column;
+        margin-left: $gutter-big!important;
+    }
+
+}
+
+.appSpan {
+    display: block;
+    width: fit-content;
+    background-color: $lightWhite!important;
+    padding: $gutter-medium!important;
+    border-radius: $radiusDownUp!important;
+}
+
+.section {
+    padding: $gutter-medium!important;
+    margin:$gutter-medium 0!important;
+    border-radius: $border-radius!important;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.flexRow {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.flexColumn {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.appDark {
+    background-color: $darkBlack!important;
+    color: $lightWhite!important;
+}
+
+.appLight {
+    background-color: $lightWhite!important;
+    color: $darkBlack!important;
+
+    // toggle td background color 1 / 2 on a table in appLight container only
+    tr:nth-child(even) {
+        background-color: $lightGray;
+    }
+}
+
+.primary {
+    color: $lightWhite;
+    background-color: $mediumBlue!important;
+}
+
+.secondary {
+    color: $lightWhite;
+    background-color: $darkGray!important;
+}
+
+.success {
+    color: $lightWhite;
+    background-color: $green!important;
+}
+
+.danger {
+    color: $lightWhite;
+    background-color: $red!important;
+}
+
+.warning {
+    color: $darkBlack!important;
+    background-color: $yellow!important;
+}
+
+.info {
+    color: $lightWhite;
+    background-color: $azure!important;
+}
+
+.fill {
+    border: 1px solid $darkBlack!important;
+    color: $darkBlack!important;
+    background-color: transparent!important;
+}
