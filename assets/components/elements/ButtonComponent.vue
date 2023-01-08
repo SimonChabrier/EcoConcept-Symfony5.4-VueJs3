@@ -1,68 +1,125 @@
 <template>
-
-    <button :class="color" @click="onClick">
-        {{ text }}
+    <button
+      :class="[type, size]"
+      @click="onClick"
+    >
+      <slot></slot>
     </button>
+  </template>
+  
+  <script>
 
-</template>
-
-<script>
-
-/////////////////// export du composant ///////////////////
-
-export default {
+  export default {
 
     name: 'ButtonComponent',
-    
-    props: {
-        text: {
-            type: String,
-            required: true
-        },
-        color : {
-            type: String,
-            required: false,
-            default: 'green'
-        }
-    },
-    
-    methods: {
-        onClick() {
-            this.$emit('click')
-            console.log('click')
-        }
-    },
-}
-</script>
 
-<style lang="scss" scoped>
+    props: {
+      type: {
+        type: String,
+        default: 'success',
+        validator: (value) => ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'].includes(value),
+      },
+      size: {
+        type: String,
+        default: '',
+        validator: (value) => ['xs', 'lg', 'sm'].includes(value),
+      },
+    },
+    methods: {
+      onClick(event) {
+        this.$emit('click', event);
+        console.log('click');
+      },
+    },
+  };
+  </script>
+  
+  <style lang="scss" scopped>
 
 button {
-    padding: 10px 20px;
-    border: none;
-    radius: 5px;
-    background-color: $green;
-    color: $lightWhite;
-    font-size: 1.2rem;
-    font-weight: bold;
+    border: 1px solid transparent;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     cursor: pointer;
-    transition: all .3s ease-in-out;
+    margin: 10px 5px;
+    border: none;
+    color: $lightWhite;
+    transition: $transition-slow;
+
+    // cliqué
+    &:focus {
+        outline: none;
+        background: $orange;
+    }
+
+    // survol
+    &:hover {
+        transform: scale(1.05);
+        transition: $transition-fast;
+    }
+}
+  
+.primary {
+background-color: $mediumBlue;
 }
 
-.green {
-    background-color: $green;
+.secondary {
+background-color: $darkGray;
 }
 
-.orange {
-    background-color: $orange;
+.success {
+background-color: $green;
 }
 
-.red {
-    background-color: $red;
+.danger {
+background-color: $red;
 }
 
+.warning {
+  color: $darkBlack;
+  background-color: $yellow;
 
+  &:focus {
+        color: $lightWhite;
+    }
+}
 
+.info {
+  background-color: $azure;
+}
 
+.light {
+  color: $darkBlack;
+  background-color: $lightWhite;
 
+  &:focus {
+        color: $lightWhite;
+    }
+}
+
+.dark {
+  background-color: $mediumBlack;
+}
+
+.lg {
+  padding: .5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: .3rem;
+}
+
+.sm {
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  border-radius: .2rem;
+}
+
+.xs {
+  padding: .1rem .5rem;
+  font-size: .75rem;
+  line-height: 1.5;
+  border-radius: .2rem;
+}
 </style>
+
+  

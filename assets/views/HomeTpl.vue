@@ -27,36 +27,36 @@
 
     <span class="appSpan fill">Buttons</span>
         <section class="section appDark flexColumn">
-        <ButTest size="lg" type="primary">primary</ButTest>
-        <ButTest size="lg" type="secondary">secondary</ButTest>
-        <ButTest size="lg" type="success">success</ButTest>
-        <ButTest size="lg" type="danger">danger</ButTest>
-        <ButTest size="lg" type="warning">warning</ButTest>
-        <ButTest size="lg" type="info">info</ButTest>
-        <ButTest size="lg" type="light">light</ButTest>
-        <ButTest size="lg" type="dark">dark</ButTest>
+        <ButtonComponent size="lg" type="primary">primary</ButtonComponent>
+        <ButtonComponent size="lg" type="secondary">secondary</ButtonComponent>
+        <ButtonComponent size="lg" type="success">success</ButtonComponent>
+        <ButtonComponent size="lg" type="danger">danger</ButtonComponent>
+        <ButtonComponent size="lg" type="warning">warning</ButtonComponent>
+        <ButtonComponent size="lg" type="info">info</ButtonComponent>
+        <ButtonComponent size="lg" type="light">light</ButtonComponent>
+        <ButtonComponent size="lg" type="dark">dark</ButtonComponent>
         </section>  
 
         <section class="section appDark flexColumn">
-        <ButTest size="sm" type="primary">primary</ButTest>
-        <ButTest size="sm" type="secondary">secondary</ButTest>
-        <ButTest size="sm" type="success">success</ButTest>
-        <ButTest size="sm" type="danger">danger</ButTest>
-        <ButTest size="sm" type="warning">warning</ButTest>
-        <ButTest size="sm" type="info">info</ButTest>
-        <ButTest size="sm" type="light">light</ButTest>
-        <ButTest size="sm" type="dark">dark</ButTest>
+        <ButtonComponent size="sm" type="primary">primary</ButtonComponent>
+        <ButtonComponent size="sm" type="secondary">secondary</ButtonComponent>
+        <ButtonComponent size="sm" type="success">success</ButtonComponent>
+        <ButtonComponent size="sm" type="danger">danger</ButtonComponent>
+        <ButtonComponent size="sm" type="warning">warning</ButtonComponent>
+        <ButtonComponent size="sm" type="info">info</ButtonComponent>
+        <ButtonComponent size="sm" type="light">light</ButtonComponent>
+        <ButtonComponent size="sm" type="dark">dark</ButtonComponent>
         </section>
 
         <section class="section appDark flexColumn">
-        <ButTest size="xs" type="primary">primary</ButTest>
-        <ButTest size="xs" type="secondary">secondary</ButTest>
-        <ButTest size="xs" type="success">success</ButTest>
-        <ButTest size="xs" type="danger">danger</ButTest>
-        <ButTest size="xs" type="warning">warning</ButTest>
-        <ButTest size="xs" type="info">info</ButTest>
-        <ButTest size="xs" type="light">light</ButTest>
-        <ButTest size="xs" type="dark">dark</ButTest>
+        <ButtonComponent size="xs" type="primary">primary</ButtonComponent>
+        <ButtonComponent size="xs" type="secondary">secondary</ButtonComponent>
+        <ButtonComponent size="xs" type="success">success</ButtonComponent>
+        <ButtonComponent size="xs" type="danger">danger</ButtonComponent>
+        <ButtonComponent size="xs" type="warning">warning</ButtonComponent>
+        <ButtonComponent size="xs" type="info">info</ButtonComponent>
+        <ButtonComponent size="xs" type="light">light</ButtonComponent>
+        <ButtonComponent size="xs" type="dark">dark</ButtonComponent>
         </section> 
 
     <span class="appSpan fill">Tags</span>
@@ -352,7 +352,7 @@
 
 <script>
 
-import ButTest from '@/components/elements/ButTest.vue';
+import ButtonComponent from '@/components/elements/ButtonComponent.vue';
 import CardComponent from '@/components/elements/CardComponent.vue';
 import TagComponent from '@/components/elements/TagComponent.vue';
 
@@ -361,7 +361,7 @@ export default {
     name: 'HomeTpl',
 
     components: {
-        ButTest,
+        ButtonComponent,
         CardComponent,
         TagComponent
     },
