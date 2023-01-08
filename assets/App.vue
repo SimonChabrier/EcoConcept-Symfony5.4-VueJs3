@@ -78,7 +78,7 @@ export default {
     align-items: center;
 }
 
-// Transition fade
+// Transition fade décommenter pour activer
 
 // .fade-enter-active,
 // .fade-leave-active {
