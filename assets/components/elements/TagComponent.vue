@@ -1,5 +1,5 @@
 <template>
-    <div class="tag" :class="color">
+    <div class="tag" :class="color" @click="onClick()">
         <slot></slot>
     </div>
 </template>
@@ -27,7 +27,10 @@ export default {
     },
 
     methods: {
-        //
+        onClick(event) {
+        this.$emit('click', event);
+        console.log('click');
+      },
     }
 
 }
@@ -45,6 +48,13 @@ export default {
   text-decoration: none;
   border: none !important;
   width: fit-content;
+  cursor: pointer;
+  transition: $transition-slow;
+
+    &:hover {
+        transform: scale(1.05);
+        transition: $transition-fast;
+    }
 
     &::before {
         background: $lightWhite;
@@ -68,6 +78,7 @@ export default {
         width: 6px;
         top: 10px;
     }
+
 }
 
 
