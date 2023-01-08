@@ -161,6 +161,46 @@
                 </tbody>
             </table>
         </section>  
+
+    <span class="appSpan fill">Card</span>
+        <section class="section appLight">
+            <CardComponent title="Card title" color="primary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+            </CardComponent>
+            <CardComponent title="Card title" color="secondary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+            </CardComponent>
+            <CardComponent title="Card title" color="success">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+            </CardComponent>
+            <CardComponent title="Card title" color="danger">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+            </CardComponent>
+            <CardComponent title="Card title" color="warning">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+            </CardComponent>
+            <CardComponent title="Card title" color="info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+            </CardComponent>
+            <CardComponent title="Card title" color="light">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+            </CardComponent>
+            <CardComponent title="Card title" color="dark">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.
+            </CardComponent>
+        </section>  
         
     <span class="appSpan fill">Form</span>
         <section class="section appLight">
@@ -256,25 +296,33 @@
                 </select>
                 <small class="help">This is a help text</small>
 
-                <label for="checkbox">checkbox</label>
-                <section class="boxAndRadio">
-                    <label for="1">Choix 1</label>
-                    <input type="checkbox" placeholder="Checkbox input" id="" name="" value="" >
-                    <label for="1">Choix 2</label>
-                    <input type="checkbox" placeholder="Checkbox input" id="" name="" value="" >
-                    <label for="1">Choix 3</label>
-                    <input type="checkbox" placeholder="Checkbox input" id="" name="" value="" >
+                <fieldset>
+                <legend>Balise legend - Checkboxes</legend>
+                    <section class="boxAndRadio">
+                        <label for="1">Choix 1</label>
+                            <input type="checkbox" placeholder="Checkbox input" id="" name="" value="" >
+                        <label for="1">Choix 2</label>
+                            <input type="checkbox" placeholder="Checkbox input" id="" name="" value="" >
+                        <label for="1">Choix 3</label>
+                            <input type="checkbox" placeholder="Checkbox input" id="" name="" value="" >
+                    </section>
+                </fieldset>
 
-                </section>
 
-                <label for="radio">radio</label>
-                <section class="boxAndRadio">
-                    <label for="1">Choix 1</label>
-                    <input type="radio" id="" name="" value="" checked >
-                    <label for="2">Choix 2</label>
-                    <input type="radio" id="" name="" value="" >
-                </section>
-
+                <fieldset>
+                <legend>Balise legend - Radio</legend>
+                    <section class="boxAndRadio">
+                        <label for="huey">Huey</label>
+                        <input type="radio" id="huey" name="drone" value="huey" checked>
+                        
+                        <label for="dewey">Dewey</label>
+                        <input type="radio" id="dewey" name="drone" value="dewey">
+                        
+                        <label for="louie">Louie</label>
+                        <input type="radio" id="louie" name="drone" value="louie">
+                        
+                    </section>
+                </fieldset>
 
 
                 <label for="submit">submit</label>
@@ -292,14 +340,16 @@
 
 <script>
 
-import ButTest from '../components/elements/ButTest.vue';
+import ButTest from '@/components/elements/ButTest.vue';
+import CardComponent from '@/components/CardComponent.vue';
 
 export default {
 
     name: 'HomeTpl',
 
     components: {
-        ButTest
+        ButTest,
+        CardComponent
     },
 
     data() {

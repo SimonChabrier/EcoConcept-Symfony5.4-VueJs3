@@ -1,6 +1,7 @@
 <template>
-<div>
 
+<div>
+<!-- Toujours ouvrir le composant avec une div pour éviter les erreurs Vue sur les transitions --->
     <section class="section appLight flexRow">
 
         <h1>Vue.js et Symfony</h1>
@@ -80,11 +81,11 @@
 
 </div>
 
-
 </template> 
 
 <script>
 
+// PrismJs pour les code blocks 
 import Prism from 'prismjs';
 import "prismjs/themes/prism-okaidia.css"; // you can change
 
@@ -102,10 +103,10 @@ export default {
   },
 
   mounted() {
-    // add prismjs to code blocks
+    // j'ajoute prism js pour les code blocks si le composant est monté
     Prism.highlightAll();
-    window.Prism = window.Prism || {};
-    window.Prism.manual = true;
+    // window.Prism = window.Prism || {};
+    // window.Prism.manual = true;
     Prism.highlightAll();
   }
 }

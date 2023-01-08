@@ -45,12 +45,12 @@ export default {
 <style lang="scss">
 
 #app {
-    display: flex;
-    margin: 0;
-    flex-direction: column;
-    background: lightblue;
-    min-height: 100vh;
-    min-width: 100%;
+    // display: flex;
+    // margin: 0;
+    // flex-direction: column;
+    // min-height: 100vh;
+    // min-width: 100%;
+    background: $lightBlue;
 }
 
 .appHeader, .appFooter {
@@ -118,11 +118,11 @@ export default {
         padding: 50px 20px;
     }
 
-    .flexRow {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;    
-    }
+    // .flexRow {
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;    
+    // }
 
     .appHeader {
         display: flex;

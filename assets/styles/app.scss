@@ -110,6 +110,21 @@ form {
     border-radius: $radius!important;
 }
 
+fieldset {
+    margin: $gutter-big 0!important;
+    border: 1px solid $mediumGray!important;
+    padding: 20px 10px!important;
+    border-radius: $radiusBig!important;
+}
+
+legend {
+    font-size: 1.1rem!important;
+    padding: 0 $gutter-medium!important;
+    color: $lightWhite!important;
+    background-color: $mediumBlue!important;
+    border-radius: $radiusUpDown!important;
+}
+
 .appForm {
     margin: $gutter-medium 0!important;
     font-weight: 200!important;
@@ -123,6 +138,7 @@ form {
         font-size: 1.1rem!important;
         padding: $gutter-small!important;
         text-transform: capitalize;
+        width: fit-content;
     }
 
     input {
@@ -221,6 +237,10 @@ form {
         transition: all 0.3s ease-in-out;
         cursor: pointer;
 
+        &:hover {
+            transform: scale(1.05);
+        }
+
         &::-webkit-color-swatch-wrapper {
             background-color: transparent!important;
         }
@@ -233,7 +253,13 @@ form {
             border: none!important;
             //background-color: red!important;
         }
+    }
 
+    input[type = choice] {
+        // change background color of select list when clicked
+        &:focus {
+            background-color: $lightGray;
+        }
         
     }
 
@@ -263,15 +289,16 @@ form {
 }
 
 .section {
-    padding: $gutter-medium!important;
-    margin:$gutter-medium 0!important;
-    border-radius: $radius!important;
+    padding: 1rem !important;
+    margin: 1rem 0 !important;
+    border-radius: 0.3rem !important;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    align-items: center;
-    // for table in phone view
+    // for pre and code on smartphone
     overflow: auto;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .flexRow {
@@ -281,12 +308,13 @@ form {
     align-items: stretch;
 }
 
-.flexColumn {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-}
+// .flexColumn {
+//     display: flex;
+//     flex-wrap: wrap;
+//     flex-direction: row;
+//     align-items: center;
+//     justify-content: flex-start;
+// }
 
 .appDark {
     background-color: $darkBlack!important;
@@ -326,6 +354,17 @@ form {
 .warning {
     color: $darkBlack!important;
     background-color: $yellow!important;
+}
+
+.dark {
+    background-color: $mediumBlack;
+    color: $lightWhite;
+}
+
+.light {
+    background-color: $lightGray;
+    color: $darkBlack;
+    border: 1px solid $darkBlack;
 }
 
 .info {

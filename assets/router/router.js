@@ -2,7 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 
 import HomeTpl from '@/views/HomeTpl.vue'
-import TestTpl from '@/views/TestTpl.vue'
+import ArticleTpl from '@/views/ArticleTpl.vue'
 import error404 from '@/views/404Tpl.vue'
 
 const routes = [
@@ -14,9 +14,9 @@ const routes = [
     component: HomeTpl,
   },
   {
-    path: '/test',
-    name: 'test',
-    component: TestTpl
+    path: '/article',
+    name: 'article',
+    component: ArticleTpl
   },
   
   // {

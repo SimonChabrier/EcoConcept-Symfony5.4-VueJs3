@@ -2,8 +2,8 @@
     
         <nav class="navbar">
 
-                <router-link @click="''" to="/">Home</router-link>
-                <router-link @click="''" to="/test">Test</router-link>
+                <router-link @click="''" to="/">App Elements</router-link>
+                <router-link @click="''" to="/article">Article Exemple</router-link>
 
         </nav>
 
