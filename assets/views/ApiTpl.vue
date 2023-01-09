@@ -96,9 +96,6 @@ export default {
         },
 
         appendPostsToPage() {
-            if (this.posts.length === 0) {
-                alert('no posts')
-            }
             let startIndex = this.currentPage * this.itemsPerPage;
             let endIndex = startIndex + this.itemsPerPage;
             this.pagePosts = this.posts.slice(startIndex, endIndex);
