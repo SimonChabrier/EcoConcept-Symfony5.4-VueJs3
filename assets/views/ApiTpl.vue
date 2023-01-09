@@ -60,6 +60,10 @@ export default {
 
 <style lang="scss" scoped>
 
+a {
+    text-decoration: none;
+}
+
 .postPara {
     color:$red;
     margin-bottom: 0!important;

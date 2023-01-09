@@ -73,6 +73,7 @@ export default {
 
 .main {
     padding: 50px 70px;
+    //min-height: 76.5vh;
 }
 
 
