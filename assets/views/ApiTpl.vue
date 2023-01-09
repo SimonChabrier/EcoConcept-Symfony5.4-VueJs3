@@ -29,7 +29,7 @@
 
             <ButtonComponent size="xs" @click="previousPage">Prev</ButtonComponent>
             <ButtonComponent size="xs" @click="nextPage">Next</ButtonComponent>
-            
+
         </div>
 
     </div>
@@ -66,7 +66,7 @@ export default {
 
     // gestion du store que je retourne en entier dans ce contexte : this.postStore
     setup() {
-        const postStore = usePostStore()
+        const postStore = usePostStore()        
         return { postStore }
     },
     

@@ -24,11 +24,6 @@
 
 // import du store post
 import { usePostStore } from '@/store/post';
-// import du state du store
-// import { storeToRefs } from "pinia";
-// import de la route pour récupérer l'id de l'article
-// import { useRoute } from 'vue-router'
-
 import ButtonComponent from '@/components/elements/ButtonComponent.vue';
 
 
@@ -46,8 +41,8 @@ export default {
         }
     },
 
+    // store
     setup() {
- 
         const postStore = usePostStore()
         return { postStore };
     },
@@ -58,12 +53,12 @@ export default {
         },
         async getDatas() {
             await this.postStore.fetchPost(this.$route.params.id)
+            document.title = `Article : ${this.postStore.post.title[0].toUpperCase() + this.postStore.post.title.substring(1)}`;
         }
     },
 
     async mounted() {
         this.getDatas();
-        document.title = `Article ${this.postStore.post.title}`;
     }
 }
 

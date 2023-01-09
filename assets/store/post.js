@@ -11,6 +11,7 @@ export const usePostStore = defineStore("user", {
 
     getters: {
       getPosts : (state) => { return state.posts },
+      //getPost: (state) => (id) => { return state.posts.find(post => post.id === id) }
       getPost: (state) => (id) => { return state.posts.find(post => post.id === id) }
     },
 
