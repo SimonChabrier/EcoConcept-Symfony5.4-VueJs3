@@ -106,10 +106,9 @@ export default {
             let endIndex = startIndex + this.itemsPerPage - 1;
             this.pagePosts = this.posts.slice(startIndex, endIndex);
 
-            console.log(this.pagePosts)
             // afficher masquer les boutons suivant et précédent si on est au début ou à la fin
             // this.currentPage === 0 ? this.hidePreviousButton = true : this.hidePreviousButton = false;
-            // endIndex >= this.totalPosts ? this.hideNextButton = true : this.hideNextButton = false; 
+            // endIndex >= this.totalPosts ? this.hideNextButton = true : this.hideNextButton = false;             
         },
     },
 
