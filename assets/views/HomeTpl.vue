@@ -1,6 +1,12 @@
 <template>
     <div>
-    
+        <span class="appSpan fill">Avatar</span>
+        <section class="section appLight flexColumn">
+            <AvatarComponent :active="true" :image="image" />
+            <AvatarComponent :active="false" :image="image" />
+        </section>
+
+
     <span class="appSpan fill">Light section</span>
         <section class="section appLight flexRow">
             <h1>Titre de premier niveau</h1>
@@ -355,6 +361,7 @@
 import ButtonComponent from '@/components/elements/ButtonComponent.vue';
 import CardComponent from '@/components/elements/CardComponent.vue';
 import TagComponent from '@/components/elements/TagComponent.vue';
+import AvatarComponent from '@/components/elements/AvatarComponent.vue';
 
 export default {
 
@@ -363,12 +370,14 @@ export default {
     components: {
         ButtonComponent,
         CardComponent,
-        TagComponent
+        TagComponent,
+        AvatarComponent
     },
 
     data() {
         return {
-            //
+            message: 'Hello World',
+            image: 'https://picsum.photos/150/150'
         }
     },
 
