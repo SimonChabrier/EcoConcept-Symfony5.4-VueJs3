@@ -4,10 +4,15 @@ $gutter-medium: 1rem;
 $gutter-small: .5rem;
 $gutter-Xsmall: .2rem;
 
-// backgrounds
+// black and white
 $darkBlack: #212529;
 $mediumBlack: #343A40;
 $lightBlack:#495057;
+
+$darkGray: #6C757D;
+$mediumGray: #CED4DA;
+$lightGray: #E9ECEF;
+$lightWhite: #F8F9FA;
 
 // colors
 $creme: #e6e6e6a1;
@@ -15,7 +20,7 @@ $darkBlue:#2256a2;
 $mediumBlue:#457B9D;
 $lightBlue:#a8dadc;
 
-// elements
+
 $red:#c71212;
 $green:#0bc357;
 $orange:#fca028;
@@ -24,19 +29,11 @@ $purple:#9B59B6;
 $white:#FFFFFF;
 $azure:#3498DB;
 
-// Typo
-$darkGray: #6C757D;
-$mediumGray: #CED4DA;
-$lightGray: #E9ECEF;
-$lightWhite: #F8F9FA;
-
 // transitions
 $transition: all .3s ease-in-out;
 $transition-fast: all .1s ease-in-out;
 $transition-slow: all .5s ease-in-out;
 
-// fade 
-$fade: 0.5s ease-in-out;
 
 // border radius
 $radius: .3rem;
@@ -45,12 +42,12 @@ $radiusUpDown: 8px 0 ;
 $radiusDownUp: 0 8px ;
 
 // border
+$borderLight: 1px solid $lightWhite;
 $border: 1px solid $lightGray;
+$borderDark: 1px solid $darkGray;
 
 // shadows
 $shadow-Xlight:  0px 4px 0rem 0px rgb(224 223 223 / 10%);
 $shadow-light: 0 0 1rem rgb(224 223 223 / 70%);
 $shadow: 0 0 1rem rgb(94 94 94 / 20%);
 $shadow-dark: 0 0 1rem rgba(0, 0, 0, 0.5);
-
-// contour
