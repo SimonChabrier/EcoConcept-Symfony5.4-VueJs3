@@ -6,12 +6,12 @@
 
         <section class="section appLight flexRow">
 
-            <h3>{{ post.title }}</h3>
+            <h3>{{ postStore.post.title }}</h3>
 
-            <p class="postPara">post id : {{ post.id }} </p>
-            <p class="postPara">author Id : {{ post.userId }}</p>  
+            <p class="postPara">post id : {{ postStore.post.id }} </p>
+            <p class="postPara">author Id : {{ postStore.post.userId }}</p>  
             
-            <p> {{ post.body }}</p>
+            <p> {{ postStore.post.body }}</p>
             
             <ButtonComponent type="primary" size="sm" @click="back">
                 Retour
@@ -25,9 +25,9 @@
 // import du store post
 import { usePostStore } from '@/store/post';
 // import du state du store
-import { storeToRefs } from "pinia";
+// import { storeToRefs } from "pinia";
 // import de la route pour récupérer l'id de l'article
-import { useRoute } from 'vue-router'
+// import { useRoute } from 'vue-router'
 
 import ButtonComponent from '@/components/elements/ButtonComponent.vue';
 
@@ -42,32 +42,28 @@ export default {
 
     data() {
         return {
-            id: this.$route.params.id,
+           //
         }
     },
 
     setup() {
-        // j'apelle le store avec son nom usePostStore
+ 
         const postStore = usePostStore()
-        // j'apelle le state du store pour accèder aux données toujours mises à jour
-        const { post } = storeToRefs(postStore)
-        // j'apelle la route pour récupérer l'id
-        const route = useRoute() 
-        // j'apelle la fonction fetchPosts
-        postStore.fetchPost(route.params.id)
-        // je retourne les posts pour boucler dessus
-        return { post };
+        return { postStore };
     },
 
     methods: {
         back() {
-
             this.$router.push({ name: 'api' })
+        },
+        async getDatas() {
+            await this.postStore.fetchPost(this.$route.params.id)
         }
     },
 
-    mounted() {
-        document.title = `Article ${this.post.title}}`;
+    async mounted() {
+        this.getDatas();
+        document.title = `Article ${this.postStore.post.title}`;
     }
 }
 

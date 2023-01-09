@@ -112,7 +112,7 @@ export default {
         },
     },
 
-    mounted() {
+    async mounted() {
         this.getDatas();
         document.title = "Posts";
     }
