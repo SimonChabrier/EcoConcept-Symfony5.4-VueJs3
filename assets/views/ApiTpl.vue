@@ -39,8 +39,6 @@
 <script>
 // import du store post
 import { usePostStore } from '@/store/post';
-// import du state du store
-import { storeToRefs } from "pinia";
 
 import ButtonComponent from '@/components/elements/ButtonComponent.vue';
 
@@ -56,25 +54,32 @@ export default {
       return {
         pages: [],
         pagePosts: [],
-        totalPosts: this.posts.length,
+        totalPosts: '',
         currentPage: 0,
-        itemsPerPage: 3,
+        itemsPerPage: 4,
+
+        posts:[]
       }
     },
 
-    // Pinia
+    // gestion du store que je retourne en entier dans ce contexte : this.postStore
     setup() {
-        // j'apelle le store avec son nom usePostStore
         const postStore = usePostStore()
-        // j'apelle le state du store pour accèder aux données toujours mises à jour
-        const { posts } = storeToRefs(postStore)
-        // j'apelle la fonction fetchPosts
-        postStore.fetchPosts()
-        // je retourne les posts pour boucler dessus dans le template
-        return { posts };
+        return { postStore }
     },
+    
 
     methods: {
+
+        async getDatas() {
+            
+            await this.postStore.fetchPosts()
+            
+            this.posts = this.postStore.posts
+            this.totalPosts = this.posts.length
+            this.setPages()
+            this.appendPostsToPage()
+        },
 
         //action de pagination
         nextPage() {
@@ -90,6 +95,7 @@ export default {
         setPages() {
             let index = 0;
             let numberOfPages = Math.ceil(this.totalPosts / this.itemsPerPage);
+            console.log(numberOfPages);
             for (index; index < numberOfPages; index++) {
                 this.pages.push(index); 
             }
@@ -106,28 +112,8 @@ export default {
         },
     },
 
-    // computed: {
-    //     // retourne le nombre de pages
-    //     numberOfPages() {
-    //         return this.pages.length;
-    //     },
-
-    //     initPages() {
-    //         console.log('initPages');
-    //         return this.setPages();
-    //     }, 
-    //     initPosts() {
-    //         return this.appendPostsToPage();
-    //     }
-    // },
-
     mounted() {
-        this.setPages();
-        //TODO ici je suis en retard
-        setTimeout(() => {
-            this.appendPostsToPage();
-        }, 200);
-
+        this.getDatas();
         document.title = "Posts";
     }
 }

@@ -6,7 +6,7 @@ export const usePostStore = defineStore("user", {
 
     state: () => ({
         posts: [],
-        post: {}
+        post: {},
     }),
 
     getters: {
