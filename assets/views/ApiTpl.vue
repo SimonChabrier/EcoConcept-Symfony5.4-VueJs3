@@ -6,9 +6,10 @@
             <span class="appSpan fill">Fetch data from Json Placeholder</span>
         </section>
 
+    
         <div v-for="post in pagePosts" :key="post.id">
-
-            <section class="section appLight flexRow">
+            <transition name="fade" mode="out-in">
+        <section class="section appLight flexRow">
                 <h3>{{ post.title }}</h3>
 
                 <p class="postPara">post id : {{ post.id }} </p>
@@ -20,8 +21,9 @@
                     <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
                 </ButtonComponent>
             </section>
-
+        </transition>
         </div>
+    
 
         <div class="pagination">
             <ButtonComponent size="xs" @click="nextPage">Prev</ButtonComponent>
@@ -41,6 +43,7 @@ import { usePostStore } from '@/store/post';
 import { storeToRefs } from "pinia";
 
 import ButtonComponent from '@/components/elements/ButtonComponent.vue';
+import { init } from 'events';
 
 export default {
 
@@ -60,6 +63,7 @@ export default {
       }
     },
 
+    // Pinia
     setup() {
         // j'apelle le store avec son nom usePostStore
         const postStore = usePostStore()
@@ -93,6 +97,9 @@ export default {
         },
 
         appendPostsToPage() {
+            if (this.posts.length === 0) {
+                alert('no posts')
+            }
             let startIndex = this.currentPage * this.itemsPerPage;
             let endIndex = startIndex + this.itemsPerPage;
             this.pagePosts = this.posts.slice(startIndex, endIndex);
@@ -103,19 +110,29 @@ export default {
         },
     },
 
-    computed: {
-        // retourne le nombre de pages
-        numberOfPages() {
-            return this.pages.length;
-        }
-    },
+    // computed: {
+    //     // retourne le nombre de pages
+    //     numberOfPages() {
+    //         return this.pages.length;
+    //     },
+
+    //     initPages() {
+    //         console.log('initPages');
+    //         return this.setPages();
+    //     }, 
+    //     initPosts() {
+    //         return this.appendPostsToPage();
+    //     }
+    // },
 
     mounted() {
         this.setPages();
         //TODO ici je suis en retard
         setTimeout(() => {
             this.appendPostsToPage();
-        }, 1000);
+        }, 200);
+
+        document.title = "Posts";
     }
 }
 </script>
@@ -131,6 +148,18 @@ a {
     margin-bottom: 0!important;
     padding-bottom: 0!important;
     padding-top: 0!important;
+}
+
+// fadde 
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transition: opacity 0.1s ease;
 }
 
 </style>
