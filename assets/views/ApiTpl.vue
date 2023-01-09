@@ -52,7 +52,6 @@ export default {
 
     data () {
       return {
-        //allPosts: [],
         pages: [],
         pagePosts: [],
         totalPosts: this.posts.length,
@@ -68,7 +67,7 @@ export default {
         const { posts } = storeToRefs(postStore)
         // j'apelle la fonction fetchPosts
         postStore.fetchPosts()
-        // je retourne les posts pour boucler dessus
+        // je retourne les posts pour boucler dessus dans le template
         return { posts };
     },
 
@@ -79,11 +78,12 @@ export default {
             this.currentPage++;
             this.appendPostsToPage();
         },
+
         previousPage() {
             this.currentPage--;
             this.appendPostsToPage();
         },
-        // calculer le nombre de pages et crée un tableau avec des index de 0 à n
+
         setPages() {
             let index = 0;
             let numberOfPages = Math.ceil(this.totalPosts / this.itemsPerPage);
@@ -91,8 +91,7 @@ export default {
                 this.pages.push(index); 
             }
         },
-        // ajouter les recettes à la page courante en fonction du nombre de recettes par page : itemsPerPage
-        // et de la valeur de la page courante : currentPage
+
         appendPostsToPage() {
             let startIndex = this.currentPage * this.itemsPerPage;
             let endIndex = startIndex + this.itemsPerPage;
@@ -101,30 +100,23 @@ export default {
             // afficher masquer les boutons suivant et précédent si on est au début ou à la fin
             // this.currentPage === 0 ? this.hidePreviousButton = true : this.hidePreviousButton = false;
             // endIndex >= this.totalPosts ? this.hideNextButton = true : this.hideNextButton = false; 
-        }
+        },
+    },
 
+    computed: {
+        // retourne le nombre de pages
+        numberOfPages() {
+            return this.pages.length;
+        }
     },
 
     mounted() {
-        
-
-        // si j'ai des posts 
-        if (this.posts.length > 0 ) {
-            this.totalPosts = this.posts.length;
-            this.setPages();
+        this.setPages();
+        //TODO ici je suis en retard
+        setTimeout(() => {
             this.appendPostsToPage();
-        } else {
-            // sinon je les récupère
-            // this.fetchPosts()
-        }
-
-        console.log(this.pagePosts)
-        console.log(this.posts)
+        }, 1000);
     }
-
-
-
-
 }
 </script>
 
