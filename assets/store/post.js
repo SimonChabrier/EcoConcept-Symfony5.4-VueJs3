@@ -1,20 +1,16 @@
 import { defineStore } from 'pinia'
 import axios from "axios"
 
+
 export const usePostStore = defineStore("user", {
 
     state: () => ({
         posts: [],
-        post: {},
     }),
 
     getters: {
-      getPosts(state){
-          return state.posts
-        },
-      getPost(state){
-          return state.post
-        }
+      getPosts : (state) => { return state.posts },
+      getPost: (state) => (id) => { return state.posts.find(post => post.id === id) }
     },
 
     actions: {
@@ -37,7 +33,6 @@ export const usePostStore = defineStore("user", {
             alert(error)
             console.log(error)
         }
-      }
-      
+      },      
     },
 })
