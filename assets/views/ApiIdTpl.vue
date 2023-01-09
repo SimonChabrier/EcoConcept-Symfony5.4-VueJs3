@@ -13,8 +13,8 @@
             
             <p> {{ post.body }}</p>
             
-            <ButtonComponent type="primary" size="sm">
-                <router-link :to="{ name: 'home'}">Home</router-link>
+            <ButtonComponent type="primary" size="sm" @click="$router.go(-1)">
+                Retour
             </ButtonComponent>
         </section>
     </div>
