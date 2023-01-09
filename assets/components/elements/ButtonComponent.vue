@@ -44,6 +44,7 @@ button {
     border: none;
     color: $lightWhite;
     transition: $transition-slow;
+    max-width: fit-content;
 
     // cliqué
     &:focus {

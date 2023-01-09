@@ -4,6 +4,7 @@
 
                 <router-link @click="''" to="/">App Elements</router-link>
                 <router-link @click="''" to="/article">Article Exemple</router-link>
+                <router-link @click="''" to="/api">API Get</router-link>
 
         </nav>
 

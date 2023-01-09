@@ -36,7 +36,6 @@ Encore
     runtimeCompilerBuild: false,
     useJsx: false,
   })
-
 // Configurer les règles de chargement du scss pour ajouter les variables globales dans l'application Vue.js
 Encore.configureLoaderRule('scss', loaderRule => {
 loaderRule.oneOf.forEach(rule => {
@@ -66,9 +65,10 @@ loaderRule.oneOf.forEach(rule => {
 // Ajouter un plugin pour linter les fichiers js 
 // ne pas mettre vu et js dans les extensions sinon il y a des erreurs
 // la config est ensuite faire dans .eslintrc 
-.addPlugin(new ESLintWebpackPlugin({
-    extensions: ['ts'],
-}))
+// .addPlugin(new ESLintWebpackPlugin({
+//     extensions: ['vu'],
+// }))
+
 
 module.exports = Encore.getWebpackConfig(); 
 
