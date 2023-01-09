@@ -1,6 +1,8 @@
 <template>
     <div>
 
+        
+
         <div class="appHeader">
 
             <NavBarComp></NavBarComp>
@@ -23,6 +25,8 @@
 
         </div>
 
+        <BannerComponent text="© 2022 - Tous droits réservés" color="success" />
+
     </div>
 
 </template>
@@ -31,13 +35,15 @@
 
 import NavBarComp from '@/components/NavBar.vue'
 import FooterComp from '@/components/Footer.vue'
+import BannerComponent from '@/components/elements/BannerComponent.vue'
 
 export default {
     name: 'App',
 
     components: {
         NavBarComp,
-        FooterComp
+        FooterComp,
+        BannerComponent
     }
 }
 </script>
@@ -45,11 +51,6 @@ export default {
 <style lang="scss">
 
 #app {
-    // display: flex;
-    // margin: 0;
-    // flex-direction: column;
-    // min-height: 100vh;
-    // min-width: 100%;
     background: $creme;
 }
 
@@ -68,7 +69,7 @@ export default {
 }
 
 .main {
-    padding: 50px 100px;
+    padding: 50px 70px;
 }
 
 
@@ -111,22 +112,6 @@ export default {
     .main {
         padding: 50px 20px;
     }
-
-    // .flexRow {
-    // display: flex;
-    // flex-direction: row;
-    // flex-wrap: wrap;    
-    // }
-
-    .appHeader {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-
-    }
-
 }
 
 
