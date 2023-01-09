@@ -43,7 +43,6 @@ import { usePostStore } from '@/store/post';
 import { storeToRefs } from "pinia";
 
 import ButtonComponent from '@/components/elements/ButtonComponent.vue';
-import { init } from 'events';
 
 export default {
 
