@@ -26,8 +26,10 @@
     
 
         <div class="pagination">
+
             <ButtonComponent size="xs" @click="previousPage">Prev</ButtonComponent>
             <ButtonComponent size="xs" @click="nextPage">Next</ButtonComponent>
+            
         </div>
 
     </div>
@@ -56,7 +58,7 @@ export default {
         pagePosts: [],
         totalPosts: '',
         currentPage: 0,
-        itemsPerPage: 4,
+        itemsPerPage: 5,
 
         posts:[]
       }
