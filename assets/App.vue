@@ -25,10 +25,11 @@
 
         </div>
 
+        
         <BannerComponent text="© 2022 - Tous droits réservés" color="success" />
 
     </div>
-
+    <BackTotop></BackTotop>
 </template>
 
 <script>
@@ -36,6 +37,7 @@
 import NavBarComp from '@/components/NavBar.vue'
 import FooterComp from '@/components/Footer.vue'
 import BannerComponent from '@/components/elements/BannerComponent.vue'
+import BackTotop from '@/components/elements/BackTotop.vue'
 
 export default {
     name: 'App',
@@ -43,7 +45,8 @@ export default {
     components: {
         NavBarComp,
         FooterComp,
-        BannerComponent
+        BannerComponent,
+        BackTotop,
     }
 }
 </script>

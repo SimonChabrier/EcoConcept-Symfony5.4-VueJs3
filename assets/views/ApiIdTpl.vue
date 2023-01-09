@@ -13,7 +13,7 @@
             
             <p> {{ post.body }}</p>
             
-            <ButtonComponent type="primary" size="sm" @click="$router.go(-1)">
+            <ButtonComponent type="primary" size="sm" @click="back">
                 Retour
             </ButtonComponent>
         </section>
@@ -57,6 +57,13 @@ export default {
         postStore.fetchPost(route.params.id)
         // je retourne les posts pour boucler dessus
         return { post };
+    },
+
+    methods: {
+        back() {
+
+            this.$router.push({ name: 'api' })
+        }
     },
 
     mounted() {
