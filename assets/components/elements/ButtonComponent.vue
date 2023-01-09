@@ -1,7 +1,6 @@
 <template>
     <button
       :class="[type, size]"
-      @click="onClick"
     >
       <slot></slot>
     </button>
@@ -26,10 +25,9 @@
       },
     },
     methods: {
-      onClick(event) {
-        this.$emit('click', event);
-        console.log('click');
-      },
+      // click() {
+      //   this.$emit('click');
+      // },
     },
   };
   </script>

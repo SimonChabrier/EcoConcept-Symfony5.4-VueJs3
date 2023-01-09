@@ -26,8 +26,8 @@
     
 
         <div class="pagination">
-            <ButtonComponent size="xs" @click="nextPage">Prev</ButtonComponent>
-            <ButtonComponent size="xs" @click="previousPage">Next</ButtonComponent>
+            <ButtonComponent size="xs" @click="previousPage">Prev</ButtonComponent>
+            <ButtonComponent size="xs" @click="nextPage">Next</ButtonComponent>
         </div>
 
     </div>
@@ -103,9 +103,10 @@ export default {
 
         appendPostsToPage() {
             let startIndex = this.currentPage * this.itemsPerPage;
-            let endIndex = startIndex + this.itemsPerPage;
+            let endIndex = startIndex + this.itemsPerPage - 1;
             this.pagePosts = this.posts.slice(startIndex, endIndex);
-            
+
+            console.log(this.pagePosts)
             // afficher masquer les boutons suivant et précédent si on est au début ou à la fin
             // this.currentPage === 0 ? this.hidePreviousButton = true : this.hidePreviousButton = false;
             // endIndex >= this.totalPosts ? this.hideNextButton = true : this.hideNextButton = false; 
