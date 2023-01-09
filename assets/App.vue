@@ -71,12 +71,6 @@ export default {
     padding: 50px 100px;
 }
 
-.appFooter {
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 // Transition fade décommenter pour activer
 

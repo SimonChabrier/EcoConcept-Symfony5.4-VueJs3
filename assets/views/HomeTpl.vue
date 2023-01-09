@@ -1,6 +1,6 @@
 <template>
     <div>
-    
+
     <span class="appSpan fill">Light section</span>
         <section class="section appLight flexRow">
             <h1>Titre de premier niveau</h1>
@@ -81,6 +81,18 @@
             <TagComponent color="info">Info</TagComponent>
             <TagComponent color="light">Light</TagComponent>
             <TagComponent color="dark">Dark</TagComponent>
+        </section>
+
+    <span class="appSpan fill">Banner full width</span>
+        <section class="section appLight flexRow">
+            <BannerComponent text="© 2022 - Tous droits réservés" color="primary" />
+            <BannerComponent text="© 2022 - Tous droits réservés" color="secondary" />
+            <BannerComponent text="© 2022 - Tous droits réservés" color="success" />
+            <BannerComponent text="© 2022 - Tous droits réservés" color="danger" />
+            <BannerComponent text="© 2022 - Tous droits réservés" color="warning" />
+            <BannerComponent text="© 2022 - Tous droits réservés" color="info" />
+            <BannerComponent text="© 2022 - Tous droits réservés" color="dark" />
+            <BannerComponent text="© 2022 - Tous droits réservés" color="light" />
         </section>
 
     <span class="appSpan fill">List</span>
@@ -360,6 +372,8 @@
         </section>
 
     </div>
+
+
 </template>
 
 <script>
@@ -368,6 +382,7 @@ import ButtonComponent from '@/components/elements/ButtonComponent.vue';
 import CardComponent from '@/components/elements/CardComponent.vue';
 import TagComponent from '@/components/elements/TagComponent.vue';
 import AvatarComponent from '@/components/elements/AvatarComponent.vue';
+import BannerComponent from '@/components/elements/BannerComponent.vue';
 
 export default {
 
@@ -377,7 +392,8 @@ export default {
         ButtonComponent,
         CardComponent,
         TagComponent,
-        AvatarComponent
+        AvatarComponent,
+        BannerComponent
     },
 
     data() {
