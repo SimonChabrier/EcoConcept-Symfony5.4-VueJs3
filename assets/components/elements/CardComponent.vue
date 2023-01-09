@@ -49,8 +49,8 @@ export default {
     max-width: 46%;
     border-radius: $radiusBig;
     position: relative;
-    padding: $gutter-big!important;
-    margin: $gutter-medium !important;
+    padding: $gutterBig!important;
+    margin: $gutterMedium !important;
 
     & h3 {
 
@@ -70,8 +70,8 @@ export default {
 
     & p {
 
-        //padding: 0 $gutter-big $gutter-big $gutter-big!important;
-        //margin: $gutter-big $gutter-big 0 $gutter-big!important;
+        //padding: 0 $gutterBig $gutterBig $gutterBig!important;
+        //margin: $gutterBig $gutterBig 0 $gutterBig!important;
         
         font-size: 1rem!important;
         line-height: 25px!important;

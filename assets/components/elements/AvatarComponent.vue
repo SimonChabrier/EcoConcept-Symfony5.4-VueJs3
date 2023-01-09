@@ -1,10 +1,15 @@
 <template>
-  
-  <div class="avatar">
-    <img :src="image">
+
+<div :class="['avatar', size]">
+   
     <span :class="{ 'active-icon': isActive, 'inactive-icon': !isActive }"></span>
-     {{ username }}
-  </div>
+    <img :src="image"> 
+
+    <div class="username">
+        {{ username.length > 10 ? username.substring(0, 10) + "..." : username }} 
+    </div>
+
+</div>
 
 </template>
 
@@ -26,6 +31,11 @@ export default {
         type: String,
         default: "Username",
         },
+        size: {
+        type: String,
+        default: '',
+        validator: (value) => ['xs', 'lg', 'sm'].includes(value),
+      },
     },
 
     data() {
@@ -34,46 +44,79 @@ export default {
         inactive: false,
         };
     },
+    methods: {
+        //
+    },
+
+    computed: {
+        // active icon auto change
+        activeIcon() {
+            if (this.isActive) {
+                return "active-icon";
+            } else {
+                return "inactive-icon";
+            }
+        },
+    },
 
 }
 </script>
 
 <style lang="scss" scoped>
 
-.avatar {
+.avatar, .lg, .sm, .xs {
     display: flex;
-    padding: 16px;
     position: relative;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    margin: $gutterSmall;
   
   & > img {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    margin-bottom: $gutter-small;
+    object-fit: cover;
   }
   
   & > .active-icon {
     position: absolute;
-    width: 32px;
-    height: 32px;
+    width: 20%;
+    height: 20%;
     background:$green;
     border-radius: 50%;
     left: 16px;
-    border: 4px solid $lightWhite;
+    border: 3px solid $lightWhite;
   }
 
   & > .inactive-icon {
     position: absolute;
-    width: 32px;
-    height: 32px;
+    width: 20%;
+    height: 20%;
     background:$red;
     border-radius: 50%;
     left: 16px;
-    border: 4px solid $lightWhite;
+    border: 3px solid $lightWhite;
   }
 
+}
+
+.username {
+    text-transform: capitalize;
+}
+.lg {
+  width: 140px;
+  height: 140px;
+}
+
+.sm {
+    width: 110px;
+    height: 110px;
+}
+
+.xs {
+    width: 85px;
+    height: 85px
 }
 
 </style>

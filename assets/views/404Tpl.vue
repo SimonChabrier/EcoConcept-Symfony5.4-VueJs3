@@ -57,6 +57,6 @@ export default {
     h1 {
         font-size: 2rem;
         color: $lightWhite;
-        padding: $gutter-big;
+        padding: $gutterBig;
     }
 </style>

@@ -56,7 +56,7 @@ export default {
 .appHeader, .appFooter {
     color: $lightWhite;
     background: $mediumBlue;
-    padding: $gutter-big;
+    padding: $gutterBig;
 }
 
 .appHeader {

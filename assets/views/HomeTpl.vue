@@ -1,12 +1,6 @@
 <template>
     <div>
-        <span class="appSpan fill">Avatar</span>
-        <section class="section appLight flexColumn">
-            <AvatarComponent :active="true" :image="image" />
-            <AvatarComponent :active="false" :image="image" />
-        </section>
-
-
+    
     <span class="appSpan fill">Light section</span>
         <section class="section appLight flexRow">
             <h1>Titre de premier niveau</h1>
@@ -30,6 +24,18 @@
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est quisquam blanditiis alias veritatis optio, laborum consequuntur vel non vero magni praesentium officiis nulla eaque eos excepturi aut voluptatem ipsum dolorum.</p>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est quisquam blanditiis alias veritatis optio, laborum consequuntur vel non vero magni praesentium officiis nulla eaque eos excepturi aut voluptatem ipsum dolorum.</p>
         </section>  
+
+    <span class="appSpan fill">Avatar</span>
+    <section class="section appLight">
+        <AvatarComponent :active="true" size="lg" :image="image" username="simon"/>
+        <AvatarComponent :active="false" size="lg" :image="image" />
+
+        <AvatarComponent :active="true" size="sm" :image="image" username="Paul"/>
+        <AvatarComponent :active="false" size="sm" :image="image" />
+
+        <AvatarComponent :active="true" size="xs" :image="image" username="Jean dsfqsdfqsdfqsdfqsdfqsdf"/>
+        <AvatarComponent :active="false" size="xs" :image="image" />
+    </section>
 
     <span class="appSpan fill">Buttons</span>
         <section class="section appDark flexColumn">

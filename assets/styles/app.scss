@@ -5,16 +5,16 @@
 h1, h2, h3 {
     font-family: "Poppins"!important;
     font-weight: 600!important;
-    margin: $gutter-big!important;
+    margin: $gutterBig!important;
 }
 
 h4, h5, h6 {
     font-family: "Poppins"!important;
     font-weight: 200!important;
-    margin: $gutter-medium $gutter-big!important;
+    margin: $gutterMedium $gutterBig!important;
     color: $lightWhite;
     background-color: $azure!important;
-    padding: $gutter-medium!important;
+    padding: $gutterMedium!important;
     border-radius: $radiusUpDown!important;
     width: fit-content;
 }
@@ -49,14 +49,14 @@ ul {
 }
 
 ul li {
-    padding: $gutter-small!important;
-    margin: 0 $gutter-big!important;
+    padding: $gutterSmall!important;
+    margin: 0 $gutterBig!important;
     list-style: square;
 }
 
 ol li {
-    padding: $gutter-small!important;
-    margin: 0 $gutter-big!important;
+    padding: $gutterSmall!important;
+    margin: 0 $gutterBig!important;
     list-style: decimal;
 }
 
@@ -69,17 +69,17 @@ p {
     font-size: 1.1rem!important;
     font-weight: 200!important;
     line-height: 28px!important;
-    padding: $gutter-big!important;
+    padding: $gutterBig!important;
 }
 
 table {
     border-collapse: collapse;
     width: 100%;
-    margin: $gutter-medium 0!important;
+    margin: $gutterMedium 0!important;
     overflow: hidden;
     box-shadow: $shadow;
     th, td {
-        padding: $gutter-small!important;
+        padding: $gutterSmall!important;
         text-align: left;
         border-bottom: $border;
     }
@@ -105,13 +105,13 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: $gutter-medium!important;
-    margin: $gutter-medium 0!important;
+    padding: $gutterMedium!important;
+    margin: $gutterMedium 0!important;
     border-radius: $radius!important;
 }
 
 fieldset {
-    margin: $gutter-big 0!important;
+    margin: $gutterBig 0!important;
     border: 1px solid $mediumGray!important;
     padding: 20px 10px!important;
     border-radius: $radiusBig!important;
@@ -119,14 +119,14 @@ fieldset {
 
 legend {
     font-size: 1.1rem!important;
-    padding: 0 $gutter-medium!important;
+    padding: 0 $gutterMedium!important;
     color: $lightWhite!important;
     background-color: $mediumBlue!important;
     border-radius: $radiusUpDown!important;
 }
 
 .appForm {
-    margin: $gutter-medium 0!important;
+    margin: $gutterMedium 0!important;
     font-weight: 200!important;
     line-height: 28px!important;
     display: flex;
@@ -136,14 +136,14 @@ legend {
 
     label {
         font-size: 1.1rem!important;
-        padding: $gutter-small!important;
+        padding: $gutterSmall!important;
         text-transform: capitalize;
         width: fit-content;
     }
 
     input {
         font-size: 1.1rem!important;
-        padding: $gutter-medium!important;
+        padding: $gutterMedium!important;
         border: none!important;
         border-radius: $radius!important;
         max-width: 100%;
@@ -151,14 +151,14 @@ legend {
 
     .help {
         font-size: .8rem!important;
-        padding-left: $gutter-small!important;
+        padding-left: $gutterSmall!important;
         padding-top: 0!important;
         margin: 0!important;
     }
 
     textarea {
         font-size: 1.1rem!important;
-        padding: $gutter-small!important;
+        padding: $gutterSmall!important;
         margin: 0!important;
         border: $border!important;
         border-radius: $radius!important;
@@ -169,14 +169,14 @@ legend {
 
     select {
         font-size: 1.1rem!important;
-        padding: $gutter-small!important;
+        padding: $gutterSmall!important;
         margin: 0!important;
         border: $border!important;
         border-radius: $radius!important;
-        line-height: $gutter-medium!important;
+        line-height: $gutterMedium!important;
         
         option {
-            padding: $gutter-small!important;
+            padding: $gutterSmall!important;
             border: none;
         }
         option:nth-child(odd) {
@@ -187,7 +187,7 @@ legend {
     input[type = file]{
         border: $border!important;
         border-radius: $radius!important;
-        padding: $gutter-small!important;
+        padding: $gutterSmall!important;
         font-family: 'poppins'!important;
         background-color: $lightGray!important;
         cursor: pointer;
@@ -196,8 +196,8 @@ legend {
         &::-webkit-file-upload-button {
             background-color: $mediumBlue!important;
             color: $lightWhite!important;
-            padding: $gutter-small!important;
-            margin-right: $gutter-big!important;
+            padding: $gutterSmall!important;
+            margin-right: $gutterBig!important;
             border: none!important;
             border-radius: $radius!important;
             cursor: pointer;
@@ -269,13 +269,13 @@ legend {
         color: $lightWhite!important;
         transform: scale(1.3);
         transition: $transition;
-        margin-bottom: $gutter-small!important;
+        margin-bottom: $gutterSmall!important;
     }
 
     .boxAndRadio {
         display: flex;
         flex-direction: column;
-        margin-left: $gutter-big!important;
+        margin-left: $gutterBig!important;
     }
 
 }
@@ -284,7 +284,7 @@ legend {
     display: block;
     width: fit-content;
     background-color: $lightWhite!important;
-    padding: $gutter-medium!important;
+    padding: $gutterMedium!important;
     border-radius: $radiusDownUp!important;
 }
 
