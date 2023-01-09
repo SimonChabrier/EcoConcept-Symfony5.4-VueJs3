@@ -2,7 +2,7 @@
   
   <div class="avatar">
     <img :src="image">
-    <span v-if="active" class="active-icon"></span>
+    <span :class="{ 'active-icon': isActive, 'inactive-icon': !isActive }"></span>
      {{ username }}
   </div>
 
@@ -26,7 +26,13 @@ export default {
         type: String,
         default: "Username",
         },
-        
+    },
+
+    data() {
+        return {
+        isActive: this.active,
+        inactive: false,
+        };
     },
 
 }
@@ -53,6 +59,16 @@ export default {
     width: 32px;
     height: 32px;
     background:$green;
+    border-radius: 50%;
+    left: 16px;
+    border: 4px solid $lightWhite;
+  }
+
+  & > .inactive-icon {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background:$red;
     border-radius: 50%;
     left: 16px;
     border: 4px solid $lightWhite;
