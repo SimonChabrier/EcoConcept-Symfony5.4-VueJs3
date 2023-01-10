@@ -21,7 +21,7 @@ class Post
      * @ORM\GeneratedValue(strategy="IDENTITY")
      * 
      * 
-     * @Groups({"postr:read"})
+     * @Groups({"post:read"})
      */
     private $id;
 
@@ -30,7 +30,7 @@ class Post
      *
      * @ORM\Column(name="title", type="string", length=255, nullable=true)
      * 
-     * @Groups({"postr:read"})
+     * @Groups({"post:read"})
      */
     private $title;
 
@@ -39,7 +39,7 @@ class Post
      *
      * @ORM\Column(name="body", type="text", length=16777215, nullable=true)
      * 
-     * @Groups({"postr:read"})
+     * @Groups({"post:read"})
      */
     private $body;
 
@@ -48,7 +48,7 @@ class Post
      *
      * @ORM\Column(name="exemple", type="text", length=16777215, nullable=true)
      * 
-     * @Groups({"postr:read"})
+     * @Groups({"post:read"})
      */
     private $exemple;
 
@@ -57,7 +57,7 @@ class Post
      *
      * @ORM\Column(name="main_tag", type="string", length=30, nullable=true)
      * 
-     * @Groups({"postr:read"})
+     * @Groups({"post:read"})
      */
     private $mainTag;
 
@@ -66,14 +66,14 @@ class Post
      *
      * @ORM\Column(name="created_at", type="datetime", nullable=true, options={"default"="CURRENT_TIMESTAMP"})
      * 
-     * @Groups({"postr:read"})
+     * @Groups({"post:read"})
      */
     private $createdAt = 'CURRENT_TIMESTAMP';
 
     /**
      * @ORM\Column(name="updated_at", type="datetime", nullable=true, options={"default"="CURRENT_TIMESTAMP"})
      * 
-     * @Groups({"postr:read"})
+     * @Groups({"post:read"})
      */
     private $updatedAt = 'CURRENT_TIMESTAMP';
 
