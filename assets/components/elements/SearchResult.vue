@@ -1,6 +1,6 @@
 <template>
 
-  <div class="main" v-if="postStore.results.length">
+  <div v-if="postStore.results.length">
             <section class="section appLight flexRow" >
                 <span class="appSpan">Resultats de recherche</span>
                 
@@ -52,6 +52,7 @@ export default {
             console.log(this.postStore.posts);
         },
     },
+
     // je récupère les datas si le composant est monté.
     async mounted () {
         this.getJsonData();

@@ -139,7 +139,7 @@ export default {
     background-color: $darkBlue;
     color: $lightWhite;
     cursor: pointer;
-    box-shadow: none!important;
+    //box-shadow: none!important;
 }
 
 // media queries
