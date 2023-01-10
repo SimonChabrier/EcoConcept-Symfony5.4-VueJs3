@@ -50,6 +50,7 @@ export default {
             console.log('submit');
         },
 
+        // on gère le chnagement du state en fonciton de la recher ici et l'affichage des résultats dans le template App.vue
         search(){
             if(!this.searchValue) {
                 this.postStore.results = [];
@@ -59,12 +60,10 @@ export default {
             this.postStore.results = this.postStore.posts.filter((post) => {
                 return post.body.toLowerCase().includes(this.searchValue.toLowerCase());
             });   
-            //console.log(this.postStore.results)
         },
 
         async getJsonData() {
             await this.postStore.fetchJsonPosts()
-            //console.log(this.postStore.posts)
         },
     },
 

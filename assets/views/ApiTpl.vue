@@ -14,7 +14,7 @@
                         <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
                     </ButtonComponent>
                 </section>
-        </transition>
+            </transition>
         </div>
     
         <div class="pagination" v-if="postStore.results.length === 0">
@@ -61,11 +61,6 @@ export default {
     setup() {
 
         const postStore = usePostStore()   
-        // subscribe to store mutations
-            postStore.$subscribe((mutation) => {
-            mutation.type // 'direct' | 'patch object' | 'patch function'
-        })
-
         return { postStore }
     },
 
