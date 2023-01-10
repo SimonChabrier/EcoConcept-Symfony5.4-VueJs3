@@ -63,18 +63,25 @@ export default {
             if(this.searchValue.length > 1 && this.postStore.results.length === 0) {
                 this.postStore.message = 'Pas de résultat !';
             }
-            this.postStore.results = this.postStore.posts.filter((post) => {
+            this.postStore.results = this.postStore.posts.posts.filter((post) => {
                 return post.body.toLowerCase().includes(this.searchValue.toLowerCase());
             });   
         },
 
-        async getJsonData() {
-            await this.postStore.fetchJsonPosts()
-        },
+        // async getJsonData() {
+        //     await this.postStore.fetchJsonPosts()
+        // },
+
+        async getDatas(){
+            await this.postStore.fetchPosts()
+            console.log(this.postStore.posts);
+        }
     },
 
     async mounted(){
-        this.getJsonData();
+        
+        //this.getJsonData();
+        this.getDatas();
     }
 }
 

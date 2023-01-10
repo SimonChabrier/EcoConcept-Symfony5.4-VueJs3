@@ -61,10 +61,16 @@ export default {
     },
 
     methods: {
-        async getJsonData() {
-            await this.postStore.fetchJsonPosts()
+        // async getJsonData() {
+        //     await this.postStore.fetchJsonPosts()
+        //     console.log(this.postStore.posts);
+        // },
+
+        async getDatas(){
+            await this.postStore.fetchPosts()
             console.log(this.postStore.posts);
         },
+
         resetSearch() {
             this.postStore.results = [];
             this.postStore.message = '';
@@ -76,7 +82,9 @@ export default {
 
     // je récupère les datas si le composant est monté.
     async mounted () {
-        this.getJsonData();
+        
+        //this.getJsonData();
+        this.getDatas();
     }
 }
 </script>

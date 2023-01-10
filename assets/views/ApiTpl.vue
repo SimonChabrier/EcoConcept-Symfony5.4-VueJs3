@@ -74,25 +74,25 @@ export default {
     
     methods: {
 
-        // async getApiData() {
+        async getData() {
             
-        //     await this.postStore.fetchPosts()
-            
-        //     this.posts = this.postStore.posts
-        //     this.totalPosts = this.posts.length
-        //     this.setPages()
-        //     this.appendPostsToPage()
-        // },
-
-        async getJsonData() {
-            
-            await this.postStore.fetchJsonPosts()
+            await this.postStore.fetchPosts()
             
             this.posts = this.postStore.posts
             this.totalPosts = this.posts.length
             this.setPages()
             this.appendPostsToPage()
         },
+
+        // async getJsonData() {
+            
+        //     await this.postStore.fetchJsonPosts()
+            
+        //     this.posts = this.postStore.posts
+        //     this.totalPosts = this.posts.length
+        //     this.setPages()
+        //     this.appendPostsToPage()
+        // },
 
         //action de pagination
         nextPage() {
@@ -125,7 +125,7 @@ export default {
         appendPostsToPage() {
             let startIndex = this.currentPage * this.itemsPerPage;
             let endIndex = startIndex + this.itemsPerPage - 1;
-            this.pagePosts = this.posts.slice(startIndex, endIndex);
+            this.pagePosts = this.posts.posts.slice(startIndex, endIndex);
 
             // afficher masquer les boutons suivant et précédent si on est au début ou à la fin
             // this.currentPage === 0 ? this.hidePreviousButton = true : this.hidePreviousButton = false;
@@ -134,8 +134,8 @@ export default {
     },
 
     async mounted() {
-        // this.getApiData();
-        this.getJsonData();
+        this.getData();
+        //this.getJsonData();
         document.title = "Posts";        
     },
 }
