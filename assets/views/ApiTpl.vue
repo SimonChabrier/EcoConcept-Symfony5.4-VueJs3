@@ -5,14 +5,19 @@
         <div v-for="post in pagePosts" :key="post.id">
             <transition name="fade" mode="out-in">
                 <section class="section appLight flexRow">
-                    <h3>{{ post.title }}</h3>
-                    <p> {{ post.body }}</p>
-                    <p class="postPara">Tag : {{ post.tag }} </p>
-                    <p class="postPara">Exemple : {{ post.exemple }}</p> 
+                    
+                    <h3>N° {{ post.id }} - {{ post.title }}</h3>
+               
+                    
+        
+                    <p class="postBody">{{ post.body }}</p>
 
+                    <p class="postPara">Exemple : {{ post.exemple }}</p> 
+                    <TagComponent color="dark">{{ post.tag }}</TagComponent> 
                     <ButtonComponent type="primary" size="sm">
                         <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
                     </ButtonComponent>
+  
                 </section>
             </transition>
         </div>
@@ -35,6 +40,7 @@
 import { usePostStore } from '@/store/post';
 
 import ButtonComponent from '@/components/elements/ButtonComponent.vue';
+import TagComponent from '@/components/elements/TagComponent.vue';
 
 export default {
 
@@ -42,6 +48,7 @@ export default {
 
     components: {
         ButtonComponent,
+        TagComponent,
     },
 
     data () {
@@ -51,9 +58,8 @@ export default {
         totalPosts: '',
         currentPage: 0,
         itemsPerPage: 7,
-
-        posts:[]
-
+        posts:[],
+        color:"primary"
       }
     },
 
@@ -134,6 +140,13 @@ a {
 
 .postPara {
     color:$red;
+    margin-bottom: $gutterSmall!important;
+    padding-bottom: 0!important;
+    padding-top: 0!important;
+}
+
+.postBody {
+    color:$darkBlack;
     margin-bottom: $gutterSmall!important;
     padding-bottom: 0!important;
     padding-top: 0!important;

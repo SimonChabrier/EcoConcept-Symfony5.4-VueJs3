@@ -8,9 +8,9 @@
 
             <h3>{{ postStore.post.title }}</h3>
 
-            <p> {{ postStore.post.body }}</p>
-            <p class="postPara">Tag : {{ postStore.post.tag }} </p>
-            <p class="postPara">Exemple : {{ postStore.post.exemple }}</p>  
+            <p class="postBody">{{ postStore.post.body }}</p>
+            <p class="postPara">Exemple : {{ postStore.post.exemple }}</p> 
+            <TagComponent color="dark">{{ postStore.post.tag }}</TagComponent>  
             
             <ButtonComponent type="primary" size="sm" @click="previousPage">
                 Retour
@@ -24,6 +24,8 @@
 // import du store post
 import { usePostStore } from '@/store/post';
 import ButtonComponent from '@/components/elements/ButtonComponent.vue';
+import TagComponent from '@/components/elements/TagComponent.vue';
+
 
 
 export default {
@@ -32,6 +34,7 @@ export default {
 
     components: {
         ButtonComponent,
+        TagComponent,
     },
 
     data() {
@@ -80,5 +83,10 @@ export default {
     padding-bottom: 0!important;
     padding-top: 0!important;
 }
-
+.postBody {
+    color:$darkBlack;
+    margin-bottom: $gutterSmall!important;
+    padding-bottom: 0!important;
+    padding-top: 0!important;
+}
 </style>

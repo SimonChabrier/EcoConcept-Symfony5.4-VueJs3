@@ -6,14 +6,17 @@
         <div v-for="( post, index ) in postStore.results" :key="index">
             <transition name="fade" mode="out-in">
                 <section class="section appDark flexRow">
-                    <h3>{{ post.title }}</h3>
-                    <p> {{ post.body }}</p>
-                    <p class="postPara">Tag : {{ post.tag }} </p>
-                    <p class="postPara">Exemple : {{ post.exemple }}</p> 
+                    
+                    <h3>N° {{ post.id }} - {{ post.title }}</h3>
+               
+                    <p class="postBody">{{ post.body }}</p>
 
-                    <ButtonComponent type="primary" size="sm" @click="resetSearch">
+                    <p class="postPara">Exemple : {{ post.exemple }}</p> 
+                    <TagComponent color="dark">{{ post.tag }}</TagComponent> 
+                    <ButtonComponent type="primary" size="sm">
                         <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
                     </ButtonComponent>
+  
                 </section>
             </transition>
         </div>
@@ -25,6 +28,7 @@
 
 import { usePostStore } from '@/store/post';
 import ButtonComponent from '@/components/elements/ButtonComponent.vue';
+import TagComponent from '@/components/elements/TagComponent.vue';
 
 
 export default {
@@ -32,6 +36,7 @@ export default {
     
     components: {
         ButtonComponent,
+        TagComponent,
     },
     // store
     setup() {
@@ -51,6 +56,8 @@ export default {
         },
         resetSearch() {
             this.postStore.results = [];
+            const input = document.getElementById('searchInput');
+            input.value = '';
         }
     },
 
@@ -61,6 +68,36 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+
+a {
+    text-decoration: none;
+}
+
+.postPara {
+    color:$lightWhite;
+    margin-bottom: $gutterSmall!important;
+    padding-bottom: 0!important;
+    padding-top: 0!important;
+}
+
+.postBody {
+    color:$lightWhite;
+    margin-bottom: $gutterSmall!important;
+    padding-bottom: 0!important;
+    padding-top: 0!important;
+}
+
+// fade 
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
 
 </style>

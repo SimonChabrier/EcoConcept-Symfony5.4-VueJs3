@@ -44,7 +44,7 @@ export default {
   line-height: 26px;
   padding: 0 25px 0 25px;
   position: relative;
-  margin: 0 10px 10px 0;
+  margin: $gutterSmall $gutterBig $gutterSmall $gutterBig;
   text-decoration: none;
   border: none !important;
   width: fit-content;

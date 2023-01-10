@@ -9,8 +9,8 @@
         </nav>
 
         <form class="searchForm">
-            <input class="input" type="search" placeholder="Rechercher" aria-label="Rechercher" v-model="searchValue" @input="search()">
-            <button class="btn" type="submit" @click.prevent="submit()">Rechercher</button>
+            <input class="input" id="searchInput" type="search" placeholder="Rechercher" aria-label="Rechercher" v-model="searchValue" @input="search()">
+            <button class="btn" type="submit" @click.prevent="reset()">Reset</button>
         </form>
 
 </template>
@@ -46,8 +46,11 @@ export default {
 
     methods: {
 
-        submit() {
-            console.log('submit');
+        reset() {
+            console.log('reset search');
+            const input = document.getElementById('searchInput');
+            input.value = '';
+            this.postStore.results = [];
         },
 
         // on gère le chnagement du state en fonciton de la recher ici et l'affichage des résultats dans le template App.vue
@@ -56,7 +59,6 @@ export default {
                 this.postStore.results = [];
                 return;
             }
-
             this.postStore.results = this.postStore.posts.filter((post) => {
                 return post.body.toLowerCase().includes(this.searchValue.toLowerCase());
             });   

@@ -38,7 +38,7 @@ button {
     border: 1px solid transparent;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     cursor: pointer;
-    margin: 10px 5px;
+    margin: $gutterSmall $gutterBig $gutterSmall $gutterBig;
     border: none;
     color: $lightWhite;
     transition: $transition-slow;
