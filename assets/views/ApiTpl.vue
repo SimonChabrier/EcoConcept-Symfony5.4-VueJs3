@@ -76,8 +76,8 @@ export default {
 
         async getData() {
             
-            await this.postStore.fetchPosts()
-            
+            //await this.postStore.fetchPosts()
+            console.log(this.postStore.posts);  
             this.posts = this.postStore.posts
             this.totalPosts = this.posts.length
             this.setPages()
