@@ -1,32 +1,8 @@
 <template>
     
     <div>
-
-        <section class="section appLight flexRow">
-            <span class="appSpan fill">Fetch data from Json Placeholder</span>
-        </section>
-
-        <section class="section appDark flexRow" v-if="postStore.results.length">
-            <span class="appSpan">Resultats de recherche</span>
-            
-            <div v-for="(post, index) in postStore.results" :key="index">
-                <transition name="fade" mode="out-in">
-                    <section class="section appLight flexRow">
-                        <h3>{{ post.title }}</h3>
-                        <p> {{ post.body }}</p>
-                        <p class="postPara">Tag : {{ post.tag }} </p>
-                        <p class="postPara">Exemple : {{ post.exemple }}</p> 
-
-                        <ButtonComponent type="primary" size="sm">
-                            <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
-                        </ButtonComponent>
-                    </section>
-                </transition>
-                </div>
-        </section>
-
     
-        <div v-else v-for="post in pagePosts" :key="post.id">
+        <div v-for="post in pagePosts" :key="post.id">
             <transition name="fade" mode="out-in">
                 <section class="section appLight flexRow">
                     <h3>{{ post.title }}</h3>
@@ -41,7 +17,6 @@
         </transition>
         </div>
     
-
         <div class="pagination" v-if="postStore.results.length === 0">
 
             <ButtonComponent size="xs" @click="previousPage">Prev</ButtonComponent>
