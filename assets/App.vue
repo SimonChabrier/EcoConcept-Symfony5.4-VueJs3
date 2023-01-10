@@ -9,7 +9,29 @@
 
         </div>
 
-        <div class="main">
+        <div class="main" v-if="postStore.results.length">
+        <section class="section appDark flexRow" >
+            <span class="appSpan">Resultats de recherche</span>
+            
+            <div v-for="(post, index) in postStore.results" :key="index">
+                <transition name="fade" mode="out-in">
+                    <section class="section appLight flexRow">
+                        <h3>{{ post.title }}</h3>
+                        <p> {{ post.body }}</p>
+                        <p class="postPara">Tag : {{ post.tag }} </p>
+                        <p class="postPara">Exemple : {{ post.exemple }}</p> 
+
+                        <ButtonComponent type="primary" size="sm">
+                            <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
+                        </ButtonComponent>
+                    </section>
+                </transition>
+                </div>
+        </section>
+        </div>
+
+
+        <div v-else class="main">
 
             <router-view v-slot="{ Component }">
                 <transition name="fade" mode="out-in">
@@ -39,14 +61,39 @@ import FooterComp from '@/components/Footer.vue'
 import BannerComponent from '@/components/elements/BannerComponent.vue'
 import BackTotop from '@/components/elements/BackTotop.vue'
 
+import { usePostStore } from '@/store/post';
+
 export default {
     name: 'App',
+    results: '',
+
+     // store
+     setup() {
+        const postStore = usePostStore()
+        postStore.$subscribe((mutation) => {
+        mutation.type // 'direct' | 'patch object' | 'patch function'
+        })
+        return { postStore };
+    },
 
     components: {
         NavBarComp,
         FooterComp,
         BannerComponent,
         BackTotop,
+    },
+    methods: {
+        async getJsonData() {
+            await this.postStore.fetchJsonPosts()
+        },
+    },
+    computed: {
+        results() {
+            return this.postStore.results
+        }
+    },
+    async mounted () {
+        this.getJsonData();
     }
 }
 </script>

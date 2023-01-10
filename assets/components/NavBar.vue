@@ -51,19 +51,20 @@ export default {
         },
 
         search(){
-            if(!this.searchValue ){
+            if(!this.searchValue) {
                 this.postStore.results = [];
                 return;
             }
+
             this.postStore.results = this.postStore.posts.filter((post) => {
                 return post.body.toLowerCase().includes(this.searchValue.toLowerCase());
             });   
-            console.log(this.postStore.results)
+            //console.log(this.postStore.results)
         },
 
         async getJsonData() {
             await this.postStore.fetchJsonPosts()
-            console.log(this.postStore.posts)
+            //console.log(this.postStore.posts)
         },
     },
 
