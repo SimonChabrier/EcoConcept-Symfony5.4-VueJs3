@@ -76,9 +76,10 @@ export default {
 
         async getData() {
             
-            //await this.postStore.fetchPosts()
+            await this.postStore.fetchPosts()
             console.log(this.postStore.posts);  
             this.posts = this.postStore.posts
+            console.log(this.posts);
             this.totalPosts = this.posts.length
             this.setPages()
             this.appendPostsToPage()
@@ -114,9 +115,10 @@ export default {
         },
 
         setPages() {
+            
             let index = 0;
             let numberOfPages = Math.ceil(this.totalPosts / this.itemsPerPage);
-            console.log(numberOfPages);
+
             for (index; index < numberOfPages; index++) {
                 this.pages.push(index); 
             }
