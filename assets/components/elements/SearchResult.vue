@@ -1,6 +1,6 @@
 <template>
 
-    <section v-if="postStore.results.length">
+    <section v-if="postStore.results.length" class="results">
         <span class="appSpan primary">Resultats de recherche</span>
 
         <div v-for="( post, index ) in postStore.results" :key="index">
@@ -72,6 +72,11 @@ export default {
 
 a {
     text-decoration: none;
+}
+.results {
+    padding:$gutterXBig;
+    background-color: $creme;
+    border-radius: $radius;
 }
 
 .postPara {
