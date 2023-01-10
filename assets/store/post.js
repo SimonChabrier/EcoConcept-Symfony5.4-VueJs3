@@ -8,6 +8,7 @@ export const usePostStore = defineStore("user", {
         posts: [],
         post: {},
         results: [],
+        message: '',
     }),
 
     getters: {

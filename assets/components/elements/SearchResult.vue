@@ -1,7 +1,7 @@
 <template>
 
     <section v-if="postStore.results.length" class="results">
-        <span class="appSpan primary">Resultats de recherche</span>
+        <span class="appSpan primary">{{ postStore.results.length > 1 ? `${postStore.results.length}` + ' resultats' : `${postStore.results.length}` + ' resultat' }} </span>
 
         <div v-for="( post, index ) in postStore.results" :key="index">
             <transition name="fade" mode="out-in">
@@ -22,6 +22,12 @@
         </div>
     </section>
 
+    <section v-if="postStore.message" class="results">
+
+        <span class="appSpan warning">{{ postStore.message }}</span>
+
+    </section>
+
 </template>
 
 <script>
@@ -29,7 +35,6 @@
 import { usePostStore } from '@/store/post';
 import ButtonComponent from '@/components/elements/ButtonComponent.vue';
 import TagComponent from '@/components/elements/TagComponent.vue';
-
 
 export default {
     name: 'SearchResult',
@@ -56,8 +61,10 @@ export default {
         },
         resetSearch() {
             this.postStore.results = [];
+            this.postStore.message = '';
             const input = document.getElementById('searchInput');
             input.value = '';
+
         }
     },
 

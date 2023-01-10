@@ -57,7 +57,7 @@ export default {
         pagePosts: [],
         totalPosts: '',
         currentPage: 0,
-        itemsPerPage: 7,
+        itemsPerPage: 6,
         posts:[],
         color:"primary"
       }
@@ -158,10 +158,6 @@ a {
     margin-bottom: $gutterSmall!important;
     padding-bottom: 0!important;
     padding-top: 0!important;
-}
-
-button {
-    margin: $gutterSmall!important;
 }
 
 // fade 

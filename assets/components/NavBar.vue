@@ -57,7 +57,11 @@ export default {
         search(){
             if(!this.searchValue) {
                 this.postStore.results = [];
+                this.postStore.message = '';
                 return;
+            }
+            if(this.searchValue.length > 1 && this.postStore.results.length === 0) {
+                this.postStore.message = 'Pas de résultat !';
             }
             this.postStore.results = this.postStore.posts.filter((post) => {
                 return post.body.toLowerCase().includes(this.searchValue.toLowerCase());
