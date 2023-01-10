@@ -1,7 +1,7 @@
 <template>
 
     <section v-if="postStore.results.length">
-        <span class="appSpan">Resultats de recherche</span>
+        <span class="appSpan primary">Resultats de recherche</span>
 
         <div v-for="( post, index ) in postStore.results" :key="index">
             <transition name="fade" mode="out-in">
@@ -13,7 +13,7 @@
 
                     <p class="postPara">Exemple : {{ post.exemple }}</p> 
                     <TagComponent color="dark">{{ post.tag }}</TagComponent> 
-                    <ButtonComponent type="primary" size="sm">
+                    <ButtonComponent type="primary" size="sm" @click="resetSearch">
                         <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
                     </ButtonComponent>
   

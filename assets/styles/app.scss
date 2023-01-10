@@ -345,12 +345,12 @@ legend {
 }
 
 .primary {
-    color: $lightWhite;
+    color: $lightWhite!important;
     background-color: $mediumBlue!important;
 }
 
 .secondary {
-    color: $lightWhite;
+    color: $lightWhite!important;
     background-color: $darkGray!important;
 }
 
@@ -360,7 +360,7 @@ legend {
 }
 
 .danger {
-    color: $lightWhite;
+    color: $lightWhite!important;
     background-color: $red!important;
 }
 
@@ -370,18 +370,18 @@ legend {
 }
 
 .dark {
-    background-color: $mediumBlack;
+    background-color: $mediumBlack!important;
     color: $lightWhite;
 }
 
 .light {
-    background-color: $lightGray;
-    color: $darkBlack;
-    border: 1px solid $darkBlack;
+    background-color: $lightGray!important;
+    color: $darkBlack!important;
+    border: 1px solid $darkBlack!important;
 }
 
 .info {
-    color: $lightWhite;
+    color: $lightWhite!important;
     background-color: $azure!important;
 }
 

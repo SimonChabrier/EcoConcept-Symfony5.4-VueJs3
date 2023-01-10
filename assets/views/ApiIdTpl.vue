@@ -1,7 +1,7 @@
 <template>
     <div>
         <section class="section appLight flexRow">
-            <span class="appSpan fill">Fetch article from Json Placeholder</span>
+            <span class="appSpan fill">Fetch article from Json File</span>
         </section>
 
         <section class="section appLight flexRow">
