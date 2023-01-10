@@ -115,7 +115,7 @@ export default {
         },
 
         setPages() {
-            
+
             let index = 0;
             let numberOfPages = Math.ceil(this.totalPosts / this.itemsPerPage);
 
@@ -138,7 +138,7 @@ export default {
     async mounted() {
         this.getData();
         //this.getJsonData();
-        document.title = "Posts";        
+        document.title = "Posts";  
     },
 }
 </script>
