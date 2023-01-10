@@ -14,8 +14,8 @@
 
                     <p class="postPara">Exemple : {{ post.exemple }}</p> 
 
-                    <TagComponent color="dark">{{ post.tag }}</TagComponent> 
-                    
+                    <TagComponent color="primary">{{ post.tag }}</TagComponent> 
+
                     <ButtonComponent type="primary" size="sm" @click="resetSearch">
                         <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
                     </ButtonComponent>
