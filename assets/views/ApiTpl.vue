@@ -2,14 +2,6 @@
     
     <div>
 
-        <div class="pagination" v-if="postStore.results.length === 0">
-
-        <ButtonComponent size="xs" @click="previousPage">Prev</ButtonComponent>
-        <ButtonComponent size="xs" @click="nextPage">Next</ButtonComponent>
-
-        </div>
-
-    
         <div v-for="post in pagePosts" :key="post.id">
             <transition name="fade" mode="out-in">
                 <section class="section appLight flexRow">
@@ -29,8 +21,14 @@
                 </section>
             </transition>
         </div>
-    
         
+        <div class="pagination" v-if="postStore.results.length === 0">
+
+            <ButtonComponent size="xs" @click="previousPage">Prev</ButtonComponent>
+            <ButtonComponent size="xs" @click="nextPage">Next</ButtonComponent>
+
+        </div>
+                
     </div>
 
 
