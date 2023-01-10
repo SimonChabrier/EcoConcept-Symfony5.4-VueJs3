@@ -6,13 +6,13 @@
 
         <section class="section appLight flexRow">
 
-            <h3>{{ postStore.post.title }}</h3>
+            <h3>{{ postStore.post.post?.title }}</h3>
 
-            <p class="postBody">{{ postStore.post.body }}</p>
-            <p class="postPara">Exemple : {{ postStore.post.exemple }}</p> 
+            <p class="postBody">{{ postStore.post.post?.body }}</p>
+            <p class="postPara">Exemple : {{ postStore.post.post?.exemple }}</p> 
 
-            <TagComponent v-if="postStore.post.tag === 'front'" class="primary"> {{ postStore.post.tag  }}</TagComponent> 
-            <TagComponent v-if="postStore.post.tag === 'back'" class="danger"> {{ postStore.post.tag  }}</TagComponent> 
+            <TagComponent v-if="postStore.post.post?.mainTag === 'front'" class="primary"> {{ postStore.post.post?.mainTag  }}</TagComponent> 
+            <TagComponent v-if="postStore.post.post?.mainTag === 'back'" class="danger"> {{ postStore.post.post?.mainTag  }}</TagComponent> 
             
             <ButtonComponent type="primary" size="sm" @click="previousPage">
                 Retour
