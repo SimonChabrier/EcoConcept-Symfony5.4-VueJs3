@@ -15,7 +15,6 @@
                     <p class="postPara">Exemple : {{ post.exemple }}</p> 
 
                     <TagComponent v-if="post.tag === 'front'" class="primary"> {{ post.tag  }}</TagComponent> 
-
                     <TagComponent v-if="post.tag === 'back'" class="danger"> {{ post.tag  }}</TagComponent> 
                     
                     <ButtonComponent type="primary" size="sm">
