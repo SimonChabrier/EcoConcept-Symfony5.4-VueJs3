@@ -7,9 +7,11 @@
 
         </div>
 
-        <SearchResult></SearchResult>
+        
 
         <div class="main">
+            
+            <SearchResult></SearchResult>
 
             <router-view v-slot="{ Component }">
                 <transition name="fade" mode="out-in">
