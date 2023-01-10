@@ -8,12 +8,11 @@
 
             <h3>{{ postStore.post.title }}</h3>
 
-            <p class="postPara">post id : {{ postStore.post.id }} </p>
-            <p class="postPara">author Id : {{ postStore.post.userId }}</p>  
-            
             <p> {{ postStore.post.body }}</p>
+            <p class="postPara">Tag : {{ postStore.post.tag }} </p>
+            <p class="postPara">Exemple : {{ postStore.post.exemple }}</p>  
             
-            <ButtonComponent type="primary" size="sm" @click="back">
+            <ButtonComponent type="primary" size="sm" @click="previousPage">
                 Retour
             </ButtonComponent>
         </section>
@@ -48,17 +47,25 @@ export default {
     },
 
     methods: {
-        back() {
+        previousPage() {
             this.$router.push({ name: 'api' })
         },
-        async getDatas() {
-            await this.postStore.fetchPost(this.$route.params.id)
+
+        async getJsonData () {
+            await this.postStore.findPost(parseInt(this.$route.params.id))
             document.title = `Article : ${this.postStore.post.title[0].toUpperCase() + this.postStore.post.title.substring(1)}`;
         }
+
+        // async getApiData() {
+        //     await this.postStore.fetchPost()
+        //     document.title = `Article : ${this.postStore.post.title[0].toUpperCase() + this.postStore.post.title.substring(1)}`;
+        // },
+
     },
 
     async mounted() {
-        this.getDatas();
+        //this.getApiData();
+        this.getJsonData();
     }
 }
 
@@ -69,7 +76,7 @@ export default {
 
 .postPara {
     color:$red;
-    margin-bottom: 0!important;
+    margin-bottom: $gutterSmall!important;
     padding-bottom: 0!important;
     padding-top: 0!important;
 }

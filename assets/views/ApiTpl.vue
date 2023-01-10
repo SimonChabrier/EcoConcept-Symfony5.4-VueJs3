@@ -11,12 +11,10 @@
             <transition name="fade" mode="out-in">
         <section class="section appLight flexRow">
                 <h3>{{ post.title }}</h3>
-
-                <p class="postPara">post id : {{ post.id }} </p>
-                <p class="postPara">author Id : {{ post.userId }}</p>  
-                
                 <p> {{ post.body }}</p>
-                
+                <p class="postPara">Tag : {{ post.tag }} </p>
+                <p class="postPara">Exemple : {{ post.exemple }}</p> 
+
                 <ButtonComponent type="primary" size="sm">
                     <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
                 </ButtonComponent>
@@ -58,7 +56,7 @@ export default {
         pagePosts: [],
         totalPosts: '',
         currentPage: 0,
-        itemsPerPage: 5,
+        itemsPerPage: 7,
 
         posts:[]
       }
@@ -73,9 +71,19 @@ export default {
 
     methods: {
 
-        async getDatas() {
+        // async getApiData() {
             
-            await this.postStore.fetchPosts()
+        //     await this.postStore.fetchPosts()
+            
+        //     this.posts = this.postStore.posts
+        //     this.totalPosts = this.posts.length
+        //     this.setPages()
+        //     this.appendPostsToPage()
+        // },
+
+        async getJsonData() {
+            
+            await this.postStore.fetchJsonPosts()
             
             this.posts = this.postStore.posts
             this.totalPosts = this.posts.length
@@ -115,7 +123,8 @@ export default {
     },
 
     async mounted() {
-        this.getDatas();
+        // this.getApiData();
+        this.getJsonData();
         document.title = "Posts";
     }
 }
@@ -129,12 +138,12 @@ a {
 
 .postPara {
     color:$red;
-    margin-bottom: 0!important;
+    margin-bottom: $gutterSmall!important;
     padding-bottom: 0!important;
     padding-top: 0!important;
 }
 
-// fadde 
+// fade 
 
 .fade-enter-active,
 .fade-leave-active {
