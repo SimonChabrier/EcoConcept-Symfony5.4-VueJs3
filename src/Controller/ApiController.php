@@ -35,6 +35,9 @@ class ApiController extends AbstractController
     {
         return $this->json([
             'post' => $post,
+            Response::HTTP_OK,
+            [],
+            ['groups' => 'post:read']
         ]);
     }
 
@@ -59,9 +62,10 @@ class ApiController extends AbstractController
 
         return $this->json(
             ['message' => 'Post created'],
-            200,
+            Response::HTTP_OK,
             [],
-            []
+            ['groups' => 'post:read']
+            
         );
     }
 
@@ -92,9 +96,9 @@ class ApiController extends AbstractController
     
         return $this->json(
             ['message' => 'Post updated'],
-            200,
+            Response::HTTP_OK,
             [],
-            []
+            ['groups' => 'post:read']
         );
     }
 
@@ -112,9 +116,9 @@ class ApiController extends AbstractController
 
         return $this->json(
             ['message' => 'Post deleted'],
-            200,
+            Response::HTTP_OK,
             [],
-            []
+            ['groups' => 'post:read']
         );
     }
 

@@ -56,21 +56,22 @@ export default {
             this.$router.push({ name: 'api' })
         },
 
-        async getJsonData () {
-            await this.postStore.findPost(parseInt(this.$route.params.id))
-            document.title = `Article : ${this.postStore.post.title[0].toUpperCase() + this.postStore.post.title.substring(1)}`;
-        }
-
-        // async getApiData() {
-        //     await this.postStore.fetchPost()
+        // async getJsonData () {
+        //     await this.postStore.findPost(parseInt(this.$route.params.id))
         //     document.title = `Article : ${this.postStore.post.title[0].toUpperCase() + this.postStore.post.title.substring(1)}`;
-        // },
+        // }
+
+        async getApiData() {
+            await this.postStore.fetchPost(parseInt(this.$route.params.id))
+            console.log(this.postStore.post)
+            //document.title = `Article : ${this.postStore.post.title[0].toUpperCase() + this.postStore.post.title.substring(1)}`;
+        },
 
     },
 
     async mounted() {
-        //this.getApiData();
-        this.getJsonData();
+        this.getApiData();
+        //this.getJsonData();
     }
 }
 

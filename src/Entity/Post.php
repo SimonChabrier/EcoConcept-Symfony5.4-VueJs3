@@ -3,10 +3,11 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Post
- *
+ *     
  * @ORM\Table(name="post")
  * @ORM\Entity
  */
@@ -18,6 +19,9 @@ class Post
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * 
+     * 
+     * @Groups({"postr:read"})
      */
     private $id;
 
@@ -25,6 +29,8 @@ class Post
      * @var string|null
      *
      * @ORM\Column(name="title", type="string", length=255, nullable=true)
+     * 
+     * @Groups({"postr:read"})
      */
     private $title;
 
@@ -32,6 +38,8 @@ class Post
      * @var string|null
      *
      * @ORM\Column(name="body", type="text", length=16777215, nullable=true)
+     * 
+     * @Groups({"postr:read"})
      */
     private $body;
 
@@ -39,6 +47,8 @@ class Post
      * @var string|null
      *
      * @ORM\Column(name="exemple", type="text", length=16777215, nullable=true)
+     * 
+     * @Groups({"postr:read"})
      */
     private $exemple;
 
@@ -46,6 +56,8 @@ class Post
      * @var string|null
      *
      * @ORM\Column(name="main_tag", type="string", length=30, nullable=true)
+     * 
+     * @Groups({"postr:read"})
      */
     private $mainTag;
 
@@ -53,11 +65,15 @@ class Post
      * @var \DateTime|null
      *
      * @ORM\Column(name="created_at", type="datetime", nullable=true, options={"default"="CURRENT_TIMESTAMP"})
+     * 
+     * @Groups({"postr:read"})
      */
     private $createdAt = 'CURRENT_TIMESTAMP';
 
     /**
      * @ORM\Column(name="updated_at", type="datetime", nullable=true, options={"default"="CURRENT_TIMESTAMP"})
+     * 
+     * @Groups({"postr:read"})
      */
     private $updatedAt = 'CURRENT_TIMESTAMP';
 

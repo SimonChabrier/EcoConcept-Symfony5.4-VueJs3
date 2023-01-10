@@ -9,6 +9,7 @@ export const usePostStore = defineStore("user", {
         post: {},
         results: [],
         message: '',
+        api: 'https://127.0.0.1:8001/api/posts',
     }),
 
     getters: {
@@ -21,7 +22,7 @@ export const usePostStore = defineStore("user", {
       // fetch all posts from jsonplaceholder -> Pour l'utiliser, switcher de méthode dans ApiTpl.vue : getJsonData / getApiData() 
       async fetchPosts() {
         try {
-          this.posts  = (await axios.get('https://jsonplaceholder.typicode.com/posts')).data
+          this.posts  = (await axios.get(this.state.api)).data
           }
           catch (error) {
             console.log(error)
@@ -31,7 +32,7 @@ export const usePostStore = defineStore("user", {
       // fetch post by id from jsonplaceholder -> Pour l'utiliser, switcher de méthode dans ApiIdTpl.vue : getJsonData / getApiData()
       async fetchPost(id) {
         try {
-          this.post  = (await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)).data
+          this.post  = (await axios.get("https://127.0.0.1:8001/api/posts/" + id)).data
           }
           catch (error) {
             console.log(error)
