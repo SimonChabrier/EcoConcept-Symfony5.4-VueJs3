@@ -3,6 +3,7 @@
     <section v-if="postStore.results.length" class="results">
         <span class="appSpan primary">{{ postStore.results.length > 1 ? `${postStore.results.length}` + ' resultats' : `${postStore.results.length}` + ' resultat' }} </span>
 
+        <!-- J'utilise l'index pour ne pas avoir de doublon de :key si les resultats sont affichés au dessus de la liste de post qui ont déjà une :key -->
         <div v-for="( post, index ) in postStore.results" :key="index">
             <transition name="fade" mode="out-in">
                 <section class="section appDark flexRow">
@@ -12,7 +13,9 @@
                     <p class="postBody">{{ post.body }}</p>
 
                     <p class="postPara">Exemple : {{ post.exemple }}</p> 
+
                     <TagComponent color="dark">{{ post.tag }}</TagComponent> 
+                    
                     <ButtonComponent type="primary" size="sm" @click="resetSearch">
                         <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
                     </ButtonComponent>
