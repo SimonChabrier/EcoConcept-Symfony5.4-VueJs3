@@ -1,6 +1,14 @@
 <template>
     
     <div>
+
+        <div class="pagination" v-if="postStore.results.length === 0">
+
+        <ButtonComponent size="xs" @click="previousPage">Prev</ButtonComponent>
+        <ButtonComponent size="xs" @click="nextPage">Next</ButtonComponent>
+
+        </div>
+
     
         <div v-for="post in pagePosts" :key="post.id">
             <transition name="fade" mode="out-in">
@@ -22,13 +30,7 @@
             </transition>
         </div>
     
-        <div class="pagination" v-if="postStore.results.length === 0">
-
-            <ButtonComponent size="xs" @click="previousPage">Prev</ButtonComponent>
-            <ButtonComponent size="xs" @click="nextPage">Next</ButtonComponent>
-
-        </div>
-
+        
     </div>
 
 
@@ -97,11 +99,19 @@ export default {
         nextPage() {
             this.currentPage++;
             this.appendPostsToPage();
+
+            if(this.currentPage === this.pages.length - 1) {
+                this.currentPage = -1;
+            }
         },
 
         previousPage() {
             this.currentPage--;
             this.appendPostsToPage();
+
+            if(this.currentPage === this.pages.length - 1) {
+                this.currentPage = -1;
+            }
         },
 
         setPages() {
@@ -150,6 +160,10 @@ a {
     margin-bottom: $gutterSmall!important;
     padding-bottom: 0!important;
     padding-top: 0!important;
+}
+
+button {
+    margin: $gutterSmall!important;
 }
 
 // fade 
