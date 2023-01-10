@@ -6,19 +6,39 @@
             <span class="appSpan fill">Fetch data from Json Placeholder</span>
         </section>
 
+        <section class="section appDark flexRow" v-if="postStore.results.length">
+            <span class="appSpan">Resultats</span>
+            
+            <div v-for="(post, index) in postStore.results" :key="index">
+                <transition name="fade" mode="out-in">
+                    <section class="section appLight flexRow">
+                        <h3>{{ post.title }}</h3>
+                        <p> {{ post.body }}</p>
+                        <p class="postPara">Tag : {{ post.tag }} </p>
+                        <p class="postPara">Exemple : {{ post.exemple }}</p> 
+
+                        <ButtonComponent type="primary" size="sm">
+                            <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
+                        </ButtonComponent>
+                    </section>
+                </transition>
+                </div>
+        </section>
+
+
     
         <div v-for="post in pagePosts" :key="post.id">
             <transition name="fade" mode="out-in">
-        <section class="section appLight flexRow">
-                <h3>{{ post.title }}</h3>
-                <p> {{ post.body }}</p>
-                <p class="postPara">Tag : {{ post.tag }} </p>
-                <p class="postPara">Exemple : {{ post.exemple }}</p> 
+                <section class="section appLight flexRow">
+                    <h3>{{ post.title }}</h3>
+                    <p> {{ post.body }}</p>
+                    <p class="postPara">Tag : {{ post.tag }} </p>
+                    <p class="postPara">Exemple : {{ post.exemple }}</p> 
 
-                <ButtonComponent type="primary" size="sm">
-                    <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
-                </ButtonComponent>
-            </section>
+                    <ButtonComponent type="primary" size="sm">
+                        <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
+                    </ButtonComponent>
+                </section>
         </transition>
         </div>
     
@@ -59,14 +79,24 @@ export default {
         itemsPerPage: 7,
 
         posts:[]
+
       }
     },
 
     // gestion du store que je retourne en entier dans ce contexte : this.postStore
     setup() {
-        const postStore = usePostStore()        
+        const postStore = usePostStore()   
+
+        // subscribe to store mutations
+            postStore.$subscribe((mutation) => {
+            mutation.type // 'direct' | 'patch object' | 'patch function'
+        })
+
+        
         return { postStore }
     },
+
+    
     
 
     methods: {
@@ -125,8 +155,8 @@ export default {
     async mounted() {
         // this.getApiData();
         this.getJsonData();
-        document.title = "Posts";
-    }
+        document.title = "Posts";        
+    },
 }
 </script>
 

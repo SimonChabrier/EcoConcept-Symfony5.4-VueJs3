@@ -9,7 +9,7 @@
         </nav>
 
         <form class="searchForm">
-            <input class="input" type="search" placeholder="Rechercher" aria-label="Rechercher">
+            <input class="input" type="search" placeholder="Rechercher" aria-label="Rechercher" v-model="searchValue" @input="search()">
             <button class="btn" type="submit" @click.prevent="submit()">Rechercher</button>
         </form>
 
@@ -17,6 +17,7 @@
 
 <script>
 
+import { usePostStore } from '@/store/post';
 
 export default {
 
@@ -24,18 +25,38 @@ export default {
 
     data() {
         return {
-            toggle: false
+            toggle: false,
+            searchValue: '',
         }
+    },
+
+    // store
+    setup() {
+        const postStore = usePostStore()
+        return { postStore };
     },
 
     components: {
         //
     },
 
+    computed: {
+
+    },
+
     methods: {
         submit() {
             console.log('submit');
         },
+        search(){
+            if(!this.searchValue ){
+                this.postStore.results = [];
+                return;
+            }
+            this.postStore.results = this.postStore.posts.filter((post) => {
+                return post.body.toLowerCase().includes(this.searchValue.toLowerCase());
+            });   
+        }
     }
 }
 

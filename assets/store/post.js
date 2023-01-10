@@ -7,6 +7,7 @@ export const usePostStore = defineStore("user", {
     state: () => ({
         posts: [],
         post: {},
+        results: [],
     }),
 
     getters: {
@@ -16,7 +17,7 @@ export const usePostStore = defineStore("user", {
 
     actions: {
 
-      // fetch all posts from jsonplaceholder -> Pour utiliser, switcher de méthode dans ApiTpl.vue : getJsonData / getApiData() 
+      // fetch all posts from jsonplaceholder -> Pour l'utiliser, switcher de méthode dans ApiTpl.vue : getJsonData / getApiData() 
       async fetchPosts() {
         try {
           this.posts  = (await axios.get('https://jsonplaceholder.typicode.com/posts')).data
@@ -26,7 +27,7 @@ export const usePostStore = defineStore("user", {
         }
       },
 
-      // fetch post by id from jsonplaceholder -> Pour utiliser, switcher de méthode dans ApiIdTpl.vue : getJsonData / getApiData()
+      // fetch post by id from jsonplaceholder -> Pour l'utiliser, switcher de méthode dans ApiIdTpl.vue : getJsonData / getApiData()
       async fetchPost(id) {
         try {
           this.post  = (await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)).data
@@ -51,6 +52,5 @@ export const usePostStore = defineStore("user", {
         this.posts  = (await axios.get('data.json')).data
         this.post = this.posts.find(post => post.id === id)
       }
-      
     },
 })
