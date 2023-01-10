@@ -45,9 +45,11 @@ export default {
     },
 
     methods: {
+
         submit() {
             console.log('submit');
         },
+
         search(){
             if(!this.searchValue ){
                 this.postStore.results = [];
@@ -56,7 +58,17 @@ export default {
             this.postStore.results = this.postStore.posts.filter((post) => {
                 return post.body.toLowerCase().includes(this.searchValue.toLowerCase());
             });   
-        }
+            console.log(this.postStore.results)
+        },
+
+        async getJsonData() {
+            await this.postStore.fetchJsonPosts()
+            console.log(this.postStore.posts)
+        },
+    },
+
+    async mounted(){
+        this.getJsonData();
     }
 }
 
@@ -110,10 +122,6 @@ export default {
     flex-direction: row;
     width: auto;
     transition: $transition;
-    
-    &:focus-within {
-        box-shadow: $shadow-Xlight;
-    }
 }
 
 .input {

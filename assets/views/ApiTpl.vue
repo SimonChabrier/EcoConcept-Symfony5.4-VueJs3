@@ -7,7 +7,7 @@
         </section>
 
         <section class="section appDark flexRow" v-if="postStore.results.length">
-            <span class="appSpan">Resultats</span>
+            <span class="appSpan">Resultats de recherche</span>
             
             <div v-for="(post, index) in postStore.results" :key="index">
                 <transition name="fade" mode="out-in">
@@ -25,9 +25,8 @@
                 </div>
         </section>
 
-
     
-        <div v-for="post in pagePosts" :key="post.id">
+        <div v-else v-for="post in pagePosts" :key="post.id">
             <transition name="fade" mode="out-in">
                 <section class="section appLight flexRow">
                     <h3>{{ post.title }}</h3>
@@ -43,7 +42,7 @@
         </div>
     
 
-        <div class="pagination">
+        <div class="pagination" v-if="postStore.results.length === 0">
 
             <ButtonComponent size="xs" @click="previousPage">Prev</ButtonComponent>
             <ButtonComponent size="xs" @click="nextPage">Next</ButtonComponent>
@@ -85,20 +84,17 @@ export default {
 
     // gestion du store que je retourne en entier dans ce contexte : this.postStore
     setup() {
-        const postStore = usePostStore()   
 
+        const postStore = usePostStore()   
         // subscribe to store mutations
             postStore.$subscribe((mutation) => {
             mutation.type // 'direct' | 'patch object' | 'patch function'
         })
 
-        
         return { postStore }
     },
 
     
-    
-
     methods: {
 
         // async getApiData() {
