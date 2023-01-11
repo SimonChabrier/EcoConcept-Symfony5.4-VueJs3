@@ -3,7 +3,7 @@ import axios from "axios"
 
 const API_ROOT_URL = 'https://127.0.0.1:8000/api/posts/'
 
-export const usePostStore = defineStore("user", {
+export const usePostStore = defineStore('post', {
 
     state: () => ({
         posts: [],

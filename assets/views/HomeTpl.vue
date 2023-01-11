@@ -398,7 +398,7 @@ export default {
 
     data() {
         return {
-            message: 'Hello World',
+            message: '',
             image: 'https://picsum.photos/150/150'
         }
     },
@@ -410,7 +410,7 @@ export default {
         resetForm() {
             console.log('reset');
         }
-    }
+    },
 
 }
 

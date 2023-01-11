@@ -41,15 +41,15 @@ export default {
     },
 
     computed: {
-
+        getSearchValue() {
+            return this.searchValue;
+        },
     },
 
     methods: {
 
         reset() {
-            console.log('reset search');
-            const input = document.getElementById('searchInput');
-            input.value = '';
+            this.searchValue = '';
             this.postStore.results = [];
         },
 
@@ -61,27 +61,28 @@ export default {
                 return;
             }
             if(this.searchValue.length > 1 && this.postStore.results.length === 0) {
-                this.postStore.message = 'Pas de résultat !';
+                this.postStore.message = `Pas de résultat pour : ${this.getSearchValue} !`;
             }
+            
             this.postStore.results = this.postStore.posts.posts.filter((post) => {
                 return post.body.toLowerCase().includes(this.searchValue.toLowerCase());
-            });   
+            });       
         },
 
         // async getJsonData() {
         //     await this.postStore.fetchJsonPosts()
         // },
 
-        // async getDatas(){
-        //     await this.postStore.fetchPosts()
-        //     console.log(this.postStore.posts);
-        // }
+        async getDatas(){
+            await this.postStore.fetchPosts()
+            console.log(this.postStore.posts);
+        }
     },
 
     async mounted(){
         
         //this.getJsonData();
-        //this.getDatas();
+        this.getDatas();
     }
 }
 

@@ -79,7 +79,6 @@ export default {
             await this.postStore.fetchPosts()
             console.log(this.postStore.posts);  
             this.posts = this.postStore.posts
-            console.log(this.posts);
             this.totalPosts = this.posts.length
             this.setPages()
             this.appendPostsToPage()
@@ -139,6 +138,7 @@ export default {
         this.getData();
         //this.getJsonData();
         document.title = "Posts";  
+        console.log(this.postStore.posts);
     },
 }
 </script>

@@ -7,8 +7,6 @@
 
         </div>
 
-        
-
         <div class="main">
             
             <SearchResult></SearchResult>
@@ -42,7 +40,7 @@ import BannerComponent from '@/components/elements/BannerComponent.vue'
 import BackTotop from '@/components/elements/BackTotop.vue'
 import SearchResult from '@/components/elements/SearchResult.vue' 
 
-// import { usePostStore } from '@/store/post';
+import { usePostStore } from '@/store/post';
 
 export default {
     name: 'App',
@@ -54,7 +52,32 @@ export default {
         BackTotop,
         SearchResult,
     },
+
+    setup() {
+        const postStore = usePostStore()   
+        return { postStore }
+    },
+
+    methods: {
+        async getDatas(){
+            await this.postStore.fetchPosts()
+            //console.log(this.postStore.posts);
+        },
+    },
+
+    computed: {
+        getPosts() {
+            return this.postStore.posts
+        }
+    },
+    
+    async mounted() {
+        document.title = "App";  
+        this.getDatas();
+    },
 }
+
+
 </script>
 
 <style lang="scss">
