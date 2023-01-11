@@ -27,8 +27,8 @@
         
         <div class="pagination">
 
-            <ButtonComponent size="xs" @click="previousPage">Prev</ButtonComponent>
-            <ButtonComponent size="xs" @click="nextPage">Next</ButtonComponent>
+            <ButtonComponent class="paginationBtn" size="xs" @click="previousPage">Prev</ButtonComponent>
+            <ButtonComponent class="paginationBtn" size="xs" @click="nextPage">Next</ButtonComponent>
 
         </div>
     </div>
@@ -152,6 +152,10 @@ export default {
 
 a {
     text-decoration: none;
+}
+
+.paginationBtn {
+    margin: $gutterSmall!important;
 }
 
 .postPara {

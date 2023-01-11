@@ -3,9 +3,7 @@
 <div>
 
     <section v-if="postStore.message" class="results">
-
         <span class="appSpan warning">{{ postStore.message }}</span>
-
     </section>
 
     <div v-if="postStore.ready === false">
