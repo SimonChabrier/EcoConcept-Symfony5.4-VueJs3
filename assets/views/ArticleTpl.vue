@@ -85,6 +85,13 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam vel soluta, nam hic cupiditate iste laboriosam fugiat, maxime aliquid, iure atque similique. Vero earum repellendus unde. Quidem maxime officiis optio nostrum error facilis laboriosam quaerat, rerum sapiente non, labore eaque ullam architecto et dignissimos accusantium dolor neque praesentium iure dolores! Soluta voluptates quasi distinctio laboriosam porro molestias debitis, fuga dolor aut perspiciatis ut ratione tenetur, iusto fugiat officia aliquid asperiores itaque consequatur ipsam? Quae fugiat, nam eligendi facere placeat tempore!</p>
     </section>
 
+    <section class="section appDark flexRow">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A laudantium.</p>
+        <h6>Lorem, ipsum dolor ?</h6>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam vel soluta, nam hic cupiditate iste laboriosam fugiat, maxime aliquid, iure atque similique. Vero earum repellendus unde. Quidem maxime officiis optio nostrum error facilis laboriosam quaerat, rerum sapiente non, labore eaque ullam architecto et dignissimos accusantium dolor neque praesentium iure dolores!</p> 
+        <p> Soluta voluptates quasi distinctio laboriosam porro molestias debitis, fuga dolor aut perspiciatis ut ratione tenetur, iusto fugiat officia aliquid asperiores itaque consequatur ipsam? Quae fugiat, nam eligendi facere placeat tempore!</p>
+    </section>
+
 </div>
 
 </template> 
