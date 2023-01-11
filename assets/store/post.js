@@ -53,6 +53,25 @@ export const usePostStore = defineStore("user", {
       async findPost(id) { 
         this.posts  = (await axios.get('data.json')).data
         this.post = this.posts.find(post => post.id === id)
+      },
+
+      // search post by title in posts array
+      async searchPost(title) {
+        if(title.length > 2) {
+        this.results = this.posts.posts.filter(post => post.title.toLowerCase().includes(title.toLowerCase()))
+        this.message = ''
+        }
+        if (this.results.length === 0 && title.length > 2) {
+          this.message = "Aucun résultat trouvé pour : " + title
+        }
+        if (this.results.length > 0 && title.length > 2) {
+          this.message = ''
+        }
+        if (title === '') {
+          console.log(title.length)
+          this.message = ''
+          this.results = []
+        }
       }
     },
 })

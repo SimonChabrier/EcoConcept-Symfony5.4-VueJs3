@@ -67,7 +67,7 @@ export default {
     async mounted () {
         
         //this.getJsonData();
-        this.getDatas();
+        // this.getDatas();
     }
 }
 </script>
