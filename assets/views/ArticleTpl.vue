@@ -34,6 +34,30 @@
             </code>
         </pre>
 
+       
+
+    </section>
+
+    <section class="section appLight flexRow">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus cumque voluptate sit quo facilis, officiis reprehenderit quia modi qui cupiditate, commodi similique suscipit autem at cum, ab beatae repudiandae fuga?</p>
+        <pre>
+            <code class="language-php">
+                // php
+
+                echo 'Hello World';
+            </code>
+        </pre>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, at mollitia. Sed et dignissimos officia, quas expedita, saepe nisi eveniet quidem labore perferendis, vel iure quos recusandae officiis deserunt amet vero consequatur voluptas. Earum dicta iure perspiciatis ut quos nam laborum, nulla et quidem fugit voluptate voluptatibus aspernatur labore hic at doloribus consequuntur voluptatem excepturi impedit saepe fuga suscipit rerum?</p>
+        <pre>
+            <code class="language-scss">
+                // scss
+
+                .hello {
+                    color: red;
+                }
+            </code>
+        </pre>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dicta ea quibusdam error vitae nesciunt necessitatibus sit facere assumenda, quod officiis, nostrum ducimus voluptatem sed dignissimos voluptate odit accusantium commodi, expedita sint? Laborum beatae nam repellendus corrupti esse eos id, harum quaerat, animi ullam consequatur minima illo facilis dolores ut odit optio fugit. Magnam nesciunt provident deserunt eaque impedit iure ad placeat quibusdam officiis</p>
         <pre>
             <code class="language-md">
                 // markup
@@ -46,24 +70,8 @@
             </code>
         </pre>
 
-        <pre>
-            <code class="language-php">
-                // php
-
-                echo 'Hello World';
-            </code>
-        </pre>
-
-        <pre>
-            <code class="language-scss">
-                // scss
-
-                .hello {
-                    color: red;
-                }
-            </code>
-        </pre>
-
+        <p>reprehenderit harum sint deleniti repellendus, cum minus cumque corporis eligendi velit, eius accusamus officia non sit animi nam. Sit distinctio optio odit, blanditiis alias quod culpa debitis quos possimus? Saepe odit optio sunt, ducimus vel quas?</p>
+        <h3>Lorem ipsum dolor sit amet.</h3>
         <pre>
             <code class="language-sql">
                 // sql
@@ -75,8 +83,9 @@
                 ORDER BY t.other_col DESC
             </code>
         </pre>
-
-
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A laudantium.</p>
+        <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam vel soluta, nam hic cupiditate iste laboriosam fugiat, maxime aliquid, iure atque similique. Vero earum repellendus unde. Quidem maxime officiis optio nostrum error facilis laboriosam quaerat, rerum sapiente non, labore eaque ullam architecto et dignissimos accusantium dolor neque praesentium iure dolores! Soluta voluptates quasi distinctio laboriosam porro molestias debitis, fuga dolor aut perspiciatis ut ratione tenetur, iusto fugiat officia aliquid asperiores itaque consequatur ipsam? Quae fugiat, nam eligendi facere placeat tempore!</p>
     </section>
 
 </div>
