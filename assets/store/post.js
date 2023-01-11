@@ -10,6 +10,7 @@ export const usePostStore = defineStore("user", {
         post: {},
         results: [],
         message: '',
+        ready: false,
     }),
 
     getters: {
@@ -27,6 +28,8 @@ export const usePostStore = defineStore("user", {
           catch (error) {
             console.log(error)
         }
+        // si les données sont chargées, on passe ready à true
+        this.ready = true
       },
 
       // fetch post by id from jsonplaceholder -> Pour l'utiliser, switcher de méthode dans ApiIdTpl.vue : getJsonData / getApiData()
@@ -37,6 +40,8 @@ export const usePostStore = defineStore("user", {
           catch (error) {
             console.log(error)
         }
+        // si les données sont chargées, on passe ready à true
+        this.ready = true
       },  
       
       // fetch all posts from json data --- NON UTILISE ACTUELLEMENT C'EST JUSTE POUR L'EXEMPLE
@@ -61,12 +66,13 @@ export const usePostStore = defineStore("user", {
         // clean title remove "s", accents, concat and lowercase string
         if(title.length > 2) {
         this.results = this.posts.posts.filter(post => post.title.replace(/\s/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(title.replace(/\s/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()))
-        console.log(this.results)
         this.message = ''
         }
 
         if (this.results.length === 0 && title.length > 2) {
+          
           this.message = "Aucun résultat trouvé pour : " + title
+          console.log(this.message)
         }
 
         if (this.results.length > 0 && title.length > 2) {
@@ -74,16 +80,17 @@ export const usePostStore = defineStore("user", {
         }
 
         if (title === '') {
-          console.log(title.length)
           this.message = ''
           this.results = []
         }
       },
+
       // filter post by tag
       async filterPost(tag) {
-        console.log(tag)
         this.results = this.posts.posts.filter(post => post.mainTag.includes(tag))
-        console.log(this.results)
+        if (this.results.length > 0) {
+          this.ready = true
+        }
       }
     },
 })

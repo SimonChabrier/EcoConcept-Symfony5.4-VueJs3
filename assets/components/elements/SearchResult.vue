@@ -1,36 +1,47 @@
 <template>
 
-    <section v-if="postStore.results.length" class="results">
-        <span class="appSpan primary">{{ postStore.results.length > 1 ? `${postStore.results.length}` + ' resultats' : `${postStore.results.length}` + ' resultat' }} </span>
-
-        <!-- J'utilise l'index pour ne pas avoir de doublon de :key si les resultats sont affichés au dessus de la liste de post qui ont déjà une :key -->
-        <div v-for="( post, index ) in postStore.results" :key="index">
-            <transition name="fade" mode="out-in">
-                <section class="section appDark flexRow">
-                    
-                    <h3>N° {{ post.id }} - {{ post.title }}</h3>
-               
-                    <p class="postBody">{{ post.body }}</p>
-
-                    <p class="postPara">Exemple : {{ post.exemple }}</p> 
-
-                    <TagComponent v-if="post.mainTag === 'front'" class="primary"> {{ post.mainTag  }}</TagComponent> 
-                    <TagComponent v-if="post.mainTag === 'back'" class="danger"> {{ post.mainTag  }}</TagComponent> 
-
-                    <ButtonComponent type="primary" size="sm" @click="resetSearch">
-                        <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
-                    </ButtonComponent>
-  
-                </section>
-            </transition>
-        </div>
-    </section>
+<div>
 
     <section v-if="postStore.message" class="results">
 
         <span class="appSpan warning">{{ postStore.message }}</span>
 
     </section>
+
+    <div v-if="!postStore.ready">
+        <LoaderComponent></LoaderComponent>
+    </div>
+
+    <div v-if="postStore.results.length !== 0">
+        <section class="results">
+            <span class="appSpan primary">{{ postStore.results.length > 1 ? `${postStore.results.length}` + ' resultats' : `${postStore.results.length}` + ' resultat' }} </span>
+
+            <!-- J'utilise l'index pour ne pas avoir de doublon de :key si les resultats sont affichés au dessus de la liste de post qui ont déjà une :key -->
+            <div v-for="( post, index ) in postStore.results" :key="index">
+                <transition name="fade" mode="out-in">
+                    <section class="section appDark flexRow">
+                        
+                        <h3>N° {{ post.id }} - {{ post.title }}</h3>
+                        <p class="postBody">{{ post.body }}</p>
+                        <p class="postPara">Exemple : {{ post.exemple }}</p> 
+
+                        <TagComponent v-if="post.mainTag === 'front'" class="primary"> {{ post.mainTag  }}</TagComponent> 
+                        <TagComponent v-if="post.mainTag === 'back'" class="danger"> {{ post.mainTag  }}</TagComponent> 
+
+                        <ButtonComponent type="primary" size="sm" @click="resetSearch">
+                            <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
+                        </ButtonComponent>
+    
+                    </section>
+                </transition>
+            </div>
+        </section>
+
+    </div>
+
+    
+
+</div>
 
 </template>
 
@@ -39,6 +50,7 @@
 import { usePostStore } from '@/store/post';
 import ButtonComponent from '@/components/elements/ButtonComponent.vue';
 import TagComponent from '@/components/elements/TagComponent.vue';
+import LoaderComponent from '@/components/elements/LoaderComponent.vue';
 
 export default {
     name: 'SearchResult',
@@ -46,6 +58,7 @@ export default {
     components: {
         ButtonComponent,
         TagComponent,
+        LoaderComponent,
     },
 
 
@@ -65,7 +78,7 @@ export default {
 
     // je récupère les datas si le composant est monté.
     async mounted () {
-        
+        console.log(this.postStore.results);
         //this.getJsonData();
         // this.getDatas();
     }

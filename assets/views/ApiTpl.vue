@@ -1,5 +1,7 @@
 <template>
-    
+
+<div>
+
     <div v-if="pagePosts">
 
         <div v-for="post in pagePosts" :key="post.id">
@@ -8,8 +10,6 @@
                     
                     <h3>N° {{ post.id }} - {{ post.title }}</h3>
                
-                    
-        
                     <p class="postBody">{{ post.body }}</p>
 
                     <p class="postPara">Exemple : {{ post.exemple }}</p> 
@@ -33,10 +33,11 @@
         </div>
     </div>
     
-    <div v-else>
+    <div v-if="!postStore.ready" >
         <LoaderComponent></LoaderComponent>
     </div>
 
+</div>
 
 </template>
 
@@ -140,7 +141,8 @@ export default {
 
         filterByTag(){
             const tag = document.querySelector('.tag').textContent
-            this.postStore.filterPost(tag) 
+            this.postStore.filterPost(tag);
+            window.scrollTo(0, 0);
         }
     },
 
