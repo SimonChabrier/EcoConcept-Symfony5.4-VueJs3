@@ -61,25 +61,25 @@ export const usePostStore = defineStore("user", {
       },
 
       // search post by title in posts array
-      async searchPost(title) {
+      async searchPost(searchValue) {
 
         // clean title remove "s", accents, concat and lowercase string
-        if(title.length > 2) {
-        this.results = this.posts.posts.filter(post => post.title.replace(/\s/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(title.replace(/\s/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()))
+        if(searchValue.length > 2) {
+        this.results = this.posts.posts.filter(post => post.title.replace(/\s/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(searchValue.replace(/\s/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()))
         this.message = ''
         }
 
-        if (this.results.length === 0 && title.length > 2) {
+        if (this.results.length === 0 && searchValue.length > 2) {
           
-          this.message = "Aucun résultat trouvé pour : " + title
+          this.message = "Aucun résultat trouvé pour : " + searchValue
           console.log(this.message)
         }
 
-        if (this.results.length > 0 && title.length > 2) {
+        if (this.results.length > 0 && searchValue.length > 2) {
           this.message = ''
         }
 
-        if (title === '') {
+        if (searchValue === '') {
           this.message = ''
           this.results = []
         }
