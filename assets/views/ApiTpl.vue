@@ -14,8 +14,8 @@
 
                     <p class="postPara">Exemple : {{ post.exemple }}</p> 
 
-                    <TagComponent v-if="post.tag === 'front'" class="primary"> {{ post.tag  }}</TagComponent> 
-                    <TagComponent v-if="post.tag === 'back'" class="danger"> {{ post.tag  }}</TagComponent> 
+                    <TagComponent v-if="post.mainTag === 'front'" class="primary"> {{ post.mainTag  }}</TagComponent> 
+                    <TagComponent v-if="post.mainTag === 'back'" class="danger"> {{ post.mainTag  }}</TagComponent> 
                     
                     <ButtonComponent type="primary" size="sm">
                         <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
