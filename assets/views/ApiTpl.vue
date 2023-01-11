@@ -31,8 +31,10 @@
             <ButtonComponent size="xs" @click="nextPage">Next</ButtonComponent>
 
         </div>
-                
+        
+
         <LoaderComponent></LoaderComponent>
+
 </div>
 
 </template>

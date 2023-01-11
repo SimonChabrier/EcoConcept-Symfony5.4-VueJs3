@@ -39,7 +39,7 @@ export const usePostStore = defineStore("user", {
         }
       },  
       
-      // fetch all posts from json data
+      // fetch all posts from json data --- NON UTILISE ACTUELLEMENT C'EST JUSTE POUR L'EXEMPLE
       async fetchJsonPosts() {
         try {
           this.posts  = (await axios.get('data.json')).data
@@ -49,7 +49,7 @@ export const usePostStore = defineStore("user", {
         }
       },
 
-      // fetch post from json data
+      // fetch post from json data --- NON UTILISE ACTUELLEMENT C'EST JUSTE POUR L'EXEMPLE
       async findPost(id) { 
         this.posts  = (await axios.get('data.json')).data
         this.post = this.posts.find(post => post.id === id)
@@ -78,6 +78,11 @@ export const usePostStore = defineStore("user", {
           this.message = ''
           this.results = []
         }
+      },
+      // filter post by tag
+      async filterPost(tag) {
+        this.results = this.posts.posts.filter(post => post.tags.includes(tag))
+        console.log(this.results)
       }
     },
 })
