@@ -81,7 +81,8 @@ export const usePostStore = defineStore("user", {
       },
       // filter post by tag
       async filterPost(tag) {
-        this.results = this.posts.posts.filter(post => post.tags.includes(tag))
+        console.log(tag)
+        this.results = this.posts.posts.filter(post => post.mainTag.includes(tag))
         console.log(this.results)
       }
     },

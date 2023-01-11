@@ -14,8 +14,8 @@
 
                     <p class="postPara">Exemple : {{ post.exemple }}</p> 
 
-                    <TagComponent v-if="post.mainTag === 'front'" class="primary"> {{ post.mainTag  }}</TagComponent> 
-                    <TagComponent v-if="post.mainTag === 'back'" class="danger"> {{ post.mainTag  }}</TagComponent> 
+                    <TagComponent v-if="post.mainTag === 'front'" class="primary" @click="filterByTag()"> {{ post.mainTag  }} </TagComponent> 
+                    <TagComponent v-if="post.mainTag === 'back'" class="danger" @click="filterByTag()"> {{ post.mainTag  }}</TagComponent> 
                     
                     <ButtonComponent type="primary" size="sm">
                         <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
@@ -31,11 +31,12 @@
             <ButtonComponent size="xs" @click="nextPage">Next</ButtonComponent>
 
         </div>
-        
-
+    </div>
+    
+    <div v-else>
         <LoaderComponent></LoaderComponent>
+    </div>
 
-</div>
 
 </template>
 
@@ -80,15 +81,12 @@ export default {
         async getData() {
 
         await this.postStore.fetchPosts() 
-        // juste pour voir le loader
-        setTimeout(() => {
             console.log(this.postStore.posts);  
             this.posts = this.postStore.posts
             console.log(this.posts);
             this.totalPosts = this.posts.length
             this.setPages()
             this.appendPostsToPage()
-        }, 500);
         },
 
         // async getJsonData() {
@@ -139,6 +137,11 @@ export default {
             // this.currentPage === 0 ? this.hidePreviousButton = true : this.hidePreviousButton = false;
             // endIndex >= this.totalPosts ? this.hideNextButton = true : this.hideNextButton = false;             
         },
+
+        filterByTag(){
+            const tag = document.querySelector('.tag').textContent
+            this.postStore.filterPost(tag) 
+        }
     },
 
     async mounted() {

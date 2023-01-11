@@ -1,5 +1,5 @@
 <template>
-    <div class="tag" :class="color" @click="onClick()">
+    <div class="tag" :class="color" @click="''">
         <slot></slot>
     </div>
 </template>
