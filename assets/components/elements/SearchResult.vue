@@ -51,32 +51,15 @@ export default {
 
     // store
     setup() {
-        const postStore = usePostStore()
-        // je souscrit aux mutations du store pour avoir les infos dynamiquement
-        postStore.$subscribe((mutation) => {
-        mutation.type // 'direct' | 'patch object' | 'patch function'
-        })
-        
+        const postStore = usePostStore()        
         return { postStore };
     },
 
     methods: {
-        // async getJsonData() {
-        //     await this.postStore.fetchJsonPosts()
-        //     console.log(this.postStore.posts);
-        // },
-
-        async getDatas(){
-            await this.postStore.fetchPosts()
-            console.log(this.postStore.posts);
-        },
-
         resetSearch() {
             this.postStore.results = [];
             this.postStore.message = '';
-            const input = document.getElementById('searchInput');
-            input.value = '';
-
+            document.getElementById('searchInput').value = '';
         }
     },
 

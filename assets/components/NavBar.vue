@@ -72,16 +72,16 @@ export default {
         //     await this.postStore.fetchJsonPosts()
         // },
 
-        // async getDatas(){
-        //     await this.postStore.fetchPosts()
-        //     console.log(this.postStore.posts);
-        // }
+        async getDatas(){
+            await this.postStore.fetchPosts()
+            console.log(this.postStore.posts);
+        }
     },
 
     async mounted(){
         
         //this.getJsonData();
-        //this.getDatas();
+        this.getDatas();
     }
 }
 
