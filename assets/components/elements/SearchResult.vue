@@ -97,6 +97,7 @@ a {
     margin-bottom: $gutterSmall!important;
     padding-bottom: 0!important;
     padding-top: 0!important;
+    color: $orange!important;
 }
 
 .postBody {
