@@ -19,8 +19,8 @@
 
                     <p class="postPara">Exemple : {{ post.exemple }}</p> 
 
-                    <TagComponent v-if="post.mainTag === 'front'" class="primary" @click="filterByTag()"> {{ post.mainTag  }} </TagComponent> 
-                    <TagComponent v-if="post.mainTag === 'back'" class="danger" @click="filterByTag()"> {{ post.mainTag  }}</TagComponent> 
+                    <TagComponent v-if="post.mainTag === 'front'" class="primary" @click="filterByTag('front')"> {{ post.mainTag  }} </TagComponent> 
+                    <TagComponent v-if="post.mainTag === 'back'" class="danger" @click="filterByTag('back')"> {{ post.mainTag  }}</TagComponent> 
                     
                     <ButtonComponent type="primary" size="sm">
                         <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
@@ -137,8 +137,7 @@ export default {
             // endIndex >= this.totalPosts ? this.hideNextButton = true : this.hideNextButton = false;             
         },
 
-        filterByTag(){
-            const tag = document.querySelector('.tag').textContent
+        filterByTag(tag){
             this.postStore.filterPost(tag);
             window.scrollTo(0, 0);
         }
