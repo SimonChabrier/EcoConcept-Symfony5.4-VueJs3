@@ -1,6 +1,6 @@
 <template>
     
-    <div>
+    <div v-if="pagePosts">
 
         <div v-for="post in pagePosts" :key="post.id">
             <transition name="fade" mode="out-in">
@@ -25,16 +25,15 @@
             </transition>
         </div>
         
-        <div class="pagination" v-if="postStore.results.length === 0">
+        <div class="pagination">
 
             <ButtonComponent size="xs" @click="previousPage">Prev</ButtonComponent>
             <ButtonComponent size="xs" @click="nextPage">Next</ButtonComponent>
 
         </div>
                 
-    </div>
-
-
+        <LoaderComponent></LoaderComponent>
+</div>
 
 </template>
 
@@ -44,6 +43,7 @@ import { usePostStore } from '@/store/post';
 
 import ButtonComponent from '@/components/elements/ButtonComponent.vue';
 import TagComponent from '@/components/elements/TagComponent.vue';
+import LoaderComponent from '@/components/elements/LoaderComponent.vue';
 
 export default {
 
@@ -52,6 +52,7 @@ export default {
     components: {
         ButtonComponent,
         TagComponent,
+        LoaderComponent,
     },
 
     data () {
@@ -75,14 +76,17 @@ export default {
     methods: {
 
         async getData() {
-            
-            await this.postStore.fetchPosts()
+
+        await this.postStore.fetchPosts() 
+        // juste pour voir le loader
+        setTimeout(() => {
             console.log(this.postStore.posts);  
             this.posts = this.postStore.posts
             console.log(this.posts);
             this.totalPosts = this.posts.length
             this.setPages()
             this.appendPostsToPage()
+        }, 500);
         },
 
         // async getJsonData() {
@@ -167,12 +171,11 @@ a {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 1s ease;
 }
-.fade-enter-from,
 .fade-leave-to {
   opacity: 0;
-  transition: opacity 0.1s ease;
+  transition: opacity .1s ease;
 }
 
 </style>
