@@ -57,7 +57,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 #app {
     background: $creme;
@@ -85,34 +85,34 @@ export default {
 
 // Transition fade décommenter pour activer
 
-// .fade-enter-active,
-// .fade-leave-active {
-//   transition: opacity 0.5s ease;
-// }
-// .fade-enter-from,
-// .fade-leave-to {
-//   opacity: 0;
-//   transition: opacity 0.1s ease;
-// }
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
 
 
 // Transition slide
 
-.fade-enter-active {
-    transition: all 0.2s ease;
-}
-.fade-enter-from {
-    transform: translateX(-100%);
-    opacity: 0;
-}
-.fade-leave-active {
-    transition: all 0.2s ease;
-}
+// .fade-enter-active {
+//     transition: all 0.2s ease;
+// }
+// .fade-enter-from {
+//     transform: translateX(-100%);
+//     opacity: 0;
+// }
+// .fade-leave-active {
+//     transition: all 0.2s ease;
+// }
 
-.fade-leave-to {
-    transform: translateX(100%);
-    opacity: 0;
-}
+// .fade-leave-to {
+//     transform: translateX(100%);
+//     opacity: 0;
+// }
 
 
 // media queries

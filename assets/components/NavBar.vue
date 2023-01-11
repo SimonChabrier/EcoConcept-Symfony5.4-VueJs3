@@ -141,6 +141,7 @@ export default {
     background-color: $darkBlue;
     color: $lightWhite;
     cursor: pointer;
+    margin: 0!important; ;
     //box-shadow: none!important;
 }
 

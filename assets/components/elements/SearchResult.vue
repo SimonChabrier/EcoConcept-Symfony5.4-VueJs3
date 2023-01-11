@@ -8,14 +8,14 @@
 
     </section>
 
-    <div v-if="!postStore.ready">
+    <div v-if="postStore.ready === false">
         <LoaderComponent></LoaderComponent>
     </div>
 
     <div v-if="postStore.results.length !== 0">
         <section class="results">
             <span class="appSpan primary">{{ postStore.results.length > 1 ? `${postStore.results.length}` + ' resultats' : `${postStore.results.length}` + ' resultat' }} </span>
-
+            <button class="btn" type="submit" @click="resetSearch">Reset</button>
             <!-- J'utilise l'index pour ne pas avoir de doublon de :key si les resultats sont affichés au dessus de la liste de post qui ont déjà une :key -->
             <div v-for="( post, index ) in postStore.results" :key="index">
                 <transition name="fade" mode="out-in">
@@ -38,8 +38,6 @@
         </section>
 
     </div>
-
-    
 
 </div>
 
@@ -108,6 +106,17 @@ a {
     margin-bottom: $gutterSmall!important;
     padding-bottom: 0!important;
     padding-top: 0!important;
+}
+
+.btn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: $darkBlue;
+    color: $lightWhite;
+    cursor: pointer;
+    margin-left: 0!important;
+    //box-shadow: none!important;
 }
 
 // fade 

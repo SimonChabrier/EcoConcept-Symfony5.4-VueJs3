@@ -5,7 +5,7 @@
     <div v-if="pagePosts">
 
         <div v-for="post in pagePosts" :key="post.id">
-            <transition name="fade" mode="out-in">
+            <transition name="fade">
                 <section class="section appLight flexRow">
                     
                     <h3>N° {{ post.id }} - {{ post.title }}</h3>
@@ -32,10 +32,6 @@
 
         </div>
     </div>
-    
-    <div v-if="!postStore.ready" >
-        <LoaderComponent></LoaderComponent>
-    </div>
 
 </div>
 
@@ -47,7 +43,6 @@ import { usePostStore } from '@/store/post';
 
 import ButtonComponent from '@/components/elements/ButtonComponent.vue';
 import TagComponent from '@/components/elements/TagComponent.vue';
-import LoaderComponent from '@/components/elements/LoaderComponent.vue';
 
 export default {
 
@@ -56,7 +51,6 @@ export default {
     components: {
         ButtonComponent,
         TagComponent,
-        LoaderComponent,
     },
 
     data () {
@@ -175,14 +169,13 @@ a {
 }
 
 // fade 
-
-.fade-enter-active,
+.fade-enter-active {
+  transition: opacity .7s
+}
 .fade-leave-active {
-  transition: opacity 1s ease;
+    opacity: 0
 }
-.fade-leave-to {
-  opacity: 0;
-  transition: opacity .1s ease;
+.fade-enter, .fade-leave-to {
+  opacity: 0
 }
-
 </style>
