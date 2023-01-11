@@ -41,7 +41,7 @@ export default {
 
     data() {
         return {
-           //
+         post:''
         }
     },
 
@@ -63,8 +63,7 @@ export default {
 
         async getApiData() {
             await this.postStore.fetchPost(parseInt(this.$route.params.id))
-            console.log(this.postStore.post)
-            //document.title = `Article : ${this.postStore.post.title[0].toUpperCase() + this.postStore.post.title.substring(1)}`;
+            document.title = `Article : ${this.postStore.post.post.title[0].toUpperCase() + this.postStore.post.post.title.substring(1)}`;
         },
 
     },
