@@ -23,8 +23,8 @@
                         <p class="postBody">{{ post.body }}</p>
                         <p class="postPara">Exemple : {{ post.exemple }}</p> 
 
-                        <TagComponent v-if="post.mainTag === 'front'" class="primary"> {{ post.mainTag  }}</TagComponent> 
-                        <TagComponent v-if="post.mainTag === 'back'" class="danger"> {{ post.mainTag  }}</TagComponent> 
+                        <TagComponent v-if="post.mainTag === 'front'" class="primary" @click="filterByTag('front')"> {{ post.mainTag  }} </TagComponent> 
+                        <TagComponent v-if="post.mainTag === 'back'" class="danger" @click="filterByTag('back')"> {{ post.mainTag  }}</TagComponent> 
 
                         <ButtonComponent type="primary" size="sm" @click="resetSearch">
                             <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
@@ -69,6 +69,10 @@ export default {
             this.postStore.results = [];
             this.postStore.message = '';
             document.getElementById('searchInput').value = '';
+        },
+        filterByTag(tag){
+            this.postStore.filterPost(tag);
+            window.scrollTo(0, 0);
         }
     },
 

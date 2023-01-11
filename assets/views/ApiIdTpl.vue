@@ -11,8 +11,8 @@
             <p class="postBody">{{ postStore.post.post.body }}</p>
             <p class="postPara">Exemple : {{ postStore.post.post.exemple }}</p> 
 
-            <TagComponent v-if="postStore.post.post.mainTag === 'front'" class="primary"> {{ postStore.post.post.mainTag  }}</TagComponent> 
-            <TagComponent v-if="postStore.post.post.mainTag === 'back'" class="danger"> {{ postStore.post.post.mainTag  }}</TagComponent> 
+            <TagComponent v-if="postStore.post.post.mainTag === 'front'" class="primary" @click="filterByTag('front')"> {{ postStore.post.post.mainTag  }} </TagComponent> 
+            <TagComponent v-if="postStore.post.post.mainTag === 'back'" class="danger" @click="filterByTag('back')"> {{ postStore.post.post.mainTag  }}</TagComponent> 
             
             <ButtonComponent type="primary" size="sm" @click="previousPage">
                 Retour
@@ -65,6 +65,11 @@ export default {
             await this.postStore.fetchPost(parseInt(this.$route.params.id))
             document.title = `Article : ${this.postStore.post.post.title[0].toUpperCase() + this.postStore.post.post.title.substring(1)}`;
         },
+
+        filterByTag(tag){
+            this.postStore.filterPost(tag);
+            window.scrollTo(0, 0);
+        }
 
     },
 
