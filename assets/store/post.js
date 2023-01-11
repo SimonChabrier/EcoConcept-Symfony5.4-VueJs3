@@ -57,16 +57,22 @@ export const usePostStore = defineStore("user", {
 
       // search post by title in posts array
       async searchPost(title) {
+
+        // clean title remove "s", accents, concat and lowercase string
         if(title.length > 2) {
-        this.results = this.posts.posts.filter(post => post.title.toLowerCase().includes(title.toLowerCase()))
+        this.results = this.posts.posts.filter(post => post.title.replace(/\s/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(title.replace(/\s/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()))
+        console.log(this.results)
         this.message = ''
         }
+
         if (this.results.length === 0 && title.length > 2) {
           this.message = "Aucun résultat trouvé pour : " + title
         }
+
         if (this.results.length > 0 && title.length > 2) {
           this.message = ''
         }
+
         if (title === '') {
           console.log(title.length)
           this.message = ''
