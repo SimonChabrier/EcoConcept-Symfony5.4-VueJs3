@@ -4,12 +4,12 @@
 <!-- Toujours ouvrir le composant avec une div pour éviter les erreurs Vue sur les transitions --->
     <section class="section appLight flexRow">
 
-        <h1>Vue.js et Symfony</h1>
-                <p>Vue.js est un framework JavaScript open-source utilisé pour la création d'interfaces utilisateur. Il a été conçu pour être simple à utiliser et offre une expérience de développement agréable grâce à ses composants réutilisables et sa syntaxe claire. Vue.js s'intègre facilement à de nombreux projets grâce à sa flexibilité et à sa taille réduite.</p>
-                <p>Symfony est un framework PHP open-source utilisé pour le développement d'applications web. Il est connu pour sa flexibilité et sa puissance, ainsi que pour sa communauté active et son écosystème étendu. En utilisant Symfony, les développeurs peuvent créer rapidement des applications robustes et scalables grâce à ses nombreux composants et outils de développement.</p>
+        <h1>Lorem ipsum dolor sit.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla consectetur veniam eaque aliquid corporis doloribus impedit aut, soluta debitis! Qui nam rerum amet dolore repellendus deserunt fugiat possimus, tempore dolorem odit quisquam optio, minima, facilis quis fuga? Architecto sit tenetur officia? Aliquam labore corrupti fugiat recusandae expedita. Laudantium aliquam magni, animi vero delectus illum dolorem, debitis officia fugiat repudiandae, non facere temporibus omnis corporis harum cumque iusto corrupti molestiae earum nostrum. Ea modi beatae rerum quia consectetur nobis, cupiditate voluptas?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit culpa fuga nam a sint quisquam modi porro sit quis quo explicabo placeat laboriosam totam quos neque, incidunt mollitia dignissimos iusto.</p>
             
-        <h4>Quels bénéfices ?</h4>
-                <p>L'intégration de Vue.js et de Symfony peut être très bénéfique pour les projets qui nécessitent une interface utilisateur interactive et une back-end solide. En utilisant Vue.js pour la partie front-end et Symfony pour la partie back-end, les développeurs peuvent créer des applications web complètes et performantes.</p>
+        <h4>Lorem ipsum ?</h4>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis harum quos magnam tempora sequi quisquam eligendi, expedita aut pariatur porro, animi perferendis? Inventore sed ipsum molestias maxime minus doloribus nemo perferendis maiores repellat cumque porro esse, impedit ad quisquam eos.</p>
     </section>
 
     <section class="section appLight flexRow">
@@ -33,9 +33,6 @@
                 } 
             </code>
         </pre>
-
-       
-
     </section>
 
     <section class="section appLight flexRow">
