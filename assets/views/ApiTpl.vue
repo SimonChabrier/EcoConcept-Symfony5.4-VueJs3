@@ -1,8 +1,13 @@
 <template>
 
 <div>
-
+    
     <div v-if="pagePosts">
+
+        <div class="pagination">
+            <ButtonComponent class="paginationBtn" size="xs" @click="previousPage">Prev</ButtonComponent>
+            <ButtonComponent class="paginationBtn" size="xs" @click="nextPage">Next</ButtonComponent>
+        </div>
 
         <div v-for="post in pagePosts" :key="post.id">
             <transition name="fade">
@@ -26,11 +31,10 @@
         </div>
         
         <div class="pagination">
-
             <ButtonComponent class="paginationBtn" size="xs" @click="previousPage">Prev</ButtonComponent>
             <ButtonComponent class="paginationBtn" size="xs" @click="nextPage">Next</ButtonComponent>
-
         </div>
+
     </div>
 
 </div>
