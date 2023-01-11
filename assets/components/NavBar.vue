@@ -62,11 +62,17 @@ export default {
             }
             if(this.searchValue.length > 1 && this.postStore.results.length === 0) {
                 this.postStore.message = `Pas de résultat pour : ${this.getSearchValue} !`;
+            } else {
+                this.postStore.results = [];
+                this.postStore.message = '';
             }
             
             this.postStore.results = this.postStore.posts.posts.filter((post) => {
                 return post.body.toLowerCase().includes(this.searchValue.toLowerCase());
             });       
+
+            console.log(this.postStore.results.length)
+            console.log(this.postStore.results)
         },
 
         // async getJsonData() {
