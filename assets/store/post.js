@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import axios from "axios"
 
 const API_ROOT_URL = 'https://127.0.0.1:8000/api/posts/'
+//const API_ROOT_URL = 'https://eco-conception.simschab.fr/api/posts/'
 
 export const usePostStore = defineStore("user", {
 
