@@ -17,7 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ApiController extends AbstractController
 {
     /**
-     * Retourne tous les Posts
+     * Retourne tous les Posts au front VueJS
      * @Route("/api/posts", name="posts.api", methods={"GET"})
      */
     public function getPosts(PostRepository $postRepository): Response
@@ -28,7 +28,7 @@ class ApiController extends AbstractController
     }
 
     /**
-     * Retourne un Post
+     * Retourne un Post au front VueJS
      * @Route("/api/posts/{id}", name="post.api", methods={"GET"})
      */
     public function getPost(Post $post): Response
@@ -42,7 +42,7 @@ class ApiController extends AbstractController
     }
 
     /**
-     * Créer un nouveau Post
+     * Créer un nouveau Post avec les données envoyées par le front VueJS
      * @Route("/api/posts", name="post.create", methods={"POST"})
      */
     public function createPost(
@@ -71,7 +71,7 @@ class ApiController extends AbstractController
 
 
     /**
-     * Mettre à jour un Post
+     * Mettre à jour un Post avec les données envoyées par le front VueJS
      * @Route("/api/posts/{id}", name="api.patch.post", methods={"PATCH"})
      */
     public function patchUser(
@@ -103,7 +103,7 @@ class ApiController extends AbstractController
     }
 
     /**
-     * Supprimer un Post
+     * Supprimer un Post avec les données envoyées par le front VueJS
      * @Route("/api/posts/{id}", name="api.delete.post", methods={"DELETE"})
      */
     public function deleteUser(
