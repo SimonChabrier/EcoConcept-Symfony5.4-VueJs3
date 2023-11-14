@@ -140,18 +140,6 @@ export default {
         this.pagePosts = this.items.posts.slice(startIndex, endIndex);
         },
 
-
-        // appendPostsToPage() {
-        //     let startIndex = this.currentPage * this.itemsPerPage;
-        //     let endIndex = startIndex + this.itemsPerPage - 1;
-        //     this.pagePosts = this.items.posts.slice(startIndex, endIndex);
-
-        //     // revenir à la page 0 si on est à la fin
-        //     if(this.currentPage === this.pages.length - 1) {
-        //         this.currentPage = -1;
-        //     }            
-        // },
-
         filterByTag(tag){
             this.postStore.filterPost(tag);
             window.scrollTo(0, 0);
