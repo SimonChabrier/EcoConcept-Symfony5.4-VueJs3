@@ -32,7 +32,7 @@ export const usePostStore = defineStore("user", {
         }
         // si les données sont chargées, on passe ready à true
         this.ready = true
-        console.log(this.posts)
+        //console.log(this.posts)
       },
 
       // fetch post by id from jsonplaceholder -> Pour l'utiliser, switcher de méthode dans ApiIdTpl.vue : getJsonData / getApiData()

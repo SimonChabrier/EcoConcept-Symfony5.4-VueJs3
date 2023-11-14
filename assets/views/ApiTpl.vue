@@ -7,6 +7,7 @@
         <div class="pagination">
             <ButtonComponent class="paginationBtn" size="xs" @click="previousPage">Prev</ButtonComponent>
             <ButtonComponent class="paginationBtn" size="xs" @click="nextPage">Next</ButtonComponent>
+            <p class="nb_pages">Page {{ currentPage + 1 }} sur {{ pages.length }}</p>
         </div>
 
         <div v-for="post in pagePosts" :key="post.id">
@@ -63,7 +64,7 @@ export default {
         pagePosts: [],
         totalPosts: '',
         currentPage: 0,
-        itemsPerPage: 6,
+        itemsPerPage: 3,
         items:[],
       }
     },
@@ -136,7 +137,7 @@ export default {
 
         appendPostsToPage() {
         let startIndex = this.currentPage * this.itemsPerPage;
-        let endIndex = startIndex + this.itemsPerPage - 1;
+        let endIndex = startIndex + this.itemsPerPage;
         this.pagePosts = this.items.posts.slice(startIndex, endIndex);
         },
 
@@ -177,7 +178,16 @@ a {
     padding-bottom: 0!important;
     padding-top: 0!important;
 }
-
+.pagination{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: $gutterSmall;
+}
+.pagination p {
+    font-size: 0.7rem!important;
+    padding-left: 5px!important;
+}
 // fade 
 .fade-enter-active {
   transition: opacity .7s

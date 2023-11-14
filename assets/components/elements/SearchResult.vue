@@ -12,7 +12,7 @@
 
     <div v-if="postStore.results.length !== 0">
         <section class="results">
-            <span class="appSpan primary">{{ postStore.results.length > 1 ? `${postStore.results.length}` + ' resultats' : `${postStore.results.length}` + ' resultat' }} </span>
+            <span class="appSpan primary">{{ postStore.results.length > 1 ? `${postStore.results.length}` + ' resultats trouvés' : `${postStore.results.length}` + ' resultat trouvé' }} </span>
             <button class="btn" type="submit" @click="resetSearch">Reset</button>
             <!-- J'utilise l'index pour ne pas avoir de doublon de :key si les resultats sont affichés au dessus de la liste de post qui ont déjà une :key -->
             <div v-for="( post, index ) in postStore.results" :key="index">
@@ -78,7 +78,7 @@ export default {
 
     // je récupère les datas si le composant est monté.
     async mounted () {
-        console.log(this.postStore.results);
+        // console.log(this.postStore.results);
         //this.getJsonData();
         // this.getDatas();
     }
@@ -91,7 +91,7 @@ a {
     text-decoration: none;
 }
 .results {
-    padding:$gutterXBig;
+    padding:10px;
     background-color: $creme;
     border-radius: $radius;
 }
@@ -121,6 +121,8 @@ a {
     margin-left: 0!important;
     //box-shadow: none!important;
 }
+
+
 
 // fade 
 

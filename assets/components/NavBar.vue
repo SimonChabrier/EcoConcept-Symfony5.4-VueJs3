@@ -47,7 +47,7 @@ export default {
     methods: {
 
         reset() {
-            console.log('reset search');
+            //console.log('reset search');
             const input = document.getElementById('searchInput');
             input.value = '';
             this.postStore.results = [];
@@ -64,7 +64,7 @@ export default {
 
         async getDatas(){
             await this.postStore.fetchPosts()
-            console.log(this.postStore.posts);
+            //console.log(this.postStore.posts);
         }
     },
 
@@ -149,26 +149,25 @@ export default {
 
 @media screen and (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        height: auto;
-        padding: 0!important;
-        margin: $gutterMedium 0 0 0!important;
+        // height: auto;
+        // padding: 0!important;
+        // margin: $gutterMedium 0 0 0!important;
     }
     .searchForm {
-        flex-direction: column;
-        align-items: center;
-        padding: 0!important;
-        margin: $gutterMedium 0 0 0!important;
+        // flex-direction: row;
+        // align-items: center;
+        // padding: 0!important;
+        // margin: $gutterMedium 0 0 0!important;
     }
     .input {
         margin-right: 0;
         margin-bottom: 10px;
     }
-    .btn {
-        width: -webkit-fill-available;
-        margin: 0 0 $gutterMedium 0!important;
-        padding: 12px;
-    }
+    // .btn {
+    //     width: -webkit-fill-available;
+    //     margin: 0 0 $gutterMedium 0!important;
+    //     padding: 12px;
+    // }
 }
 
 </style>

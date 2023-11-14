@@ -1,3 +1,25 @@
+
+## pense bête
+ - lancer le serveur : 
+ - 
+```shell
+  symfony serve
+ ```
+ - se placer dans le dossier assets pour lancer ensuite le serveur webpack : 
+ - 
+```shell
+cd assets &&  npm run dev-server
+```
+  
+Ouvrir le navigateur sur l'url du serveur symfony et travailler sur VueJS le sevrer webpack est lancé sur le port 8080
+il fera l'autorefresh des pages et des composants VueJS
+
+Ensuite il faudra refaire un build pour que les fichiers soient mis à jour dans le dossier public si besoin de mettere en prod ou de tester sur le serveur symfony en local sans le serveur webpack qui tourne en parallèle
+
+```shell
+npm run build
+```
+
 ## Doc
 
 ![Template et composants](./doc/template.jpg).
