@@ -1,12 +1,14 @@
 import { defineStore } from 'pinia'
 import axios from "axios"
 
-const API_ROOT_URL = 'https://127.0.0.1:8000/api/posts/'
+const LOCATION = window.location.origin;
+const API_ROOT_URL = `${LOCATION}/api/posts/`;
+//const API_ROOT_URL = 'https://127.0.0.1:8001/api/posts/';
 
 export const usePostStore = defineStore("user", {
 
     state: () => ({
-        posts: [],
+        posts: [], 
         post: {},
         results: [],
         message: '',

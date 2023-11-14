@@ -64,7 +64,7 @@ export default {
         totalPosts: '',
         currentPage: 0,
         itemsPerPage: 6,
-        posts:[],
+        items:[],
       }
     },
 
@@ -77,16 +77,19 @@ export default {
     
     methods: {
 
-        async getData() {
+    async getData() {
 
         await this.postStore.fetchPosts() 
-            console.log(this.postStore.posts);  
-            this.posts = this.postStore.posts
-            console.log(this.posts);
-            this.totalPosts = this.posts.length
-            this.setPages()
-            this.appendPostsToPage()
+            this.items = this.postStore.posts
+            if(this.postStore.ready === false) {
+                console.log('loading')
+            } else {
+                this.totalPosts = this.items.posts.length
+                this.setPages()
+                this.appendPostsToPage()
+            }
         },
+
 
         // async getJsonData() {
             
@@ -98,44 +101,56 @@ export default {
         //     this.appendPostsToPage()
         // },
 
-        //action de pagination
-        nextPage() {
-            this.currentPage++;
-            this.appendPostsToPage();
-
-            if(this.currentPage === this.pages.length - 1) {
-                this.currentPage = -1;
-            }
-        },
-
-        previousPage() {
-            this.currentPage--;
-            this.appendPostsToPage();
-
-            if(this.currentPage === this.pages.length - 1) {
-                this.currentPage = -1;
-            }
-        },
-
         setPages() {
 
-            let index = 0;
-            let numberOfPages = Math.ceil(this.totalPosts / this.itemsPerPage);
-
+        let index = 0;
+        let numberOfPages = Math.ceil(this.totalPosts / this.itemsPerPage);
             for (index; index < numberOfPages; index++) {
                 this.pages.push(index); 
             }
         },
 
-        appendPostsToPage() {
-            let startIndex = this.currentPage * this.itemsPerPage;
-            let endIndex = startIndex + this.itemsPerPage - 1;
-            this.pagePosts = this.posts.posts.slice(startIndex, endIndex);
+        //action de pagination
+        nextPage() {
+            this.currentPage++;
 
-            // afficher masquer les boutons suivant et précédent si on est au début ou à la fin
-            // this.currentPage === 0 ? this.hidePreviousButton = true : this.hidePreviousButton = false;
-            // endIndex >= this.totalPosts ? this.hideNextButton = true : this.hideNextButton = false;             
+            // si on est sur la dernière page on revient à la première
+            if (this.currentPage > this.pages.length - 1) {
+                this.currentPage = 0;
+            }
+
+            this.appendPostsToPage();
         },
+
+        previousPage() {
+            this.currentPage--;
+
+            // Si on est à la première page et on veut aller en arrière,
+            // on revient à la dernière page
+            if (this.currentPage === -1) {
+                this.currentPage = this.pages.length - 1;
+            }
+
+            this.appendPostsToPage();
+        },
+
+        appendPostsToPage() {
+        let startIndex = this.currentPage * this.itemsPerPage;
+        let endIndex = startIndex + this.itemsPerPage - 1;
+        this.pagePosts = this.items.posts.slice(startIndex, endIndex);
+        },
+
+
+        // appendPostsToPage() {
+        //     let startIndex = this.currentPage * this.itemsPerPage;
+        //     let endIndex = startIndex + this.itemsPerPage - 1;
+        //     this.pagePosts = this.items.posts.slice(startIndex, endIndex);
+
+        //     // revenir à la page 0 si on est à la fin
+        //     if(this.currentPage === this.pages.length - 1) {
+        //         this.currentPage = -1;
+        //     }            
+        // },
 
         filterByTag(tag){
             this.postStore.filterPost(tag);
