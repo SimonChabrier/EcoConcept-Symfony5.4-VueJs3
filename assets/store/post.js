@@ -44,28 +44,29 @@ export const usePostStore = defineStore("user", {
       },  
       // search post by title in posts array
       async searchPost(searchValue) {
-
+        const MIN_SEARCH_LENGTH = 2;
         // clean title remove "s", accents, concat and lowercase string
-        if(searchValue.length > 2) {
-        this.results = this.posts.posts.filter(post => post.title.replace(/\s/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(searchValue.replace(/\s/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()))
-        this.message = ''
-        }
-
-        if (this.results.length === 0 && searchValue.length > 2) {
-          
-          this.message = "Aucun résultat trouvé pour : " + searchValue
-          console.log(this.message)
-        }
-
-        if (this.results.length > 0 && searchValue.length > 2) {
-          this.message = ''
-        }
-
-        if (searchValue === '') {
-          this.message = ''
-          this.results = []
+        const cleanText = (text) => text.replace(/\s/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        // if search value length > 2, search in posts array
+        if (searchValue.length > MIN_SEARCH_LENGTH) {
+          const normalizedSearch = cleanText(searchValue);
+          this.results = this.posts.posts.filter(
+            (post) => cleanText(post.title).includes(normalizedSearch)
+          );
+          // if no results, display message
+          if (this.results.length === 0) {
+            this.message = `Aucun résultat trouvé pour : ${searchValue}`;
+            console.log(this.message);
+          } else {
+            this.message = '';
+          }
+        // reset all if empty search
+        } else if (searchValue === '') {
+          this.message = '';
+          this.results = [];
         }
       },
+      
       // filter post by tag
       async filterPost(tag) {
         this.results = this.posts.posts.filter(post => post.mainTag.includes(tag))
