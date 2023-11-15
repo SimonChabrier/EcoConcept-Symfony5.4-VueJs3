@@ -14,14 +14,11 @@ export const usePostStore = defineStore("user", {
         message: '',
         ready: false,
     }),
-
     getters: {
       getPosts : (state) => state.posts,
       getPost: (state) => (id) => { return state.posts.find(post => post.id === id) }
     },
-
     actions: {
-
       // fetch all posts from jsonplaceholder -> Pour l'utiliser, switcher de méthode dans ApiTpl.vue : getJsonData / getApiData() 
       async fetchPosts() {
         try {
@@ -34,7 +31,6 @@ export const usePostStore = defineStore("user", {
         this.ready = true
         //console.log(this.posts)
       },
-
       // fetch post by id from jsonplaceholder -> Pour l'utiliser, switcher de méthode dans ApiIdTpl.vue : getJsonData / getApiData()
       async fetchPost(id) {
         try {
@@ -46,23 +42,6 @@ export const usePostStore = defineStore("user", {
         // si les données sont chargées, on passe ready à true
         this.ready = true
       },  
-      
-      // fetch all posts from json data --- NON UTILISE ACTUELLEMENT C'EST JUSTE POUR L'EXEMPLE
-      async fetchJsonPosts() {
-        try {
-          this.posts  = (await axios.get('data.json')).data
-          }
-          catch (error) {
-            console.log(error)
-        }
-      },
-
-      // fetch post from json data --- NON UTILISE ACTUELLEMENT C'EST JUSTE POUR L'EXEMPLE
-      async findPost(id) { 
-        this.posts  = (await axios.get('data.json')).data
-        this.post = this.posts.find(post => post.id === id)
-      },
-
       // search post by title in posts array
       async searchPost(searchValue) {
 
@@ -87,13 +66,26 @@ export const usePostStore = defineStore("user", {
           this.results = []
         }
       },
-
       // filter post by tag
       async filterPost(tag) {
         this.results = this.posts.posts.filter(post => post.mainTag.includes(tag))
         if (this.results.length > 0) {
           this.ready = true
         }
-      }
+      },
+      // fetch all posts from json data --- NON UTILISE ACTUELLEMENT C'EST JUSTE POUR L'EXEMPLE C'ETAIT AVANT DE FAIRE L'API
+      async fetchJsonPosts() {
+        try {
+          this.posts  = (await axios.get('data.json')).data
+          }
+          catch (error) {
+            console.log(error)
+        }
+      },
+      // fetch post from json data --- NON UTILISE ACTUELLEMENT C'EST JUSTE POUR L'EXEMPLE
+      async findPost(id) { 
+        this.posts  = (await axios.get('data.json')).data
+        this.post = this.posts.find(post => post.id === id)
+      },
     },
 })
