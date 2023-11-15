@@ -1,7 +1,7 @@
 <template>
     <div>
         <section class="section appLight flexRow">
-            <span class="appSpan fill">Fetch article from Json File</span>
+            <span class="appSpan fill">Fetch unique article</span>
         </section>
 
         <section class="section appLight flexRow" v-if="postStore.post.post">
@@ -61,7 +61,7 @@ export default {
         //     document.title = `Article : ${this.postStore.post.title[0].toUpperCase() + this.postStore.post.title.substring(1)}`;
         // }
 
-        async getApiData() {
+        async getPost() {
             await this.postStore.fetchPost(parseInt(this.$route.params.id))
             document.title = `Article : ${this.postStore.post.post.title[0].toUpperCase() + this.postStore.post.post.title.substring(1)}`;
         },
@@ -74,7 +74,7 @@ export default {
     },
 
     async mounted() {
-        this.getApiData();
+        this.getPost();
         //this.getJsonData();
     }
 }
