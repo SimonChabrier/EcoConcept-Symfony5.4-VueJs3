@@ -3,10 +3,8 @@ import axios from "axios"
 
 const LOCATION = window.location.origin;
 const API_ROOT_URL = `${LOCATION}/api/posts/`;
-//const API_ROOT_URL = 'https://127.0.0.1:8001/api/posts/';
 
-export const usePostStore = defineStore("user", {
-
+export const usePostStore = defineStore("post", {
     state: () => ({
         posts: [], 
         post: {},
@@ -19,7 +17,6 @@ export const usePostStore = defineStore("user", {
       getPost: (state) => (id) => { return state.posts.find(post => post.id === id) }
     },
     actions: {
-      // fetch all posts from jsonplaceholder -> Pour l'utiliser, switcher de méthode dans ApiTpl.vue : getJsonData / getApiData() 
       async fetchPosts() {
         try {
           this.posts  = (await axios.get(API_ROOT_URL)).data
@@ -27,9 +24,8 @@ export const usePostStore = defineStore("user", {
           catch (error) {
             console.log(error)
         }
-        // si les données sont chargées, on passe ready à true
+        // if data are loaded, set ready to true
         this.ready = true
-        //console.log(this.posts)
       },
       // fetch post by id from jsonplaceholder -> Pour l'utiliser, switcher de méthode dans ApiIdTpl.vue : getJsonData / getApiData()
       async fetchPost(id) {
@@ -39,7 +35,7 @@ export const usePostStore = defineStore("user", {
           catch (error) {
             console.log(error)
         }
-        // si les données sont chargées, on passe ready à true
+        // if data are loaded, set ready to true
         this.ready = true
       },  
       // search post by title in posts array
@@ -66,7 +62,6 @@ export const usePostStore = defineStore("user", {
           this.results = [];
         }
       },
-      
       // filter post by tag
       async filterPost(tag) {
         this.results = this.posts.posts.filter(post => post.mainTag.includes(tag))
