@@ -1,24 +1,21 @@
 <template>
-
 <div>
-
     <section v-if="postStore.message" class="results">
         <span class="appSpan warning">{{ postStore.message }}</span>
     </section>
-
     <div v-if="postStore.ready === false">
         <LoaderComponent></LoaderComponent>
     </div>
-
     <div v-if="postStore.results.length !== 0">
         <section class="results">
-            <span class="appSpan primary">{{ postStore.results.length > 1 ? `${postStore.results.length}` + ' resultats trouvés' : `${postStore.results.length}` + ' resultat trouvé' }} </span>
+            <span class="appSpan primary">
+                {{ postStore.results.length > 1 ? `${postStore.results.length}` + ' resultats trouvés' : `${postStore.results.length}` + ' resultat trouvé' }} 
+            </span>
             <button class="btn" type="submit" @click="resetSearch">Reset</button>
             <!-- J'utilise l'index pour ne pas avoir de doublon de :key si les resultats sont affichés au dessus de la liste de post qui ont déjà une :key -->
             <div v-for="( post, index ) in postStore.results" :key="index">
                 <transition name="fade" mode="out-in">
                     <section class="section appDark flexRow">
-                        
                         <h3>N° {{ post.id }} - {{ post.title }}</h3>
                         <p class="postBody">{{ post.body }}</p>
                         <p class="postPara">Exemple : {{ post.exemple }}</p> 
@@ -29,16 +26,12 @@
                         <ButtonComponent type="primary" size="sm" @click="resetSearch">
                             <router-link :to="{ name: 'post_id', params: { id: post.id }}">Voir l'article</router-link>
                         </ButtonComponent>
-    
                     </section>
                 </transition>
             </div>
         </section>
-
     </div>
-
 </div>
-
 </template>
 
 <script>

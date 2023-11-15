@@ -1,22 +1,25 @@
 <template>
-    <button
-      :class="[type, size]"
-    >
+    <button :class="[type, size]">
       <slot></slot>
     </button>
   </template>
-  
+
   <script>
-
   export default {
-
     name: 'ButtonComponent',
-
     props: {
       type: {
         type: String,
         default: 'success',
-        validator: (value) => ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'].includes(value),
+        validator: (value) => [
+          'primary', 
+          'secondary', 
+          'success', 
+          'danger', 
+          'warning', 
+          'info', 
+          'light', 
+          'dark'].includes(value),
       },
       size: {
         type: String,

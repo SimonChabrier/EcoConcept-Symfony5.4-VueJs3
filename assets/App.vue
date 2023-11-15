@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mainContent">
 
         <div class="appHeader">
 
@@ -63,6 +63,15 @@ export default {
     background: $creme;
 }
 
+.mainContent {
+    margin-left: auto;
+ 	margin-right: auto;
+ 	background-color: #fff;
+ 	min-height: 100vh;
+ 	flex-direction: column;
+ 	display: flex;
+}
+
 .appHeader, .appFooter {
     color: $lightWhite;
     background: $mediumBlue;
@@ -79,7 +88,7 @@ export default {
 
 .main {
     padding: 50px 70px;
-    //min-height: 76.5vh;
+ 	flex-grow: 1;
 }
 
 
