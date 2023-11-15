@@ -1,35 +1,20 @@
 <template>
     <div class="mainContent">
-
         <div class="appHeader">
-
             <NavBarComp></NavBarComp>
-
         </div>
-
-        
-
-        <div class="main">
-            
+        <div class="main">   
             <SearchResult></SearchResult>
-
             <router-view v-slot="{ Component }">
                 <transition name="fade" mode="out-in">
                 <component :is="Component"/>
                 </transition>
             </router-view>
-
         </div>
-
         <div class="appFooter">
-
             <FooterComp ></FooterComp>
-
         </div>
-
-        
         <BannerComponent text="© 2022 - Tous droits réservés" color="success" />
-
     </div>
     <BackTotop></BackTotop>
 </template>
@@ -42,11 +27,8 @@ import BannerComponent from '@/components/elements/BannerComponent.vue'
 import BackTotop from '@/components/elements/BackTotop.vue'
 import SearchResult from '@/components/elements/SearchResult.vue' 
 
-// import { usePostStore } from '@/store/post';
-
 export default {
     name: 'App',
-
     components: {
         NavBarComp,
         FooterComp,
@@ -56,13 +38,11 @@ export default {
     },
 }
 </script>
-
 <style lang="scss" scoped>
 
 #app {
     background: $creme;
 }
-
 .mainContent {
     margin-left: auto;
  	margin-right: auto;

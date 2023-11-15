@@ -35,7 +35,7 @@
   };
   </script>
   
-  <style lang="scss" scopped>
+  <style lang="scss" scoped>
 
 button {
     border: 1px solid transparent;

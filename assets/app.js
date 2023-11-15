@@ -1,7 +1,5 @@
-
 import '@styles/app.scss';
 
-// init vue app
 import { createApp } from "vue";
 import router from "@/router/router";
 import { createPinia } from 'pinia';
